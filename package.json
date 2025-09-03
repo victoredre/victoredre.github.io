@@ -2,11 +2,13 @@
   "name": "victoredre.github.io",
   "type": "module",
   "version": "1.1.0",
-  "description": "free and open-source portfolio template site built with Astro.",
+  "description": "Portfolio personal de Victor Alvarado - Desarrollador Web construido con Astro.",
   "license": "MIT",
   "private": true,
   "author": {
-    "name": "Victor Alvarado"
+    "name": "Victor Alvarado",
+    "email": "victoralvarado.dev@gmail.com",
+    "url": "https://victoredre.github.io"
   },
   "homepage": "https://victoredre.github.io",
   "contributors": [
@@ -18,22 +20,30 @@
   ],
   "keywords": [
     "portfolio",
-    "Astro",
+    "victor-alvarado",
+    "astro",
     "react",
     "tailwindcss",
     "typescript",
-    "shadCn"
+    "shadcn-ui",
+    "github-pages",
+    "web-developer"
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/victoredre/victoredre.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/victoredre/victoredre.github.io/issues"
   },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rm -rf dist .astro",
+    "type-check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -60,5 +70,8 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
-}
+  }
