@@ -1,20 +1,20 @@
 export const SITE = {
-    website: "https://victoredre.github.io", // replace this with your deployed domain
-    title: "Simple Portfolio",
-    description: "A simple but beautiful portfolio created with Astro",
-    tags: ["portfolio", "Resume cv", "Astro"],
+    website: "https://victoredre.github.io", // tu dominio actual
+    title: "Victor Alvarado - Portfolio",
+    description: "Portfolio personal de Victor Alvarado - Desarrollador Web Full Stack",
+    tags: ["portfolio", "victor-alvarado", "full-stack", "developer", "astro"],
     ogImage: "/og-image.webp",
     logo: "logo",
-    logoText: "Portfolio",
-    lang: "en",
+    logoText: "Victor Alvarado",
+    lang: "es", // cambiado a español según tu contenido
     favicon: "/favicon.png",
-    repository: "https://github.com/vito8916/simple-portfolio.git",
+    repository: "https://github.com/victoredre/victoredre.github.io", // tu repo real
     author: "Victor Alvarado",
     profile: "https://victoredre.github.io",
 }
 
 export const ME = {
-    name: "VicBox Dot Dev",
+    name: "Victor Alvarado",
     profession: "Software Engineer | Full Stack Developer",
     profileImage: "pp2.png",
     profileFacts: [
@@ -32,47 +32,49 @@ export const ME = {
         }
     ],
     contactInfo: {
-        email: "vicbox.dev@vicbox.dev",
+        email: "victoralvarado.dev@gmail.com", // tu email real del package.json
         linkedin: "https://www.linkedin.com/in/victor-alvaradohn",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "I am a software engineer with a passion for web development. I have experience in building web " + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
+    aboutMe: "Soy un ingeniero de software con pasión por el desarrollo web. Tengo experiencia construyendo " +
+             "aplicaciones web usando tecnologías modernas. Soy un desarrollador autodidacta que disfruta " +
+             "aprender cosas nuevas y compartir conocimiento con otros.",
 }
 
 export const SOCIALS = [
     {
         name: "Twitter",
-        url: "https://twitter.com/vicbox.dev",
+        url: "https://twitter.com/victoredre", // corregir con tu usuario real
         icon: "twitter-x-fill",
         show: true
     },
     {
         name: "Facebook",
-        url: "https://www.facebook.com/vicbox.dev",
+        url: "https://www.facebook.com/victoredre", // corregir con tu usuario real
         icon: "facebook-fill",
         show: false
     },
     {
         name: "Instagram",
-        url: "https://www.instagram.com/vicbox.dev",
+        url: "https://www.instagram.com/victoredre", // corregir con tu usuario real
         icon: "instagram-fill",
         show: true
     },
     {
         name: "Youtube",
-        url: "https://www.youtube.com/vicbox.dev",
+        url: "https://www.youtube.com/@victoredre", // corregir con tu usuario real
         icon: "youtube-fill",
         show: true
     },
     {
         name: "TikTok",
-        url: "https://tiktok.com/vicbox.dev",
+        url: "https://tiktok.com/@victoredre", // corregir con tu usuario real
         icon: "tik-fill",
         show: false
     },
     {
         name: "GitHub",
-        url: "https://github.com/vicbox.dev",
+        url: "https://github.com/victoredre", // tu usuario real de GitHub
         icon: "github-fill",
         show: true
     }
