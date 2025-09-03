@@ -12,7 +12,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://victoredre.github.io',
+    site: 'https://victoredre.github.io/',
     integrations: [mdx(), react(), tailwind({
         applyBaseStyles: false,
     }), icon(), sitemap()],
@@ -24,4 +24,5 @@ export default defineConfig({
     },
     experimental: {
         svg: true,
-    }});
+    }
+});
