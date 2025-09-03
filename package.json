@@ -1,5 +1,5 @@
 {
-  "name": "astro-simple-portfolio",
+  "name": "victoredre.github.io",
   "type": "module",
   "version": "1.1.0",
   "description": "free and open-source portfolio template site built with Astro.",
@@ -8,7 +8,7 @@
   "author": {
     "name": "Victor Alvarado"
   },
-  "homepage": "https://simple-portfolio.vicbox.dev",
+  "homepage": "https://victoredre.github.io",
   "contributors": [
     {
       "name": "Victor Alvarado",
