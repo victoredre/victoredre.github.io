@@ -1,5 +1,5 @@
 export const SITE = {
-    website: "https://simple-portfolio.vicbox.dev", // replace this with your deployed domain
+    website: "https://victoredre.github.io", // replace this with your deployed domain
     title: "Simple Portfolio",
     description: "A simple but beautiful portfolio created with Astro",
     tags: ["portfolio", "Resume cv", "Astro"],
@@ -10,7 +10,7 @@ export const SITE = {
     favicon: "/favicon.png",
     repository: "https://github.com/vito8916/simple-portfolio.git",
     author: "Victor Alvarado",
-    profile: "https://victoralvarado.dev/",
+    profile: "https://victoredre.github.io",
 }
 
 export const ME = {
