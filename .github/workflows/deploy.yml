@@ -31,5 +31,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        id: https://github.com/victoredre/victoredre.github.io
+        id: deployment
         uses: actions/deploy-pages@v4
