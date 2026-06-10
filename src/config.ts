@@ -1,6 +1,6 @@
 export const SITE = {
     website: "https://victoredre.github.io/", // replace this with your deployed domain
-    title: "Ing. Victor EduardoResendiz Villegas",
+    title: "Ing. Victor Eduardo Resendiz Villegas",
     description: "Ingeniero",
     tags: ["portfolio", "Resume cv", "Astro"],
     ogImage: "/og-image.webp",
@@ -14,7 +14,7 @@ export const SITE = {
 }
 
 export const ME = {
-    name: "VictorEduardoResendizVillegas",
+    name: "Victor Eduardo Resendiz Villegas",
     profession: "Ing. Gestión,  Administración y implementación en soluciones de ciberseguridad - SOC",
     profileImage: "pp2.png",
     profileFacts: [
