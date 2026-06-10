@@ -2,10 +2,10 @@ export const SITE = {
     website: "https://victoredre.github.io/", // replace this with your deployed domain
     title: "Ing. Victor Eduardo Resendiz Villegas",
     description: "Ingeniero",
-    tags: ["portfolio", "Resume cv", "Astro"],
+    tags: ["Bienvenidos", "Resume cv", "Astro"],
     ogImage: "/og-image.webp",
     logo: "logo",
-    logoText: "Portfolio",
+    logoText: "Bienvenidos",
     lang: "en",
     favicon: "/favicon.png",
     repository: "https://github.com/victoredre/victoredre.github.io/",
@@ -15,20 +15,24 @@ export const SITE = {
 
 export const ME = {
     name: "Victor Eduardo Resendiz Villegas",
-    profession: "Ing. Gestión,  Administración y implementación en soluciones de ciberseguridad - SOC",
+    profession: "Ing. Gestión, Administración e Implementación en Soluciones de Ciberseguridad Senior",
     profileImage: "pp2.png",
     profileFacts: [
+       {
+            value: 9,
+            description: "Años de Experiencia"
+        },
         {
             value: 77,
-            description: "Proyectos culminados"
+            description: "Proyectos Culminados"
         },
         {
             value: 41,
             description: "Clientes"
         },
         {
-            value: 1,
-            description: "Reconocimiento internacional"
+         value: 18,
+            description: "Reconocimientos"
         }
     ],
     contactInfo: {
@@ -36,7 +40,7 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "Profesional en Administracion y implementacion de ciberseguridad Senior con mas 9 años de experiencia transformando datos en decisiones estratégicas. Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles y optimizar procesos de seguridad generando un rio medible en cada proyecto" + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
+    aboutMe: "Especialista en administración y implementación con mas 9 años de experiencia transformando datos en decisiones estratégicas. Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles y optimizar procesos de seguridad generando un rio medible en cada proyecto" + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
 }
 
 export const SOCIALS = [
