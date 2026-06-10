@@ -1,48 +1,48 @@
 export const SITE = {
-    website: "https://simple-portfolio.vicbox.dev", // replace this with your deployed domain
-    title: "Simple Portfolio",
-    description: "A simple but beautiful portfolio created with Astro",
+    website: "https://victoredre.github.io/", // replace this with your deployed domain
+    title: "Ing. Victor EduardoResendiz Villegas",
+    description: "Ingeniero",
     tags: ["portfolio", "Resume cv", "Astro"],
     ogImage: "/og-image.webp",
     logo: "logo",
     logoText: "Portfolio",
     lang: "en",
     favicon: "/favicon.png",
-    repository: "https://github.com/vito8916/simple-portfolio.git",
-    author: "Victor Alvarado",
-    profile: "https://victoralvarado.dev/",
+    repository: "https://github.com/victoredre/victoredre.github.io/",
+    author: "Victor Eduardo Resendiz Villegas",
+    profile: "https://victoredre.github.io/",
 }
 
 export const ME = {
-    name: "VicBox Dot Dev",
-    profession: "Software Engineer | Full Stack Developer",
+    name: "VictorEduardoResendizVillegas",
+    profession: "Ing. Gestión,  Administración y implementación en soluciones de ciberseguridad - SOC",
     profileImage: "pp2.png",
     profileFacts: [
         {
-            value: 10,
-            description: "Years of Experience"
+            value: 77,
+            description: "Proyectos culminados"
         },
         {
-            value: 5,
-            description: "Completed Projects"
+            value: 41,
+            description: "Clientes"
         },
         {
-            value: 4,
-            description: "Satisfied Clients"
+            value: 1,
+            description: "Reconocimiento internacional"
         }
     ],
     contactInfo: {
-        email: "vicbox.dev@vicbox.dev",
-        linkedin: "https://www.linkedin.com/in/victor-alvaradohn",
+        email: "Ing. Victor Eduardo Resendiz Villegas",
+        linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "I am a software engineer with a passion for web development. I have experience in building web " + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
+    aboutMe: "Profesional en Administracion y implementacion de ciberseguridad Senior con mas 9 años de experiencia transformando datos en decisiones estratégicas. Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles y optimizar procesos de seguridad generando un rio medible en cada proyecto" + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
 }
 
 export const SOCIALS = [
     {
         name: "Twitter",
-        url: "https://twitter.com/vicbox.dev",
+        url: "https:// 'https://api.whatsapp.com/send/?phone=525536805993&text&type=phone_number&app_absent=0&wame_ctl=1-x-fill",
         icon: "twitter-x-fill",
         show: true
     },
