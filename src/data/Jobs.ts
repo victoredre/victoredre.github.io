@@ -86,9 +86,9 @@ const workExperience:WorkExperience[] = [
     },
         {
         title: "Software Engineer",
-        startDate: 20183-10-10",
-        endDate: "2020-03-10",
-        company: "Company Name",
+        startDate: "2021-09-10",
+        endDate: "2017-03-10",
+        company: "Scitum",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
