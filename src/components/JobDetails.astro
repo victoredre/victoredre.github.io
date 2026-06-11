@@ -33,12 +33,15 @@ const {
 <div class="flex flex-col gap-1">
     <h3 class="text-2xl font-bold">{title}</h3>
 <div class="flex items-center gap-1">
-<Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md whitespace-nowrap text-gray-800 dark:text-white"> {company}
-        </Badge>
+<Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md whitespace-nowrap text-gray-800 dark:text-white">{company}</Badge>
 <Badge className="bg-n1000 dark:bg-primary-dark w-fit rounded-md whitespace-nowrap text-white dark:text-white"> {formatDatetime(startDate)} - {currentJob ? "Present" : formatDatetime(endDate)}
         </Badge>
     </div
-    <div class="text-xl font-bold">{description}</h3>
+<ul style="list-style: disc;">
+        {goals.map((description: string) => (
+                <li>{description}</li>
+        ))}
+    </ul>
     <h3 class="text-xl font-bold">{location}</h3>
     <ul style="list-style: disc;">
         {goals.map((goal: string) => (
