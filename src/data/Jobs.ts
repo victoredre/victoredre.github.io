@@ -52,7 +52,6 @@ const workExperience:WorkExperience[] = [
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
             "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales.",
-            "Limpieza y transformación de datos con Python (Pandas) y SQL para análisis predictivo en auditoria para los equipos UTM como Palo alto network, Fortinet,  CheckPoint y watchGuard",
             "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
         ],
         currentJob: false,
