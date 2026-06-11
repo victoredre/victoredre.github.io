@@ -55,7 +55,7 @@ const workExperience:WorkExperience[] = [
             "Implementación de .",
             "Capacitación de personal DOC."
         ],
-        currentJob: true,
+        currentJob: false,
     },
     {
         title: "Software Engineer",
@@ -69,7 +69,7 @@ const workExperience:WorkExperience[] = [
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
-        currentJob: true,
+        currentJob: false,
     },
         {
         title: "Software Engineer",
@@ -84,7 +84,7 @@ const workExperience:WorkExperience[] = [
             "Capacitación de personal.",
             "Automaticé los tiempos.",
         ],
-        currentJob: true,
+        currentJob: false,
     },
         {
         title: "Software Engineer",
@@ -98,7 +98,7 @@ const workExperience:WorkExperience[] = [
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
-        currentJob: true,
+        currentJob: false,
     },
 ];
 export default workExperience;
