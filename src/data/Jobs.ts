@@ -48,8 +48,8 @@ const workExperience:WorkExperience[] = [
         startDate: "2014-03-10",
         endDate: "2018-06-10",
         company: "IQsec S.A de C.V",
-        location: "Ciudad de México",
-        description: "hola",
+        location: "Integración arquitectura de ciberseguridad en Multicapa",
+        description: "hhgjh",
         goals:  [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
