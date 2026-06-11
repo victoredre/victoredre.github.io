@@ -72,7 +72,7 @@ export const SOCIALS = [
         name: "TikTok",
         url: "https://tiktok.com/vicbox.dev",
         icon: "tik-fill",
-        show: true
+        show: false
     },
     {
         name: "GitHub",
@@ -80,4 +80,3 @@ export const SOCIALS = [
         icon: "github-fill",
         show: true
     }
-]
