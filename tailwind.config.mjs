@@ -16,8 +16,8 @@ export default {
     	extend: {
     		borderRadius: {
     			lg: 'var(--radius)',
-    			md: 'calc(var(--radius) - 5px)',
-    			sm: 'calc(var(--radius) - 6px)'
+    			md: 'calc(var(--radius) - 4px)',
+    			sm: 'calc(var(--radius) - 5px)'
     		},
 			colors: {
 				// Light mode colors
