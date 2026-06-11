@@ -16,7 +16,7 @@ export default {
     	extend: {
     		borderRadius: {
     			lg: 'var(--radius)',
-    			md: 'calc(var(--radius) - 3px)',
+    			md: 'calc(var(--radius) - 5px)',
     			sm: 'calc(var(--radius) - 6px)'
     		},
 			colors: {
