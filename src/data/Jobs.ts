@@ -51,8 +51,8 @@ const workExperience:WorkExperience[] = [
         location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Lideré talleres para unificar el traspaso de conocimientos de SOC/NOC de migración  logrando una reducción del 50% de en incidentes de falsos positivos",  
-            "Desarrollé entornos virtuales ESXi para mover grandes cantidades de datos un 35% ",  
+            "Lideré talleres para unificar el traspaso de conocimientos de SOC/NOC reduciendo hasta un 50% incidentes y/o cambios en la red",  
+            "Configuré entornos virtuales sobre hipervisores ESXi, con  datastores VMFS y SW, 35%
             "Logre una reducción del 30% en falsos positivos y optimizando la eficiencia de equipos: Ivanti Neurons, CrowdStrike Falcon EDR, Forescout Continuum, Forcepoint DLP",
                 ],
         currentJob: false, 
