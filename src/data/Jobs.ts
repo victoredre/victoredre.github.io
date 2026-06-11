@@ -51,12 +51,13 @@ const workExperience:WorkExperience[] = [
         location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Diseñé e impartí la capacitación para los analistas del SOC, enfocados en la interpretación de los nuevos flujos de logs locales e identificación de vectores de ataque dentro de la infraestructura aislada",
-            "Cree un entorno virtual para la integración del ecosistema Fortinet con CrowdStrike y Forescout, acelerando un 40% el tiempo de implementación real en el centro de datos",
-            "Logre una reducción del 30%",
+            "Diseñé e impartí la capacitación para los analistas del SOC, enfocados en la interpretación e identificación de vectores de ataque dentro de la infraestructura aislada",
+            "Cree un entorno virtual ESXi para migrar e implementar los ecosistemas Fortinet en multicapa por ejemplo CrowdStrike y Forescout, Forcepoint BeyondTrust acelerando un 40% el tiempo de implementación real en el centro de datos",
+            "Implementé y desarrollé pasarelas web en Forcepoint y Forescout, frente a fugas de información e ingresos de dispositivos no autorizados de amenazas vinculando las alertas de Falcon y Forcepoint reforzamdo hasta un 40% las brechas de seguridad.",
                 ],
         currentJob: false, 
     },
+    
     {
         title: "Analista en Servicios de Seguridad Perimetral Senior",
         startDate: "2018-03-10",
