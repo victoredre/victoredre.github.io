@@ -13,6 +13,7 @@ interface Job {
     endDate: string;
     description: string;
     goals: string[];
+  n logros: string[];
     currentJob: boolean;
 }
 
@@ -25,6 +26,7 @@ const {
     endDate,
     description,
     goals,
+    logros,
     currentJob,
 } = jobData as Job;
 
@@ -44,6 +46,11 @@ const {
     <ul style="list-style: disc;">
         {goals.map((goals: string) => (
                 <li>{goals}</li>
+        ))}
+    </ul>
+<ul style="list-style: disc;">
+        {logros.map((goals: string) => (
+                <li>{logros}</li>
         ))}
     </ul>
 <h3 class="text-xl font-bold">{currentJob}</h3>
