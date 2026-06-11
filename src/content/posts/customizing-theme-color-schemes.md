@@ -1,5 +1,5 @@
 ---
-author: VicBox
+author: In. Victor Eduardo  Resendiz  Villegas 
 publishDate: 2024-12-20T15:20:35Z
 title: Implementacion 
 tags:
