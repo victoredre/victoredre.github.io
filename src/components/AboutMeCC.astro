@@ -18,7 +18,7 @@ import {ME} from '@/config';
 
 <div class="relative flex flex-col gap-8 text-n800 dark:text-n400 w-full mt-50 px-4">
     {/*Description or About me -- Section*/}
-    <h2 class="text-3xl font-bold mb-4">Perfil Profesional</h2>
+    <h2 class="text-4xl font-bold mb-4">Perfil Profesional</h2>
     <div class="flex flex-col gap-3">
     <div class="mb-4">
         <p>
@@ -27,7 +27,7 @@ import {ME} from '@/config';
     </div>
     {/*Experiencia*/}
     <div class="mb-4">
-        <h2 class="text-3xl font-bold mb-4">Experiencia</h2>
+        <h2 class="text-4xl font-bold mb-4">Experiencia</h2>
         <div class="flex flex-col gap-6">
             {workExperience.map((job) => (
                     <JobDetails jobData={job}/>
@@ -36,7 +36,7 @@ import {ME} from '@/config';
     </div>
     {/*Trayectoria Profesional*/}
     <div class="mb-4">
-        <h2 class="text-3xl font-bold mb-4">Trayectoria Profesional</h2>
+        <h2 class="text-4xl font-bold mb-4">Trayectoria Profesional</h2>
         <div class="flex flex-col gap-6">
             {education.map((edu) => (
                     <EduDetail eduData={edu}/>
@@ -45,7 +45,7 @@ import {ME} from '@/config';
     </div>
     {/*Competencias*/}
     <div class="mb-4">
-        <h2 class="text-3xl font-bold mb-4">Competencias</h2>
+        <h2 class="text-4xl font-bold mb-4">Competencias</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {hardSkills.map((skill) => (
                     <SkillCard {...skill} showDescription={true}/>
@@ -54,7 +54,7 @@ import {ME} from '@/config';
     </div>
     {/*Certificaciones*/}
     <div class="mb-4">
-        <h2 class="text-3xl font-bold mb-4">Certificaciones</h2>
+        <h2 class="text-4xl font-bold mb-4">Certificaciones</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             {softSkills.map((skill) => (
                     <SkillCard {...skill} showDescription={false}/>
