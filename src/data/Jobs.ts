@@ -45,13 +45,13 @@ interface WorkExperience {
 const workExperience:WorkExperience[] = [
     {
         title: "Ing. Implementación en servicios de ciberseguridad - sentínel",
-        startDate: "2018-03-10",
-        endDate: "2014-06-10",
+        endDate:   "2024-06-10",
+        startDate: "2025-03-10",
         company: "IQsec S.A de C.V",
-        location: "Integración arquitectura de ciberseguridad en Multicapa",
+        location: "Implementacion en servicios de ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+            "Migración de equipos equpos perimetrales Palo alto network PA-5220, CheckPoint a ecosistema Fortinet",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
