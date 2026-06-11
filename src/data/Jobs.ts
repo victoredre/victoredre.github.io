@@ -51,12 +51,11 @@ const workExperience:WorkExperience[] = [
         location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
-            "Implementé tempranas que incrementó la retención de clientes en un 40%",
-            "Desarrollé entornos virtuales ESXi para mover grandes cantidades de datos reduciendo un 35% el tiempo de la implementación.  
-            "Diseño e integración de Vcenter 40%",
+            "Coordiné migraciones de Palo Alto, CheckPoint y Juniper al ecosistema Fortinet, 
+            "Desarrollé entornos virtuales ESXi para mover grandes cantidades de datos un 35% ",  
+            "Logre una reducción del 30% en falsos positivos y optimizando la eficiencia de equipos: Ivanti Neurons, CrowdStrike Falcon EDR, Forescout Continuum, Forcepoint DLP. 
                 ],
-        currentJob: false,
+        currentJob: false, 
     },
     {
         title: "Analista en Servicios de Seguridad Perimetral Senior",
@@ -66,7 +65,7 @@ const workExperience:WorkExperience[] = [
         location: "Integración de Soluciones en WatchGuard, Palo Alto, Fortinet, CheckPoint en arquitecturas on-premise",
         description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax",
         goals: [
-            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+            "Developed and maintne5 ained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
                ],
