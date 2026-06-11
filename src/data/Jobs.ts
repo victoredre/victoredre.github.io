@@ -52,8 +52,8 @@ const workExperience:WorkExperience[] = [
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
             "Migración de equipos perimetrales Palo alto network PA-5220, CheckPoint a ecosistema Fortinet",
-            "Implementación de e.",
-            "Created and maintained web applications using React, NodeJs, and MongoDB.",
+            "Implementación de .",
+            "Capacitación de personal DOC."
         ],
         currentJob: true,
     },
