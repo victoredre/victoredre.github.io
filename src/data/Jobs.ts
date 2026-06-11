@@ -51,17 +51,19 @@ const workExperience:WorkExperience[] = [
         location: "Implementacion en servicios de ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Migración de equipos perimetrales Palo alto network PA-5220, CheckPoint a ecosistema Fortinet",
-            "Implementación de .",
-            "Capacitación de personal DOC."
+            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales.",
+            "Limpieza y transformación de datos con Python (Pandas) y SQL para análisis predictivo en auditoria para los equipos UTM como Palo alto network, Fortinet,  CheckPoint y watchGuard",
+            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
+            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
+            "Coordinación con stakeholders para definir KPIs y roadmap de datos".
         ],
         currentJob: false,
     },
     {
-        title: "Software Engineer",
+        title: "Analista en ciberguridad Senior",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
-        company: "Company Name",
+        company: "Círculo Daat",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
@@ -82,13 +84,12 @@ const workExperience:WorkExperience[] = [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Implementación de equipos.",
             "Capacitación de personal.",
-            "Automaticé los tiempos.",
-        ],
+            "Automaticé los tiempos."       ],
         currentJob: false,
     },
         {
         title: "Software Engineer",
-        startDate: "2018-03-10",
+        startDate: 20183-10-10",
         endDate: "2020-03-10",
         company: "Company Name",
         location: "United States",
