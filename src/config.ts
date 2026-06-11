@@ -40,7 +40,7 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "Especialista en administración y implementación de ciberguridad con mas 9 años de experiencia transformando datos en decisiones estratégicas Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles y optimizar procesos de seguridad generando un rio medible en cada proyecto" + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
+    aboutMe: "Especialista en administración y implementación de ciberguridad con mas 9 años de experiencia transformando datos en decisiones estratégicas Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles.",
 }
 
 export const SOCIALS = [
@@ -80,3 +80,4 @@ export const SOCIALS = [
         icon: "github-fill",
         show: true
     }
+]
