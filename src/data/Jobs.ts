@@ -49,11 +49,11 @@ const workExperience:WorkExperience[] = [
         company: "IQsec S.A de C.V",
         location: "Integración arquitectura de ciberseguridad Multicapa",
         description: "hola",
-        goals: 
+        goals:  [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
-        
+        ],
         currentJob: true,
     },
     {
