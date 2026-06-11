@@ -36,15 +36,13 @@ const {
 <Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md whitespace-nowrap text-gray-800 dark:text-white">{company}</Badge>
 <Badge className="bg-n1000 dark:bg-primary-dark w-fit rounded-md whitespace-nowrap text-white dark:text-white"> {formatDatetime(startDate)} - {currentJob ? "Present" : formatDatetime(endDate)}
         </Badge>
-    <h3 class="text-xl font-bold">{currentJob}</h3>
     </div
-<ul style="list-style: disc;">{goals.map((description: string) => (<li>{description}</li>
-        ))}
-    </ul>
+
+    <h3 class="text-xl font-bold">{description}</h3>
     <h3 class="text-xl font-bold">{location}</h3>
     <ul style="list-style: disc;">
-        {goals.map((goal: string) => (
-                <li>{goal}</li>
+        {goals.map((goals: string) => (
+                <li>{goals}</li>
         ))}
     </ul>
 </div>
