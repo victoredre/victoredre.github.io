@@ -53,7 +53,7 @@ const workExperience:WorkExperience[] = [
         goals:  [
             "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
             "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
-        ],
+                ],
         currentJob: false,
     },
     {
@@ -62,29 +62,29 @@ const workExperience:WorkExperience[] = [
         endDate: "2020-03-10",
         company: "Círculo Daat S.A de C.V",
         location: "Gestión e integración de Soluciones en WatchGuard, Palo Alto, Fortinet, CheckPoint en arquitecturas on-premise",
-        description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax,",
+        description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax",
         goals: [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
-        ],
+               ],
         currentJob: false,
     },
-        {
+    {
         title: "Tet",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
-        company: " ón",
+        company:  "Telefónica",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Implementación de equipos.",
             "Capacitación de personal.",
-        ], 
+           ], 
         currentJob: false,
     },
-        {
+    {
         title: "Software Engineer",
         startDate: "2021-09-10",
         endDate: "2017-03-10",
