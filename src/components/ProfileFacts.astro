@@ -5,11 +5,11 @@ import { ME } from '@/config'
 const { profileFacts } = ME
 ---
 
-<div class="flex justify-between gap-2 text-center">
+<div class="flex justify-between gap-1 text-center">
     {profileFacts.map((fact) => (
-        <div class="flex flex-col items-center justify-center gap-2">
-            <h3 class="text-md font-bold text-n1000 dark:text-n300">{`${fact.value}+`}</h3>
-            <p class="text-sm text-n1000 dark:text-n300">{fact.description}</p>
+        <div class="flex flex-col items-center justify-center gap-1">
+            <h3 class="text-md font-bold text-n1500 dark:text-n500">{`${fact.value}+`}</h3>
+            <p class="text-sm text-n1500 dark:text-n500">{fact.description}</p>
         </div>
     ))}
 </div>
