@@ -12,7 +12,7 @@ const allProjects = (await getCollection('projects'))
 
 <!--Grid section to show the projects in to columns -->
 <>
-    <section class="mt-8 px-3 w-full">
+    <section class="mt-12 px-6 w-full">
         <div class="mb-4">
             <h2 class="text-3xl font-bold mb-4">Projects</h2>
         </div>
@@ -30,8 +30,8 @@ const allProjects = (await getCollection('projects'))
             }
         </div>
     </section>
-    <div class="flex justify-center mt-5">
-        <a href="/projects" class={buttonVariants({ variant: "default" }) + "text-n900 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark"}>
+    <div class="flex justify-center mt-20">
+        <a href="/projects" class={buttonVariants({ variant: "default" }) + "text-n600 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark"}>
             See All Projects
         </a>
     </div>
