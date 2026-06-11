@@ -44,7 +44,7 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "Ing. Implementación en servicios de ciberseguridad - sentínel",
+        title: "Ing. Administración y Implementación en servicios de ciberseguridad - sentínel",
         startDate: "2025-03-10",
         endDate:   "2024-06-10",
         company: "IQsec S.A de C.V",
@@ -57,12 +57,13 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Analista en ciberguridad Senior",
+        title: "Ing. Gestión, implementación de ciberguridad - Senior.
+",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
         company: "Círculo Daat S.A de C.V",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+        location: "Proyecto: Administración e implementación de soluciones de ciberseguridad con WatchGuard, Palo Alto, Fortinet, CheckPoint en arquitecturas on-premise",
+        description: "Principales clientes: Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax,",
         goals: [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
@@ -74,7 +75,7 @@ const workExperience:WorkExperience[] = [
         title: "Tet",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
-        company: "Company Name",
+        company: " ón",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
