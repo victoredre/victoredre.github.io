@@ -1,19 +1,19 @@
 {
-  "name": "astro-simple-portfolio",
+  "name": "victoredre.github.io",
   "type": "module",
   "version": "1.1.0",
   "description": "free and open-source portfolio template site built with Astro.",
   "license": "MIT",
   "private": true,
   "author": {
-    "name": "Victor Alvarado"
+    "name": "Victor Eduardo Resendiz Villegas"
   },
-  "homepage": "https://simple-portfolio.vicbox.dev",
+  "homepage": "https://victoredre.github.io",
   "contributors": [
     {
-      "name": "Victor Alvarado",
-      "email": "victoralvarado.dev@gmail.com",
-      "url": "https://victoralvarado.dev"
+      "name": "Victor Eduardo Resendiz Villegas",
+      "email": "victorresendizv@outlook.com",
+      "url": "https://victoredre.github.io"
     }
   ],
   "keywords": [
