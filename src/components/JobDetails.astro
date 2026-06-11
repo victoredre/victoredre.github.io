@@ -37,11 +37,13 @@ const {
             {formatDatetime(startDate)} - {currentJob ? "Present" : formatDatetime(endDate)}
         </Badge>
 <Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md whitespace-nowrap text-gray-800 dark:text-white">
-        truncate">{company}
+{company}
 </Badge>
         <span class="text-sm font-bold">/</span>
     </div
-    <p class="truncate">{description}</p>
+<Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md whitespace-nowrap text-black dark:text-white">
+{description}
+</Badge>
     <p class="truncate">{location}</p>
     <ul style="list-style: disc;">
         {goals.map((goal: string) => (
