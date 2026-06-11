@@ -55,7 +55,6 @@ const workExperience:WorkExperience[] = [
             "Limpieza y transformación de datos con Python (Pandas) y SQL para análisis predictivo en auditoria para los equipos UTM como Palo alto network, Fortinet,  CheckPoint y watchGuard",
             "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
             "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
-            "Coordinación con stakeholders para definir KPIs y roadmap de datos".
         ],
         currentJob: false,
     },
