@@ -51,9 +51,9 @@ const workExperience:WorkExperience[] = [
         location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Lideré talleres para unificar el traspaso de conocimientos de SOC/NOC reduciendo hasta un 50% incidentes y/o cambios en la red",  
-            "Configuré entornos virtuales sobre hipervisores ESXi, con  datastores VMFS y SW, 35%
-            "Logre una reducción del 30% en falsos positivos y optimizando la eficiencia de equipos: Ivanti Neurons, CrowdStrike Falcon EDR, Forescout Continuum, Forcepoint DLP",
+            "Diseñé e impartí la capacitación para los analistas del SOC, enfocados en la interpretación de los nuevos flujos de logs locales e identificación de vectores de ataque dentro de la infraestructura aislada",
+            "Cree un entorno virtual para la integración del ecosistema Fortinet con CrowdStrike y Forescout, acelerando un 40% el tiempo de implementación real en el centro de datos",
+            "Logre una reducción del 30%",
                 ],
         currentJob: false, 
     },
