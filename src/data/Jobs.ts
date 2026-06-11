@@ -51,7 +51,7 @@ const workExperience:WorkExperience[] = [
         location: "Implementacion en servicios de ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales.",
+            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
             "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
         ],
         currentJob: false,
@@ -71,7 +71,7 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
         {
-        title: "Software Engineer",
+        title: "Tet",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
         company: "Company Name",
@@ -81,7 +81,7 @@ const workExperience:WorkExperience[] = [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Implementación de equipos.",
             "Capacitación de personal.",
-            "Automaticé los tiempos."       ],
+        ],
         currentJob: false,
     },
         {
