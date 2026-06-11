@@ -56,7 +56,6 @@ const workExperience:WorkExperience[] = [
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
         currentJob: true,
-        description: "hola",
     },
     {
         title: "Software Engineer",
