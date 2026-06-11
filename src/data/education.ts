@@ -11,10 +11,10 @@ interface Education {
 const  education: Education[] = [
     {
         title: "Universidad Tecnológica de Nezahualcoyotl",
-        startDate: "2023-09-01",
-        endDate: "2028-11-01",
-        school: "Ing. Tecnologías de la Información y Comunicaciónes",
-        location: "Estado de México",
+        startDate: "2013-09-01",
+        endDate: "2018-08-01",
+        school: "Tecnologías de la Información y Comunicaciónes",
+        location: "Edo. de México",
         description: "Espealidad en diseño, desarrollo, implementación e integración de servicios ciberseguridad",
         currentUni: true,
     },
