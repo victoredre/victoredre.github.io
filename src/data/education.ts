@@ -10,31 +10,13 @@ interface Education {
 
 const  education: Education[] = [
     {
-        title: "General English",
-        startDate: "2024-09-01",
-        endDate: "",
-        school: "University Name",
-        location: "United States",
+        title: "Universidad Tecnológica de Nezahualcoyotl",
+        startDate: "2023-09-01",
+        endDate: "2028-11-01",
+        school: "Ing. Tecnologíasde la Informacióny Comunicación",
+        location: "Estado de México",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         currentUni: true,
-    },
-    {
-        title: "Bachelor of Science in Computer Science",
-        startDate: "2014-09-01",
-        endDate: "2018-06-30",
-        school: "University Name",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-        currentUni: false,
-    },
-    {
-        title: "Bachelor of Science in Computer Science",
-        startDate: "2012-09-01",
-        endDate: "2013-06-30",
-        school: "University Name",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-        currentUni: false,
     },
 ];
 
