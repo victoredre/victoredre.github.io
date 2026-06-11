@@ -51,12 +51,6 @@ export const SOCIALS = [
         show: true
     },
     {
-        name: "Facebook",
-        url: "https://www.facebook.com/vicbox.dev",
-        icon: "facebook-fill",
-        show: true
-    },
-    {
         name: "Instagram",
         url: "https://www.instagram.com/vicbox.dev",
         icon: "instagram-fill",
