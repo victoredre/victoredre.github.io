@@ -1,7 +1,7 @@
 ---
 author: VicBox
 publishDate: 2024-12-20T15:20:35Z
-title: Customizing color schemes of Astro Simple Portfolio
+title: Implementacion 
 tags:
   - color-schemes
   - docs
