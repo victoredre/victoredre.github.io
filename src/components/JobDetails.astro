@@ -15,6 +15,7 @@ interface Job {
     goals: string[];
   n logros: string[];
     currentJob: boolean;
+
 }
 
 const {jobData} = Astro.props;  // Ensure correct typing for the props
@@ -49,7 +50,7 @@ const {
         ))}
     </ul>
 <ul style="list-style: disc;">
-        {logros.map((goals: string) => (
+        {logros.map((logros: string) => (
                 <li>{logros}</li>
         ))}
     </ul>
