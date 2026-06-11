@@ -57,8 +57,7 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Ing. Gestión, implementación de ciberguridad - Senior.
-",
+        title: "Ing. Gestión, implementación de ciberguridad - Senior",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
         company: "Círculo Daat S.A de C.V",
