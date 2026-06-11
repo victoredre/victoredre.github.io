@@ -44,16 +44,16 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "Frontend Developer",
+        title: "Ing. Gestión, Implementación en servicios de ciberseguridad - sentínel",
         startDate: "2020-03-10",
-        company: "Google Inc",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NextJs, and Tailwind CSS.",
-        goals: [
+        company: "IQsec S.A de C.V",
+        location: "Integración arquitectura de ciberseguridad Multicapa",
+        description: "hola",
+        goals: 
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
-        ],
+        
         currentJob: true,
     },
     {
