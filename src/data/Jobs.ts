@@ -46,7 +46,7 @@ const workExperience:WorkExperience[] = [
     {
         title: "Ing. Implementación en servicios de ciberseguridad - sentínel",
         startDate: "2025-03-10",
-        endDate?:   "2024-06-10",
+        endDate:   "2024-06-10",
         company: "IQsec S.A de C.V",
         location: "Implementacion en servicios de ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
