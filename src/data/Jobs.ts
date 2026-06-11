@@ -20,7 +20,6 @@ interface WorkExperience {
     location: string;
     description: string;
     goals: string[];
-    logros: string[];
     currentJob: boolean;
 }
 
@@ -45,37 +44,29 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "Ing. Administración y Implementación en servicios de ciberseguridad - sentínel",
+        title: "Ing. Implementación en Soluciones de Ciberseguridad - Sentínel",
         startDate: "2025-03-10",
         endDate:   "2024-06-10",
         company: "IQsec S.A de C.V",
-        location: "Implementacion en servicios de ciberseguridad Multicapa ",
+        location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
-            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
-        ],
-        logros:  [
             "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
             "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
         ],
         currentJob: false,
     },
     {
-        title: "Ing. Gestión, implementación de ciberguridad - Senior",
+        title: "Analista en Servicios de seguridadcperimetral - Senior",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
         company: "Círculo Daat S.A de C.V",
-        location: "Proyecto: Administración e implementación de soluciones de ciberseguridad con WatchGuard, Palo Alto, Fortinet, CheckPoint en arquitecturas on-premise",
-        description: "Principales clientes: Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax,",
+        location: "Gestión e integración de Soluciones en WatchGuard, Palo Alto, Fortinet, CheckPoint en arquitecturas on-premise",
+        description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax,",
         goals: [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
-        ],
-        logros:  [
-            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
-            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
         ],
         currentJob: false,
     },
@@ -90,10 +81,6 @@ const workExperience:WorkExperience[] = [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Implementación de equipos.",
             "Capacitación de personal.",
-        ],
-        logros:  [
-            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
-            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
         ], 
         currentJob: false,
     },
@@ -109,10 +96,6 @@ const workExperience:WorkExperience[] = [
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
-        logros:  [
-            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
-            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
-        ], 
         currentJob: false,
     },
 ];
