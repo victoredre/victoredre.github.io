@@ -38,7 +38,6 @@ const {
 {formatDatetime(startDate)} - {currentJob ? "Present" : formatDatetime(endDate)}
         </Badge> 
 </div
-<h3 class="text-xl font-bold">{location}</h3>
 
     <h3 class="text-xl font-bold">{description}</h3>
     <ul style="list-style: disc;">
@@ -47,8 +46,8 @@ const {
         ))}
     </ul>
 <ul style="list-style: disc;">
-        {goals.map((currentJob: string) => (
-                <li>{currentJob}</li>
+        {location: string) => (
+                <li>{location}</li>
         ))}
     </ul>
 </div>
