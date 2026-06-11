@@ -51,9 +51,10 @@ const workExperience:WorkExperience[] = [
         location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
         description: "Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Diseñé e impartí la capacitación para los analistas del SOC, enfocados en la interpretación e identificación de vectores de ataque dentro de la infraestructura aislada",
-            "Cree un entorno virtual ESXi para migrar e implementar los ecosistemas Fortinet en multicapa por ejemplo CrowdStrike y Forescout, Forcepoint BeyondTrust acelerando un 40% el tiempo de implementación real en el centro de datos",
-            "Implementé y desarrollé pasarelas web en Forcepoint y Forescout, frente a fugas de información e ingresos de dispositivos no autorizados de amenazas vinculando las alertas de Falcon y Forcepoint reforzamdo hasta un 40% las brechas de seguridad.",
+            "Diseñé e impartí la capacitación para los ingenieros SOC,en la interpretación e identificación de vectores de ataque dentro de nuestra infraestructura",
+            "Cree un entorno virtual ESXi para migrar e implementar, ecosistemas Fortinet en multicapa por ejemplo CrowdStrike y Forescout, Forcepoint BeyondTrust acelerando un 40% el tiempo de implementación y minimizand oerrores",
+            "Configuré pasarelas web en Forcepoint y Forescout frente a fugas de información e ingresos de dispositivos no autorizados agilizando la detección y contención de anomalías hasta un 40% las brechas de seguridad.",
+            "Basado se expl',
                 ],
         currentJob: false, 
     },
@@ -62,7 +63,7 @@ const workExperience:WorkExperience[] = [
         title: "Analista en Servicios de Seguridad Perimetral Senior",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
-        company: "Círculo Daat S.A de C.V",
+        company: "Círculo Daat S.A de Ciberseguridad.V",
         location: "Integración de Soluciones en WatchGuard, Palo Alto, Fortinet, CheckPoint en arquitecturas on-premise",
         description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax",
         goals: [
