@@ -60,7 +60,7 @@ const workExperience:WorkExperience[] = [
         title: "Analista en ciberguridad Senior",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
-        company: "Círculo Daat",
+        company: "Círculo Daat S.A de C.V",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
@@ -88,7 +88,7 @@ const workExperience:WorkExperience[] = [
         title: "Software Engineer",
         startDate: "2021-09-10",
         endDate: "2017-03-10",
-        company: "Scitum",
+        company: "Scitum S.A de C.V",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
