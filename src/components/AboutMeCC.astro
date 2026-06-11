@@ -46,7 +46,7 @@ import {ME} from '@/config';
     {/*Competencias*/}
     <div class="mb-4">
         <h2 class="text-xl font-bold mb-4">Competencias</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
             {hardSkills.map((skill) => (
                     <SkillCard {...skill} showDescription={true}/>
             ))}
@@ -55,7 +55,7 @@ import {ME} from '@/config';
     {/*Certificaciones*/}
     <div class="mb-4">
         <h2 class="text-xl font-bold mb-4">Certificaciones</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
             {softSkills.map((skill) => (
                     <SkillCard {...skill} showDescription={false}/>
             ))}
