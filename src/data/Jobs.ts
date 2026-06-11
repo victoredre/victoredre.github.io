@@ -20,6 +20,7 @@ interface WorkExperience {
     location: string;
     description: string;
     goals: string[];
+    logros: string[];
     currentJob: boolean;
 }
 
@@ -54,6 +55,10 @@ const workExperience:WorkExperience[] = [
             "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
             "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
         ],
+        logros:  [
+            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
+            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
+        ],
         currentJob: false,
     },
     {
@@ -67,6 +72,10 @@ const workExperience:WorkExperience[] = [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
+        ],
+        logros:  [
+            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
+            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
         ],
         currentJob: false,
     },
@@ -82,6 +91,10 @@ const workExperience:WorkExperience[] = [
             "Implementación de equipos.",
             "Capacitación de personal.",
         ],
+        logros:  [
+            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
+            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
+        ], 
         currentJob: false,
     },
         {
@@ -96,6 +109,10 @@ const workExperience:WorkExperience[] = [
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
+        logros:  [
+            "Automatización de procesos ETL y reportes gerenciales, ahorrando más de 150 horas anuales",
+            "Implementé un sistema de alertas tempranas que incrementó la retención de clientes en un 40%",
+        ], 
         currentJob: false,
     },
 ];
