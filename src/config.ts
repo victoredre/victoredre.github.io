@@ -52,19 +52,19 @@ export const SOCIALS = [
     },
     {
         name: "Instagram",
-        url: "https://www.instagram.com/vicbox.dev",
+        url: "victorresendizv@outlook.com",
         icon: "instagram-fill",
         show: true
     },
     {
         name: "Youtube",
-        url: "https://api.whatsapp.com/send?phone=525536805993&text=Rh",
+        url: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         icon: "youtube-fill",
         show: true
     },
     {
         name: "TikTok",
-        url: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        url: "h",
         icon: "tik-fill",
         show: false
     },
