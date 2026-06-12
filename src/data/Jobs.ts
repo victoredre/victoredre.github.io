@@ -90,8 +90,8 @@ const workExperience:WorkExperience[] = [
         startDate: "2021-09-10",
         endDate: "2017-03-10",
         company: "Scitum S.A de C.V",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+        location: "Data Center Triara Qro.",
+        description: "Administración de equipos ",
         goals: [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
