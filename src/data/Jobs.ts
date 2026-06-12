@@ -54,7 +54,6 @@ const workExperience:WorkExperience[] = [
             "Diseñé e impartí la capacitación para los ingenieros SOC,en la interpretación e identificación de vectores de ataque dentro de nuestra y fuera de la infraestructura",
             "Cree un entorno virtual ESXi para migrar e implementar, ecosistemas Fortinet en multicapa por ejemplo la integración con CrowdStrike y Forescout, Forcepoint BeyondTrust acelerando un 40% el tiempo de implementación y minimizando errores",
             "Configuré pasarelas web en Forcepoint y Forescout frente a fugas de información e ingresos de dispositivos no autorizados agilizando la detección y contención de anomalías hasta un 20% en las brechas de seguridad.",
-            "Se obtuvo un ',
                 ],
         currentJob: false, 
     }, 
