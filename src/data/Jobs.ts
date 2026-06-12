@@ -54,6 +54,8 @@ const workExperience:WorkExperience[] = [
             "Diseñé e impartí la capacitación para los ingenieros SOC,en la interpretación e identificación de vectores de ataque dentro de nuestra y fuera de la infraestructura",
             "Implementé un entorno virtual ESXi para migrar e implementar, ecosistemas Fortinet en multicapa por ejemplo la integración con CrowdStrike y Forescout, Forcepoint BeyondTrust acelerando un 40% el tiempo de implementación y minimizando errores",
             "Configuré pasarelas web en Forcepoint y Forescout frente a fugas de información e ingresos de dispositivos no autorizados agilizando la detección y contención de anomalías hasta un 20% en las brechas de seguridad",
+            "Gestión de campañas de concientización y simulaciones de phishing",
+            "Aseguré el cumplimiento de los SLAs , logrando un tiempo de contención menor a 15 minutos en alertas críticas en el tablero de Falcon",
                 ],
         currentJob: false, 
     }, 
@@ -97,8 +99,10 @@ const workExperience:WorkExperience[] = [
         description: "Principales clientes Gpo. Bimbo, Milano, Grupo Sears",
         goals: [
             "Asegure la reducción del 18% en fallas no detectadas durante el horario de producción configurando sensores en Hostmonitor",          
-            "Disminución del 20% en los tiempos de atención técnica mediante la estandarización del flujo de tickets y la correcta priorización de incidentes críticos según su impacto en el negocio.
-            "Created and maintained web applications using React, NodeJs, and MongoDB.",
+            "Remediación de incidentes a través de la operación de reglas en las plataformas de seguridad con Juniper, WatchGuard y Fortinet",
+            "Administré el ciclo de vida de los ticket's directamente con Vendor Support, asegurando la recolección correcta de evidencias técnicas para agilizar los reemplazos de hardware RMA",
+            "Coordinación de acciones de contención y remediación junto con el equipo interno del cliente",
+            "Coordiné y ejecuté cambios críticos en producción durante ventanas de mantenimiento asegurando un 100% la producción apegando el plan de Rollback",
         ],
         currentJob: false,
     },
