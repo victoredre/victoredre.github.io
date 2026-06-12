@@ -58,14 +58,14 @@ const workExperience:WorkExperience[] = [
         currentJob: false, 
     }, 
     {
-        title: "Analista en Servicios de Seguridad Perimetral Senior",
+        title: "Analista en Ciberguridad - Senior",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
         company: "Círculo Daat S.A de C.V",
         location: "Integración de Soluciones en WatchGuard, Palo Alto, Fortinet, CheckPoint en arquitecturas on-premise",
         description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax",
         goals: [
-            "Coordiné la dirección de proyectos para la entrega de soluciones perimetrales a  corto, mediano y largo plazo  en  la puesta de plataformas Palo Alto Networks y Check Point con 0 impacto operativo",
+            "Coordiné la entrega de soluciones perimetrales a  corto, mediano y largo plazo en la puesta de plataformas Palo Alto Networks y Check Point con 0 impacto operativo",
             "Reduje en un 20% el tiempo de atención y solución de TCK de soporte para usuarios finales gracias a una mejor clasificación de incidentes, logrando atender casos de soprote L1/L2", 
             "Automaticé de forma local Cloud/NAS para gestionar documentos, reportes y/o seguimientos donde se registran manuales de soporte, Mantenimiento la capacitación contante de los ingenieros y mitigando errores humanos",
             "Incrementé en un 35% la detección oportuna de fallas y caídas mediante el monitoreo constante de consolas de seguridad via Hostmonitor, logrando contener comportamientos sospechosos",
@@ -73,10 +73,10 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Analista en Ciberguridad - Senior ",
+        title: "Ing. Gestión, Administración e implementación de ciberseguridad- Senior ",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
-        company:  "Telefónica Tech Cyber Security & Cloud México S.A de C.V",
+        company:  "Telefónica Tech S.A de C.V",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
@@ -87,7 +87,7 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Ing. Gestión de Servicios en seguridad",
+        title: "Ing. Gestión de Servicios en Seguridad Perimetral Jr.",
         startDate: "2021-09-10",
         endDate: "2017-03-10",
         company: "Scitum S.A de C.V",
