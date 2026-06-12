@@ -73,20 +73,23 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Ing. Gestión, Administración e implementación de ciberseguridad- Senior ",
+        title: "Especialista en Seguridad Perimetral y Redes",
         startDate: "2023-03-10",
         endDate: "2021-09-17",
         company:  "Telefónica Tech S.A de C.V",
-        location: "I Especializadas  ",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+        location: "Consolidación Operativa y Arquitectura Multi-tenant",
+        description: "Principales clientes Gpo. Ciosa, Gpo. Bradescard, Grupo Atento, CI Banco",
         goals: [
-            "Administré accesos seguros multifactor mediante RSA, controlé la postura de seguridad de endpoints con Trend Micro (Antivirus/EDR) y supervisé el cumplimiento de políticas de prevención de fuga de información a través de DLPe.",
-            "Lleve los procesos del ciclo de vida de los tickets a soporte de segundo nivel y directamente al Vendor, asegurando la recolección correcta de evidencias técnicas para agilizar los reemplazos de hardware RMA y parches de firmware",
+            "Participé activamente en la atención de auditorías externas al SOC encargándome de presentar controles de cambios y aportando la trazabilidad de la operación.",
+            "Migración e Implementación a ecosistemas Fortinet desplegando FortiGate, FortiWifi, FortiEMS, FortiManager, FortiSwitch, FortiAP, FortiWeb, FortiAnalyzer, FortiExtender",
+            "Soporte de N1/N2 a ecosistemas híbridos con Palo Alto Networks con gestión a Panorama con PA-VM en la nube",
+            "Optimicé controles de Monitoreo con Nagios, Host Monitor y Observium para la supervisor de la infraestructura interna como externa Reforzando un 40% el manejo de incidentes",
+            "Incrementé en un 35% la identificación de anomalías en la red mediante la sintonización de filtros aislando solicitudes sospechosas en Trend Micro Apex one y Deep Security.
            ], 
         currentJob: false,
     },
     {
-        title: "Ing. Gestión de Servicios en Seguridad Perimetral Jr.",
+        title: "Ing. Gestión, Seguridad Perimetral Jr.",
         startDate: "2021-09-10",
         endDate: "2017-03-10",
         company: "Scitum S.A de C.V",
@@ -94,7 +97,7 @@ const workExperience:WorkExperience[] = [
         description: "Administración de equipos ",
         goals: [
             "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-            "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
+            "Worked with the team to develop and maintain applications using React, NodeJs, and MongoDB.",
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
         currentJob: false,
