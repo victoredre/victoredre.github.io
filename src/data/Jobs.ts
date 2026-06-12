@@ -72,10 +72,10 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Analista ",
+        title: "Analista en Ciberguridad - Senior ",
         startDate: "2018-03-10",
         endDate: "2020-03-10",
-        company:  "Telefónica",
+        company:  "Telefónica Tech Cyber Security & Cloud México S.A de C.V",
         location: "United States",
         description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
         goals: [
@@ -86,7 +86,7 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Software Engineer",
+        title: "Ing. Gestión de Servicios en seguridad",
         startDate: "2021-09-10",
         endDate: "2017-03-10",
         company: "Scitum S.A de C.V",
