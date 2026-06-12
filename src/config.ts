@@ -46,7 +46,7 @@ export const ME = {
 export const SOCIALS = [
     {
         name: "Twitter",
-        url: "https:// 'https://api.whatsapp.com/send/?phone=525536805993&text&type=phone_number&app_absent=0&wame_ctl=1-x-fill",
+        url:  "https://api.whatsapp.com/send/?phone=525536805993&text&type=phone_number&app_absent=0&wame_ctl=1-x-fill",
         icon: "twitter-x-fill",
         show: true
     },
@@ -58,19 +58,19 @@ export const SOCIALS = [
     },
     {
         name: "Youtube",
-        url: "https://www.youtube.com/vicbox.dev",
+        url: "https://api.whatsapp.com/send?phone=525536805993&text=Rh",
         icon: "youtube-fill",
         show: true
     },
     {
         name: "TikTok",
-        url: "https://tiktok.com/vicbox.dev",
+        url: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         icon: "tik-fill",
         show: false
     },
     {
         name: "GitHub",
-        url: "https://github.com/vicbox.dev",
+        url: "https://github.com/victoredre/victoredre.github.io/tree/master/src",
         icon: "github-fill",
         show: true
     }
