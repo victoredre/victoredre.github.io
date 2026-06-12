@@ -84,7 +84,7 @@ const workExperience:WorkExperience[] = [
             "Migración e Implementación a ecosistemas Fortinet desplegando FortiGate, FortiWifi, FortiEMS, FortiManager, FortiSwitch, FortiAP, FortiWeb, FortiAnalyzer, FortiExtender",
             "Soporte de N1/N2 a ecosistemas híbridos con Palo Alto Networks con gestión a Panorama con PA-VM en la nube",
             "Optimicé controles de Monitoreo con Nagios, Host Monitor y Observium para la supervisor de la infraestructura interna como externa Reforzando un 40% el manejo de incidentes",
-            "Incrementé en un 35% la identificación de anomalías en la red mediante la sintonización de filtros aislando solicitudes sospechosas en Trend Micro Apex one y Deep Security.
+            "Logre la reducción de un 40% la identificación de anomalías en la red mediante la sintonización de filtros aislando solicitudes sospechosas en Trend Micro con Apex one y Deep Security",
            ], 
         currentJob: false,
     },
@@ -93,11 +93,11 @@ const workExperience:WorkExperience[] = [
         startDate: "2021-09-10",
         endDate: "2017-03-10",
         company: "Scitum S.A de C.V",
-        location: "Data Center Triara Qro.",
-        description: "Administración de equipos ",
+        location: "Seguridad Perimetral Data Center Triara Qro.",
+        description: "Principales clientes Gpo. Bimbo, Milano, Grupo Sears",
         goals: [
-            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-            "Worked with the team to develop and maintain applications using React, NodeJs, and MongoDB.",
+            "Asegure la reducción del 18% en fallas no detectadas durante el horario de producción configurando sensores en Hostmonitor",          
+            "Disminución del 20% en los tiempos de atención técnica mediante la estandarización del flujo de tickets y la correcta priorización de incidentes críticos según su impacto en el negocio.
             "Created and maintained web applications using React, NodeJs, and MongoDB.",
         ],
         currentJob: false,
