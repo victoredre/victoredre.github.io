@@ -66,8 +66,9 @@ const workExperience:WorkExperience[] = [
         description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax",
         goals: [
             "Coordiné la dirección de proyectos para la entrega de soluciones perimetrales a  corto, mediano y largo plazo  en  la puesta de plataformas Palo Alto Networks y Check Point con 0 impacto operativo",
-            "Brinde soporte especialidado L2/L3 para  ",
-            "Created and maintained web applications using React, NodeJs, and MongoDB.",
+            "Reduje en un 20% el tiempo de atención y solución de TCK de soporte para usuarios finales gracias a una mejor clasificación de incidentes, logrando atender casos de soprote L1/L2", 
+            "Automaticé de forma local Cloud/NAS para gestionar documentos, reportes y/o seguimientos donde se registran manuales de soporte, Mantenimiento la capacitación contante de los ingenieros y mitigando errores humanos",
+            "Incrementé en un 35% la detección oportuna de fallas y caídas mediante el monitoreo constante de consolas de seguridad via Hostmonitor, logrando contener comportamientos sospechosos",
                ],
         currentJob: false,
     },
