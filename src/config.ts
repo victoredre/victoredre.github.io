@@ -15,7 +15,7 @@ export const SITE = {
 
 export const ME = {
     name: "Victor Eduardo Resendiz Villegas",
-    profession: "Ing. Gestión, Administración e Implementación en Soluciones de Ciberseguridad Senior",
+    profession: "Ing. Gestión, Administración e Implementación en Soluciones de Ciberseguridad - Senior",
     profileImage: "pp2.png",
     profileFacts: [
        {
