@@ -40,7 +40,7 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "Ingeniero con mas 9 años de experiencia en diseño, administración y implementación, me especializo transformar datos en decisiones estratégicas, Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles.",
+    aboutMe: "Ingeniero con mas 9 años de experiencia en diseño, administración y implementación de soluciones en ciberseguridad, me especializo en optimizar herramientas de seguridad asi como las decisiones estratégicas, Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles.",
 }
 
 export const SOCIALS = [
