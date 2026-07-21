@@ -33,9 +33,73 @@ En el panorama actual de amenazas, las organizaciones invierten millones en solu
 
 ---
 
-## 👨‍💻 Role
-Lideré el ciclo completo del proyecto e investigación de inteligencia de amenazas, diseño de arquitectura orientada a objetos, desarrollo del framework, pruebas en entornos controlados y documentación técnica. El proyecto integró capacidades ofensivas y defensivas en una sola plataforma auditable.
+## 👨‍💻 REvil (Sodinokibi) - Servidor Web Oracle Weblogic comprometido
+Llega alerta del SOC, todos los archivos tienen extensión .qd7f9x. Nota de rescate en escritorio. El servidor de producción con Oracle Weblogic dejó de responder. Los backups en red también están cifrados.
+Paso 1: Aislar sin apagar (preservar memoria)
 
+```bash
+# Desde otro equipo admin, cortar red pero mantener encendido
+psexec \\192.168.1.50 -s netsh interface set interface "Ethernet0" admin=disable
+# Capturar memoria RAM antes de cualquier cosa (con winpmem)
+winpmem_mini_x64_rc2.exe --output D:\Evidencia\memoria_server.raw --format raw
+```
+
+Paso 2: Identificar el vector (Oracle Weblogic CVE-2019-2725)
+
+```bash
+# En el servidor comprometido, buscar artefactos de explotación
+# Buscar war maliciosas desplegadas
+dir "C:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\servers\AdminServer\tmp\_WL_internal\*" -Recurse | Select-String "cmd.exe|powershell"
+
+# En logs de acceso HTTP encontrar llamada sospechosa
+findstr /i /c:"wls-wsat" /c:"CoordinatorPortType" C:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\servers\AdminServer\logs\access.log
+
+# Salida típica del ataque:
+# 192.168.1.100 - - [fecha] "POST /wls-wsat/CoordinatorPortType HTTP/1.1" 200
+```
+
+Paso 3: Encontrar y matar el proceso malicioso
+
+```bash
+# Enumerar procesos sospechosos con handles a archivos cifrados
+handle64.exe -a *.qd7f9x
+
+# Salida: process_cifrado.exe pid: 4580 type: File C:\datos\documento.doc.qd7f9x
+
+# Volcar el ejecutable malicioso de memoria
+procdump.exe -ma 4580 malware_revil.dmp
+
+# Matar el proceso y sus hijos
+taskkill /PID 4580 /F /T
+```
+
+Paso 4: Eliminar persistencia
+
+```bash
+# REvil típicamente usa tarea programada con nombre aleatorio
+schtasks /query /fo LIST /v | findstr /i "revil\|qd7f\|update\|sync" 
+
+# Encontrada: "WindowsUpdateCheck" ejecutando wscript.exe desde %APPDATA%
+schtasks /delete /TN "WindowsUpdateCheck" /F
+
+# Buscar en claves de registro RUN
+reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Run"
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "OneDriveUpdate" /f
+```
+
+Paso 5: Recuperar de backups inmutables (SIEMPRE tener Veeam con Linux Hardened Repo)
+
+```bash
+# Conectar a Veeam desde PowerShell
+Connect-VBRServer -Server veeam.empresa.local
+
+# Restaurar último backup antes del ataque (ej. 02:00 AM)
+$restorepoint = Get-VBRBackup -Name "Srv-Weblogic" | Get-VBRRestorePoint | Sort-Object CreationTime -Descending | Select-Object -First 1
+Start-VBRWindowsFileRestore -RestorePoint $restorepoint -Path "D:\datos" -Destination "D:\datos_restaurados"
+
+# Si todo falló, buscar herramienta de descifrado pública
+# Verificar en NoMoreRansom.org si hay decryptor para tu variante
+```
 ---
 
 ## ❓ Problem
