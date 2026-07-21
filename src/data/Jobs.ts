@@ -49,7 +49,7 @@ const workExperience:WorkExperience[] = [
         endDate:   "2024-06-10",
         company: "IQsec S.A de C.V",
         location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
-        description: "Sector gubernamental Instituto Nacional de Migración",
+        description: "Principal cliente: Sector gubernamental Instituto Nacional de Migración",
         goals:  [
             "Diseñé e impartí la capacitación para los ingenieros SOC,en la interpretación e identificación de vectores de ataque dentro de nuestra y fuera de la infraestructura",
             "Implementé un entorno virtual ESXi para migrar e implementar, ecosistemas Fortinet en multicapa por ejemplo la integración con CrowdStrike y Forescout, Forcepoint BeyondTrust acelerando un 40% el tiempo de implementación y minimizando errores",
@@ -65,7 +65,7 @@ const workExperience:WorkExperience[] = [
         endDate: "2023-03-10",
         company: "Círculo Daat S.A de C.V",
         location: "Integración en Soluciones de Arquitecturas On-premise",
-        description: "Principales clientes Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax",
+        description: "Principales clientes: Desarrolladora roca Mty, Instituto Real de Slp, Suprema Corte de Justicia de la Nación (SCJN), Mpio de progreso de Obregón Hlg, Mpio de corregidora Qro, Mpio de Juárez Oax",
         goals: [
             "Implementé la entrega de soluciones perimetrales a  corto, mediano y largo plazo en la puesta de plataformas Fortinet, Palo Alto Networks y Check Point con 0 impacto operativo",
             "Reduje en un 20% el tiempo de atención y solución de TCK de soporte para usuarios finales gracias a una mejor clasificación de incidentes, logrando atender casos de soprote L1/L2", 
@@ -80,7 +80,7 @@ const workExperience:WorkExperience[] = [
         endDate: "2021-09-17",
         company:  "Telefónica Tech S.A de C.V",
         location: "Consolidación Operativa y Arquitectura Multi-tenant",
-        description: "Principales clientes Gpo. Ciosa, Gpo. Bradescard, Grupo Atento, CI Banco",
+        description: "Principales clientes: Gpo. Ciosa, Gpo. Bradescard, Grupo Atento, CI Banco",
         goals: [
             "Participé activamente en la atención de auditorías externas al SOC encargándome de presentar controles de cambios y aportando la trazabilidad de la operación.",
             "Migración e Implementación a ecosistemas Fortinet desplegando FortiGate, FortiWifi, FortiEMS, FortiManager, FortiSwitch, FortiAP, FortiWeb, FortiAnalyzer, FortiExtender",
