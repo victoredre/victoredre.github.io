@@ -40,6 +40,21 @@ const hardSkills: HardSkill[] = [
     description: "My favorite database for modern apps",
     icon: "checkpoint"
   }
+  {
+    name: "CrowdStrike",
+    description: "I've been using NodeJs for backend development since 2018",
+    icon: "Kaspersky"
+  },
+  {
+    name: "BeyondTrust",
+    description: "I've been using NodeJs for backend development since 2018",
+    icon: "Kaspersky"
+  },
+    {
+    name: "Trellix",
+    description: "I've been using NodeJs for backend development since 2018",
+    icon: "Kaspersky"
+  },
 ];
 
 export default hardSkills;
