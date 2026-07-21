@@ -8,7 +8,7 @@ const hardSkills: HardSkill[] = [
   {
     name: "Fortinet",
     description: "FortiAnalyzer, FortiExtender, FortiManager, FortiSwitch,  FortiAP,  FortiWeb,  FortiGate,  FortiWifi",
-    icon: "astro_f"
+    icon: "astro_t"
   },
   {
     name: "WatchGuard",
