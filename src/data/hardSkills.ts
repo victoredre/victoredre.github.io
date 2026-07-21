@@ -23,7 +23,7 @@ const hardSkills: HardSkill[] = [
   {
     name: "Juniper",
     description: "I've been using NodeJs for backend development since 2018",
-    icon: "react"
+    icon: "astro_juniper"
   },
     {
     name: "Trend Micro",
