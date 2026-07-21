@@ -7,7 +7,7 @@ interface HardSkill {
 const hardSkills: HardSkill[] = [
   {
     name: "Fortinet",
-    description: "My favorite static site generator for building modern websites",
+    description: "FortiAnalyzer, FortiExtender, FortiManager, FortiSwitch,  FortiAP,  FortiWeb,  FortiGate,  FortiWifi",
     icon: "astro_dark"
   },
   {
