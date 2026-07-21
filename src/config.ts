@@ -31,7 +31,7 @@ export const ME = {
             description: "Clientes"
         },
         {
-         value: 18,
+         value: 7,
             description: "Reconocimientos"
         }
     ],
