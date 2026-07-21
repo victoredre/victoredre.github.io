@@ -8,14 +8,14 @@ import AboutMeCC from "../components/AboutMeCC.astro";
 import ProfileFacts from "../components/ProfileFacts.astro";
 ---
 
-<Layout title="Ing Victor Eduardo Resendiz Villegas" scrollSmooth={false}>
+<Layout title= "Ing. Victor Eduardo Resendiz Villegas" scrollSmooth={false}>
     <>
         <ProfileInfo/>
         <ProfileFacts/>
         <ProfileActionButton/>
         <TabsButtons client:idle>
-            <ProjectsCC slot="portfolio"/>
-            <AboutMeCC slot="about"/>
+        <ProjectsCC slot="portfolio"/>
+         <AboutMeCC slot="about"/>
         </TabsButtons>
     </>
 </Layout>
