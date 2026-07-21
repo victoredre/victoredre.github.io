@@ -12,12 +12,11 @@ interface Job {
     startDate: string;
     endDate: string;
     description: string;
-    goals: string;
+    goals: string[];
     currentJob: boolean;
-
 }
 
-const {jobData} = Astro.props;  // Ensure correct typing for the props
+const {jobData} = Astro.props;
 const {
     title,
     company,
@@ -28,24 +27,22 @@ const {
     goals,
     currentJob,
 } = jobData as Job;
-
 ---
 
 <div class="flex flex-col gap-1">
-<h3 class="text-2xl font-bold">{title}</h3>
-<div class="flex items-center gap-1">
-<h3 class="text-xl font-bold">{company}</h3>
-<Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md">
-{formatDatetime(startDate)} - {currentJob ? "Present" : formatDatetime(endDate)}
-</Badge> 
-</div
+    <h3 class="text-2xl font-bold">{title}</h3>
+    <div class="flex items-center gap-1">
+        <h3 class="text-xl font-bold">{company}</h3>
+        <Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md">
+            {formatDatetime(startDate)} - {currentJob ? "Present" : formatDatetime(endDate)}
+        </Badge>
+    </div>
 
-    <h3 class="text-xl font-bold">{description}</h3>
+    <p class="text-base">{description}</p>
     <h3 class="text-x font-bold">{location}</h3>
     <ul style="list-style: disc;">
-        {goals.map((goals: string) => (
-                <li>{goals}</li>
+        {goals.map((goal: string) => (
+            <li>{goal}</li>
         ))}
     </ul>
-<h3 class="text-xl font-bold">{currentJob}</h3>
 </div>
