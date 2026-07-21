@@ -289,15 +289,105 @@ rule Netwalker_Mailto_Detection {
 
 ---
 
-## ✨ Solution
-Las pruebas se realizaron en entornos completamente aislados (sin salida a internet, redes VLAN segmentadas) validando tres dimensiones: comportamiento de la emulación (¿replica correctamente las TTPs?), capacidad de detección del módulo EDR integrado (¿identifica los IOCs generados?) e impacto controlado (¿no hay efecto fuera del entorno de prueba?).
+## ✨ Ragnar Locker - Ataque dirigido a Veeam Backup Server
+
+Escenario: El servidor de backup Veeam aparece con todos los backups eliminados. Luego empieza el cifrado en producción. Los atacantes entraron por una VPN sin MFA.
+
+Paso 1: Evaluar daños en Veeam
+
+```bash
+# Entrar al Veeam Server (Windows Server 2022)
+# Verificar si los archivos de backup existen o fueron eliminados
+Get-ChildItem -Path E:\Backups\*, F:\Backups\* -Recurse -Filter *.vbk | Select FullName, Length, LastWriteTime
+
+# Si aparecen archivos .vbk pero corruptos o eliminados, verificar papelera de reciclaje
+# Ragnar Locker ejecuta "vssadmin delete shadows /all /quiet" y "wbadmin delete catalog"
+
+# Recuperar backups desde Veeam Cloud Connect (si estaba configurado)
+Connect-VBRServer -Server veeam_cloud_provider
+Get-VBRCloudBackup | Where-Object {$_.JobName -like "*Produccion*"}
+
+# Listar puntos de restauración que sobrevivieron en cloud
+$backup = Get-VBRBackup -Name "DC_Production"
+$backup.GetAllStorages() | Select PartialPath, CreationTime
+```
+
+Paso 2: Matar el proceso de cifrado que se ejecuta como servicio legítimo
+
+```bash
+# Ragnar Locker usa nombres de servicios falsos como "Windows Event Log" o "VeeamBackupSvc"
+# Detectar por alto consumo de CPU en todos los servidores
+Get-WmiObject Win32_Process -ComputerName SRV-APP01 | Where-Object {$_.Name -eq "svchost.exe" -and $_.PrivatePageCount -gt 500000000} | Select ProcessId, CommandLine
+
+# Verificar si ese svchost.exe está en ubicación no estándar
+Get-Process -ComputerName SRV-APP01 -Id 5432 | Select Path
+# Path: C:\Windows\Temp\svchost.exe  <-- MALICIOSO
+
+# Matar remotamente
+taskkill /s SRV-APP01 /PID 5432 /F
+
+# Repetir para todos los servidores del dominio
+$servidores = Get-ADComputer -Filter "OperatingSystem -like '*Server*'" | Select -ExpandProperty Name
+foreach($server in $servidores) {
+    Invoke-Command -ComputerName $server -ScriptBlock {
+        Get-Process | Where-Object {$_.Path -eq "C:\Windows\Temp\svchost.exe"} | Stop-Process -Force
+        Remove-Item "C:\Windows\Temp\svchost.exe" -Force
+    }
+}
+```
+
+Paso 3: Detectar GPO maliciosa que ejecuta el ransomware
+
+```bash
+# En Domain Controller, buscar GPO modificadas recientemente
+Get-GPO -All | Where-Object {$_.ModificationTime -gt (Get-Date).AddDays(-1)}
+
+# Verificar contenido de GPO sospechosa "Windows Security Update"
+Get-GPOReport -Name "Windows Security Update" -ReportType XML -Path C:\report.xml
+# Revisar en el XML la sección de Scheduled Tasks o Scripts de inicio
+
+# Eliminar GPO maliciosa
+Remove-GPO -Name "Windows Security Update"
+
+# Eliminar tareas programadas creadas por la GPO en todos los equipos
+Invoke-GPUpdate -Computer "DC=empresa,DC=local" -Target "Computer" -Force
+```
+
+Paso 4: Restaurar desde Veeam Cloud Connect (último recurso)
+
+```bash
+# Si los backups locales fueron eliminados pero cloud sobrevivió
+# Iniciar restauración completa desde cloud (operación lenta)
+Start-VBRCloudRestore -CloudBackup $backup -Server veeam_cloud -RestorePoint $backup.GetLastRestorePoint() -Path "C:\Restaurado"
+
+# Monitorear progreso
+Get-VBRRestoreSession | Where-Object {$_.State -eq "Working"} | Select Progress, Speed
+```
+
+Paso 5: Implementar bastión para VPN con MFA obligatorio
+
+```bash
+# En pfSense/OPNsense, configurar autenticación RADIUS + MFA
+# /etc/inc/pfsense-auth.inc ya modificado
+# OpenVPN con plugin de Google Authenticator
+
+# Comprobar configuración actual
+cat /var/etc/openvpn/server1.conf | grep "auth-user-pass-verify"
+
+# Añadir MFA en FreeRADIUS (si no existe)
+echo "DEFAULT Auth-Type := PAM" >> /etc/freeradius/users
+echo "radiusd        ALL=(ALL)       NOPASSWD: /usr/local/bin/google-authenticator" >> /etc/sudoers
+
+# Recargar servicio
+service openvpn restart
+service radiusd restart
+```
 
 ---
 
 ## 🚌 User Victor Eduardo 
 ```python
-# #!/usr/bin/env python3
-# ======================================================
+#
 # Objetivo: Ransomware de doble extorsión
 #           para análisis de infraestructura.
 #           Incluye: DoppelPaymer, Maze, REvil, Nemty, Netwalker,
