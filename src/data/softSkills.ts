@@ -5,8 +5,8 @@ interface SoftSkill {
 
 const softSkills: SoftSkill[] = [
     {
-        name: "Solving Problems",
-        icon: "tools-fill"
+        name: "Fortinet",
+        icon: "fortinet"
     },
     {
         name: "Teamwork",
