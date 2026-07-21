@@ -25,6 +25,16 @@ const hardSkills: HardSkill[] = [
     description: "I've been using NodeJs for backend development since 2018",
     icon: "nodejs"
   },
+    {
+    name: "Trend Micro",
+    description: "I've been using NodeJs for backend development since 2018",
+    icon: "nodejs"
+  },
+    {
+    name: "Kaspersky",
+    description: "I've been using NodeJs for backend development since 2018",
+    icon: "nodejs"
+  },
   {
     name: "Check Point",
     description: "My favorite database for modern apps",
