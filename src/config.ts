@@ -52,7 +52,7 @@ export const SOCIALS = [
     },
     {
         name: "Instagram",
-        url: "victorresendizv@outlook.com",
+        url: "https://victoredre.github.io/projects/pro-accountant/",
         icon: "malwa",
         show: true
     },
