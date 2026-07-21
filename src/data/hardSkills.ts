@@ -8,12 +8,12 @@ const hardSkills: HardSkill[] = [
   {
     name: "Fortinet",
     description: "FortiAnalyzer, FortiExtender, FortiManager, FortiSwitch,  FortiAP,  FortiWeb,  FortiGate,  FortiWifi",
-    icon: "astro_fortine"
+    icon: "fortinet"
   },
   {
     name: "WatchGuard",
     description: "My favorite React framework for building modern web apps",
-    icon: "react"
+    icon: "watchguard"
   },
   {
     name: "Palo Alto Network",
@@ -28,7 +28,7 @@ const hardSkills: HardSkill[] = [
     {
     name: "Trend Micro",
     description: "I've been using NodeJs for backend development since 2018",
-    icon: "youtube-fill"
+    icon: "astro_trendmicro"
   },
     {
     name: "Kaspersky",
