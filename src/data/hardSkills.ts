@@ -13,12 +13,12 @@ const hardSkills: HardSkill[] = [
   {
     name: "WatchGuard",
     description: "My favorite React framework for building modern web apps",
-    icon: "nextjs_icon_dark"
+    icon: "astro_WatchGuard"
   },
   {
     name: "Palo Alto Network",
     description: "I've been using NodeJs for backend development since 2018",
-    icon: "astro_dark"
+    icon: "astro_palo"
   },
   {
     name: "Juniper",
