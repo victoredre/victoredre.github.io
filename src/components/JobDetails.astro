@@ -1,9 +1,7 @@
 ---
-// component imports
-import {Badge} from "./ui/badge";
-
-// library imports
-import {formatDatetime} from "../lib/utils";
+// JobDetails.astro - Versión mejorada
+import { Badge } from "./ui/badge";
+import { formatDatetime } from "../lib/utils";
 
 interface Job {
     title: string;
@@ -14,10 +12,11 @@ interface Job {
     description: string;
     goals: string[];
     currentJob: boolean;
-
+    technologies?: string[];  // Campo opcional
+    website?: string;         // Campo opcional
 }
 
-const {jobData} = Astro.props;  // Ensure correct typing for the props
+const { jobData } = Astro.props;
 const {
     title,
     company,
@@ -27,25 +26,104 @@ const {
     description,
     goals,
     currentJob,
+    technologies = [],
+    website
 } = jobData as Job;
-
 ---
 
-<div class="flex flex-col gap-1">
-    <h3 class="text-2xl font-bold">{title}</h3>
-<div class="flex items-center gap-1">
-<h3 class="text-xl font-bold">{company}</h3>
-<Badge className="bg-primary-light dark:bg-primary-dark w-fit rounded-md">
-{formatDatetime(startDate)} - {currentJob ? "Present" : formatDatetime(endDate)}
-        </Badge> 
-</div
-
-    <h3 class="text-xl font-bold">{description}</h3>
-    <h3 class="text-x font-bold">{location}</h3>
-    <ul style="list-style: disc;">
-        {goals.map((goals: string) => (
-                <li>{goals}</li>
-        ))}
-    </ul>
-<h3 class="text-xl font-bold">{currentJob}</h3>
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
+    {/* Cabecera */}
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+        <div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                {title}
+            </h3>
+            <div class="flex items-center gap-2 mt-1">
+                <h4 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
+                    {company}
+                </h4>
+                {website && (
+                    <a 
+                        href={website} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                )}
+            </div>
+        </div>
+        <Badge class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md px-3 py-1.5 text-sm whitespace-nowrap">
+            {formatDatetime(startDate)} — {currentJob ? "Actualidad" : formatDatetime(endDate)}
+        </Badge>
+    </div>
+    
+    {/* Ubicación */}
+    <div class="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        {location}
+    </div>
+    
+    {/* Descripción */}
+    {description && (
+        <div class="mt-2">
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {description}
+            </p>
+        </div>
+    )}
+    
+    {/* Logros */}
+    {goals && goals.length > 0 && (
+        <div class="mt-2">
+            <h5 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center gap-2">
+                <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Logros destacados
+            </h5>
+            <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                {goals.map((goal: string, index: number) => (
+                    <li key={index} class="ml-2">
+                        {goal}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )}
+    
+    {/* Tecnologías */}
+    {technologies.length > 0 && (
+        <div class="mt-2">
+            <h5 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                Tecnologías:
+            </h5>
+            <div class="flex flex-wrap gap-2">
+                {technologies.map((tech: string, index: number) => (
+                    <span 
+                        key={index}
+                        class="px-2.5 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md text-xs"
+                    >
+                        {tech}
+                    </span>
+                ))}
+            </div>
+        </div>
+    )}
+    
+    {/* Badge de trabajo actual */}
+    {currentJob && (
+        <div class="mt-2">
+            <Badge class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 border-green-200 dark:border-green-800">
+                <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1.5 animate-pulse"></span>
+                Trabajo actual
+            </Badge>
+        </div>
+    )}
 </div>
