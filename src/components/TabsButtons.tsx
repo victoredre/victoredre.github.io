@@ -10,7 +10,7 @@ const TabsButtons = (props:any) => {
             <TabsContent value="portfolio">
                 {props.portfolio}
             </TabsContent>
-            <TabsContent value="about">
+            <TabsContent value="Experiencia">
                 {props.about}
             </TabsContent>
         </Tabs>
