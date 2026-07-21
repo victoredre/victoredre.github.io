@@ -13,7 +13,7 @@ const hardSkills: HardSkill[] = [
   {
     name: "WatchGuard",
     description: "My favorite React framework for building modern web apps",
-    icon: "watchguard-fill.svg"
+    icon: "watchguard-fill"
   },
   {
     name: "Palo Alto Network",
