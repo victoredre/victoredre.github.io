@@ -30,6 +30,8 @@ import {ME} from '@/config';
             {workExperience.map((job) => (
                     <JobDetails jobData={job}/>
             ))}
+            {ME.aboutMe}
+</p>
         </div>
     </div>
     {/*Educación*/}
@@ -39,6 +41,8 @@ import {ME} from '@/config';
             {education.map((edu) => (
                     <EduDetail eduData={edu}/>
             ))}
+            {ME.aboutMe}
+</p>
         </div>
     </div>
     {/*Competencias*/}
@@ -48,6 +52,8 @@ import {ME} from '@/config';
             {hardSkills.map((skill) => (
                     <SkillCard {...skill} showDescription={true}/>
             ))}
+            {ME.aboutMe}
+</p>
         </div>
     </div>
     {/*Certificaciones*/}
