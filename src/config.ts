@@ -40,7 +40,7 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "Ingeniero con mas 9 años de experiencia en diseño, administración y implementación de soluciones en ciberseguridad, me especializo en optimizar herramientas de seguridad asi como las decisiones estratégicas, Me apasiona construir puentes entre tecnología y negocio, liderar equipos ágiles.",
+    aboutMe: "Ingeniero titulado en tecnologías de la información y comunicación, con más de 9 años de experiencia en el diseño, implementación y administración de infraestructuras tecnológicas y plataformas de ciberseguridad en entornos empresariales de alta exigencia, he liderado iniciativas de modernización tecnológica y desarrollo de soluciones personalizadas mediante la automatización y la creación de herramientas en seguridad, poseo una sólida trayectoria con un enfoque orientado a la excelencia operativa y la generación de valor sostenido.lo que me impulsa a  convertir desafíos tecnológicos en soluciones innovadoras, eficientes y escalables que fortalecen la continuidad del negocio y aportan ventaja competitiva a la organización.",
 }
 
 export const SOCIALS = [
