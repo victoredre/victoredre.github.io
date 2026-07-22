@@ -1,819 +1,317 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head><!-- PLAYABLE_TOUCH_PATCH_V1 --><script>
+(function() {
+  if (window.__playableTouchPatchInstalled) return;
+  window.__playableTouchPatchInstalled = true;
+  var origAdd = EventTarget.prototype.addEventListener;
+  var blockedTypes = { touchstart: 1, touchmove: 1, wheel: 1 };
+  EventTarget.prototype.addEventListener = function(type, listener, options) {
+    if (blockedTypes[type]) {
+      if (options === undefined || options === null) {
+        options = { passive: true };
+      } else if (typeof options === 'boolean') {
+        options = { capture: options, passive: true };
+      } else {
+        options = Object.assign({}, options, { passive: true });
+      }
+    }
+    return origAdd.call(this, type, listener, options);
+  };
+})();
+</script><script>window.Intl=window.Intl||{};Intl.t=function(s){return(Intl._locale&&Intl._locale[s])||s;};</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Ing. Victor Eduardo Resendiz Villegas </title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'> </text></svg>">
+    <title>Ing. Victor Eduardo Resendiz Villegas | Portafolio</title>
+    <meta name="description" content="Portafolio profesional de certificaciones en ciberseguridad, cloud y redes - Ing. Victor Eduardo Resendiz Villegas">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
     <style>
         :root {
-            --bg: #0d1117;
-            --bg-secondary: #161b22;
-            --border: #30363d;
-            --text: #e6edf3;
-            --text-muted: #8b949e;
-            --text-dim: #6e7681;
-            --accent: #58a6ff;
-            --accent-hover: #79b8ff;
-            --green: #3fb950;
-            --green-hover: #2ea043;
-            --red: #da3633;
-            --orange: #d29922;
-            --purple: #a371f7;
+            --bg: #0d1117; --bg-secondary: #161b22; --border: #30363d;
+            --text: #e6edf3; --text-muted: #8b949e; --text-dim: #6e7681;
+            --accent: #58a6ff; --accent-hover: #79b8ff; --green: #3fb950;
+            --green-hover: #2ea043; --red: #da3633; --orange: #d29922; --purple: #a371f7;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        /* ===== HEADER ===== */
-        .header {
-            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 3rem 1.5rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 50% 50%, rgba(88, 166, 255, 0.03) 0%, transparent 50%);
-            animation: pulse-bg 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse-bg {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
-
-        .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--purple));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin: 0 auto 1rem;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 0 40px rgba(88, 166, 255, 0.2);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header p {
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 6px 14px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            background: var(--bg-secondary);
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-            background: rgba(88, 166, 255, 0.1);
-        }
-
-        /* ===== CONTAINER ===== */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        /* ===== STATS ===== */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
-
-        /* ===== FILTERS ===== */
-        .filters {
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .filters-label {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-right: 0.5rem;
-        }
-
-        .filter-btn {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 6px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
-            font-family: inherit;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--accent);
-            color: var(--text);
-        }
-
-        .filter-btn.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        /* ===== CERTIFICATES ===== */
-        .certs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .cert-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--purple));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-            transform-origin: left;
-        }
-
-        .cert-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .cert-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
-        }
-
-        .cert-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 1rem;
-        }
-
-        .cert-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #21262d, #30363d);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            flex-shrink: 0;
-        }
-
-        .cert-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text);
-            line-height: 1.3;
-        }
-
-        .cert-org {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .cert-status {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 0.8rem;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); border-bottom: 1px solid var(--border); padding: 3rem 1.5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 50% 50%, rgba(88, 166, 255, 0.05) 0%, transparent 50%); animation: pulse-bg 8s ease-in-out infinite; }
+        @keyframes pulse-bg { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } }
+        .avatar { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--purple)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1rem; position: relative; z-index: 1; box-shadow: 0 0 40px rgba(88, 166, 255, 0.25); border: 3px solid var(--border); overflow:hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        .header h1 { font-size: 2rem; font-weight: 700; position: relative; z-index: 1; }
+        .header .subtitle { color: var(--accent); font-weight: 500; margin-top: 4px; position: relative; z-index: 1; }
+        .header p.desc { color: var(--text-muted); margin-top: 0.5rem; position: relative; z-index: 1; max-width: 600px; margin-left:auto; margin-right:auto; }
+        .social-links { margin-top: 1.2rem; display: flex; justify-content: center; gap: 0.8rem; flex-wrap:wrap; position: relative; z-index: 1; }
+        .social-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; padding: 6px 16px; border: 1px solid var(--border); border-radius: 20px; transition: all 0.3s ease; background: var(--bg-secondary); }
+        .social-links a:hover { color: var(--accent); border-color: var(--accent); background: rgba(88, 166, 255, 0.1); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        .stat-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; text-align: center; transition: all 0.3s ease; }
+        .stat-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .stat-number { font-size: 2.2rem; font-weight: 700; color: var(--accent); line-height: 1; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
+        .filters { margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+        .filters-label { color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem; }
+        .filter-btn { background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-muted); padding: 6px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s ease; font-family: inherit; }
+        .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+        .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+        .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }
+        .cert-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+        .cert-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--purple)); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
+        .cert-card:hover::before { transform: scaleX(1); }
+        .cert-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+        .cert-header { display: flex; align-items: center; gap: 14px; margin-bottom: 1rem; }
+        .cert-icon { width: 52px; height: 52px; border-radius: 12px; background: linear-gradient(135deg, #21262d, #30363d); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+        .cert-title { font-size: 1rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+        .cert-org { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+        .cert-status { display: flex; align-items: center; gap: 6px; margin-bottom: 0.8rem; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
         .status-active { background: var(--green); box-shadow: 0 0 8px rgba(63, 185, 80, 0.5); }
         .status-expired { background: var(--red); }
         .status-pending { background: var(--orange); }
-
-        .status-text {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 0.8rem;
-        }
-
-        .skill-tag {
-            background: #21262d;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 3px 12px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            transition: all 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            background: var(--green);
-            color: white;
-            border-color: var(--green);
-        }
-
-        .cert-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            margin-top: 0.5rem;
-        }
-
-        .cert-details {
-            display: none;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .cert-details.show {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .cred-id {
-            background: #21262d;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            font-family: 'SF Mono', Monaco, monospace;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .verify-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--green);
-            color: white;
-            text-decoration: none;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            margin-top: 8px;
-        }
-
-        .verify-btn:hover {
-            background: var(--green-hover);
-            transform: scale(1.02);
-        }
-
-        /* ===== ROADMAP ===== */
-        .roadmap {
-            margin-top: 3rem;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -26px;
-            top: 6px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            border: 3px solid var(--bg);
-            z-index: 1;
-        }
-
+        .status-text { font-size: 0.75rem; color: var(--text-muted); }
+        .skills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0.8rem; }
+        .skill-tag { background: #21262d; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px; font-size: 0.75rem; color: var(--text-muted); }
+        .cert-meta { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 0.5rem; }
+        .cert-details { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); animation: fadeIn 0.3s ease; }
+        .cert-details.show { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+        .cred-id { background: #21262d; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; color: var(--text-dim); font-family: monospace; display: inline-block; margin: 8px 0; word-break: break-all; }
+        .verify-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: white; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; transition: all 0.2s ease; margin-top: 8px; }
+        .verify-btn:hover { background: var(--green-hover); }
+        .roadmap { margin-top: 3rem; }
+        .section-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; padding-bottom: 1.5rem; }
+        .timeline-dot { position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--bg); z-index: 1; }
         .timeline-dot.done { background: var(--green); }
         .timeline-dot.current { background: var(--accent); box-shadow: 0 0 12px rgba(88, 166, 255, 0.4); }
         .timeline-dot.future { background: var(--text-dim); }
-
-        .timeline-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1rem 1.2rem;
-        }
-
-        .timeline-card h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .timeline-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .progress-bar {
-            height: 6px;
-            background: #21262d;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            border-radius: 3px;
-            background: linear-gradient(90deg, var(--green), var(--accent));
-            transition: width 1s ease;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            border-top: 1px solid var(--border);
-            margin-top: 3rem;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-        }
-
-        .footer a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 8px;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .certs-grid { grid-template-columns: 1fr; }
-            .header h1 { font-size: 1.5rem; }
-            .filters { gap: 0.4rem; }
-            .filter-btn { padding: 5px 12px; font-size: 0.8rem; }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-            .stat-number { font-size: 1.6rem; }
-        }
-
-        /* ===== NO RESULTS ===== */
-        .no-results {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-muted);
-        }
-
-        .no-results-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+        .timeline-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; }
+        .timeline-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+        .timeline-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+        .progress-bar { height: 6px; background: #21262d; border-radius: 3px; overflow: hidden; margin-top: 10px; }
+        .progress-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--green), var(--accent)); transition: width 1s ease; }
+        .footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); margin-top: 3rem; color: var(--text-dim); font-size: 0.8rem; }
+        .footer a { color: var(--accent); text-decoration: none; margin: 0 8px; }
+        @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } .certs-grid { grid-template-columns: 1fr; } .header h1 { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
-<!-- HEADER -->
-    <header class="header">
-<div class="avatar">
-    <img src="logo.jpg" alt="Mi foto" 
-         style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-</div>       
-        <h1> Ing. Victor Eduardo Resendiz Villlegas </h1>
-        <p>Portafolio Profesional de Certificaciones</p>
-        <div class="social-links">
-            <a href="https://github.com/victoredre/victoredre.github.io/tree/master/src" target="_blank"> GitHub</a>
-            <a href="https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android"," target="_blank"> LinkedIn</a>
-            <a href="https://victoredre.github.io/" target="_blank"> Página Web</a>
-        </div>
-    </header>
+<header class="header">
+    <div class="avatar">🛡️</div>
+    <h1>Ing. Victor Eduardo Resendiz Villegas</h1>
+    <div class="subtitle">Cybersecurity Engineer | +9 años</div>
+    <p class="desc">Diseño e implementación de arquitecturas de seguridad perimetral, cloud y redes. Consultoría alineada a ISO 27001, ITIL y Scrum.</p>
+    <div class="social-links">
+        <a href="https://github.com/victoredre/victoredre.github.io/tree/master/src" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290" target="_blank">LinkedIn</a>
+        <a href="https://victoredre.github.io/" target="_blank">Web</a>
+        <a href="mailto:victoredre@example.com">Email</a>
+    </div>
+</header>
 
-    <div class="container">
-        <!-- STATS -->
+<div class="container">
     <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" id="stat-total">0</div>
-                <div class="stat-label">Certificaciones</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="stat-active">0</div>
-                <div class="stat-label">Activas</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="stat-vendors">0</div>
-                <div class="stat-label">Proveedores</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="stat-hours">0</div>
-                <div class="stat-label">Horas de Estudio</div>
-            </div>
-        </div>
-
-        <!-- FILTERS -->
-        <div class="filters">
-            <span class="filters-label">Filtrar:</span>
-            <button class="filter-btn active" onclick="filterCerts('all', this)">Todas</button>
-            <button class="filter-btn" onclick="filterCerts('active', this)"> Activas</button>
-            <button class="filter-btn" onclick="filterCerts('security', this)"> Seguridad</button>
-            <button class="filter-btn" onclick="filterCerts('cloud', this)"> Cloud</button>
-            <button class="filter-btn" onclick="filterCerts('network', this)">Redes</button>
-            <button class="filter-btn" onclick="filterCerts('expired', this)"> Por renovar</button>
-        </div>
-
-        <!-- CERTIFICATES -->
-        <div id="certs-container"></div>
-
-        <!-- ROADMAP -->
-        <div class="roadmap">
-            <h2 class="section-title">🎯 Hoja de Ruta 2026</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot done"></div>
-                    <div class="timeline-card">
-                        <h4>✅ Q1 2026 - NSE 7 Enterprise Firewall</h4>
-                        <p>Fortinet - Completado</p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot current"></div>
-                    <div class="timeline-card">
-                        <h4>🔄 Q3 2026 - AWS Solutions Architect Professional</h4>
-                        <p>Amazon Web Services - En progreso</p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot future"></div>
-                    <div class="timeline-card">
-                        <h4>📋 Q4 2026 - CKA Certified Kubernetes Administrator</h4>
-                        <p>CNCF / Linux Foundation - Planificado</p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 5%"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="stat-card"><div class="stat-number" id="stat-total">0</div><div class="stat-label">Certificaciones</div></div>
+        <div class="stat-card"><div class="stat-number" id="stat-active">0</div><div class="stat-label">Activas</div></div>
+        <div class="stat-card"><div class="stat-number" id="stat-vendors">0</div><div class="stat-label">Proveedores</div></div>
+        <div class="stat-card"><div class="stat-number" id="stat-hours">0</div><div class="stat-label">Horas de Estudio</div></div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>Certificaciones</p>
-        <p style="margin-top: 8px;">
-            <a href="https://credly.com" target="_blank">Credly</a> •
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a> •
-            <a href="https://github.com" target="_blank">GitHub</a>
-        </p>
-    </footer>
+    <div class="filters">
+        <span class="filters-label">Filtrar:</span>
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="active">Activas</button>
+        <button class="filter-btn" data-filter="security">Seguridad</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" data-filter="network">Redes</button>
+        <button class="filter-btn" data-filter="expired">Por renovar</button>
+    </div>
 
-    <script>
-        // ========================
-        // CONFIGURA TUS CERTIFICACIONES AQUÍ
-        // ========================
-        const certifications = [
-            {
-                id: 1,
-                title: "Fortinet Certified Associate in Cybersecurity",
-                org: "Fortinet",
-                icon: "🛡️",
-                status: "active",
-                creds: "4203148770VR",
-                category: "security",
-                skills: ["Associate in Cybersecurity", "Security Frabric", "Cybersecurity", "Servicios en la nube"],
-                hours: 120,
-                verifyUrl: "https://www.linkedin.com/safety/go/?url=https%3A%2F%2F1drv%2Ems%2Fb%2Fc%2F2b5ae85c8b191dfa%2FEZvK1V2GEpRCpg3TsX1-LXABMOLK_DmypV7kG2MBh8Y3pQ%3Fe%3DnMFrTF&urlhash=HYwO&mt=ndoVJ4OTkQ7HZ4LNz86-QE_CKjI5Sz3oPiL1YlYDAso-JHI2IyJAGzfY4N_Nhm_3S-5n21dsbI4kNoMbGsA0J4OJpXxq&isSdui=true"
-            },
-             {
-                id: 2,
-                title: "Fortinet Certified Associate in Cybersecurity",
-                org: "Fortinet",
-                icon: "🛡️",
-                status: "active",
-                creds: "4203148770VR",
-                category: "security",
-                skills: ["Associate in Cybersecurity", "Security Frabric", "Cybersecurity", "Servicios en la nube"],
-                hours: 120,
-                verifyUrl: "https://www.linkedin.com/safety/go/?url=https%3A%2F%2F1drv%2Ems%2Fb%2Fc%2F2b5ae85c8b191dfa%2FEZvK1V2GEpRCpg3TsX1-LXABMOLK_DmypV7kG2MBh8Y3pQ%3Fe%3DnMFrTF&urlhash=HYwO&mt=ndoVJ4OTkQ7HZ4LNz86-QE_CKjI5Sz3oPiL1YlYDAso-JHI2IyJAGzfY4N_Nhm_3S-5n21dsbI4kNoMbGsA0J4OJpXxq&isSdui=true"
-            },
-            {
-                id: 2,
-                title: "FCA - FortiGate 7.4 Operator Self Security.",
-                org: "Palo Alto Networks",
-                icon: "",
-                status: "active",,
-                creds: 42031282VR",
-                category: "security",
-                skills: ["Associate in Cybersecurity", "Security Frabric", "Cybersecurity", "Servicios en la nube"],
-                hours: 150,
-                verifyUrl: "https://www.paloaltonetworks.com/services/education/certification"
-            },
-            {
-                id: 3,
-                title: "AWS Solutions Architect Associate",
-                org: "Amazon Web Services",
-                icon: "☁️",
-                status: "active",
-                date: "Jun 2024",
-                expiry: "Jun 2027",
-                creds: "AWS-XXX-XXXX",
-                category: "cloud",
-                skills: ["EC2", "S3", "VPC", "IAM", "CloudFormation"],
-                hours: 80,
-                verifyUrl: "https://www.credly.com/org/amazon-web-services"
-            },
-            {
-                id: 4,
-                title: "CCNP Enterprise",
-                org: "Cisco",
-                icon: "🌐",
-                status: "active",
-                date: "Ago 2024",
-                expiry: "Ago 2027",
-                creds: "CSCOXXXXXXX",
-                category: "network",
-                skills: ["OSPF", "BGP", "MPLS", "SD-Access"],
-                hours: 200,
-                verifyUrl: "https://www.cisco.com/c/en/us/training-events/training-certifications/certifications.html"
-            },
-            {
-                id: 5,
-                title: "Azure Administrator Associate",
-                org: "Microsoft",
-                icon: "🔷",
-                status: "expired",
-                date: "Feb 2023",
-                expiry: "Feb 2025",
-                creds: "MS-XXX-XXXX",
-                category: "cloud",
-                skills: ["Azure AD", "VMs", "Storage", "Networking"],
-                hours: 60,
-                verifyUrl: "https://learn.microsoft.com/en-us/credentials/"
-            },
-            {
-                id: 6,
-                title: "CompTIA Security+",
-                org: "CompTIA",
-                icon: "🔐",
-                status: "active",
-                date: "Nov 2023",
-                expiry: "Nov 2026",
-                creds: "COMP-XXX-XXXX",
-                category: "security",
-                skills: ["Threat Management", "Cryptography", "Risk Analysis"],
-                hours: 90,
-                verifyUrl: "https://www.credly.com/org/comptia"
-            }
-        ];
+    <div id="certs-container"></div>
 
-        // ========================
-        // RENDER FUNCTIONS
-        // ========================
-        function getStatusHTML(status) {
-            const config = {
-                active:  { dot: 'status-active',  label: 'Activa' },
-                expired: { dot: 'status-expired', label: 'Expirada' },
-                pending: { dot: 'status-pending', label: 'Pendiente' }
-            };
-            const c = config[status];
-            return `<span class="status-dot ${c.dot}"></span><span class="status-text">${c.label}</span>`;
+    <div class="roadmap">
+        <h2 class="section-title">🎯 Hoja de Ruta 2026</h2>
+        <div class="timeline">
+            <div class="timeline-item"><div class="timeline-dot done"></div><div class="timeline-card"><h4>✅ Q1 2026 - NSE 7 Enterprise Firewall</h4><p>Fortinet - Completado</p><div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div></div></div>
+            <div class="timeline-item"><div class="timeline-dot current"></div><div class="timeline-card"><h4>🔄 Q3 2026 - AWS Solutions Architect Professional</h4><p>Amazon Web Services - En progreso</p><div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div></div></div>
+            <div class="timeline-item"><div class="timeline-dot future"></div><div class="timeline-card"><h4>📋 Q4 2026 - CKA Certified Kubernetes Administrator</h4><p>CNCF / Linux Foundation - Planificado</p><div class="progress-bar"><div class="progress-fill" style="width: 5%"></div></div></div></div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>Ing. Victor Eduardo Resendiz Villegas © 2026 - Hecho con 🛡️ y código</p>
+</footer>
+
+<script>
+    // EDITA SOLO ESTE ARRAY - Todo lo demás es automático
+    const certifications = [
+        {
+            id: 1,
+            title: "Fortinet Certified Associate in Cybersecurity",
+            org: "Fortinet",
+            icon: "🛡️",
+            status: "active",
+            date: "Ene 2024",
+            expiry: "Ene 2026",
+            creds: "4203148770VR",
+            category: "security",
+            skills: ["Security Fabric", "FortiGate", "Cybersecurity", "NSE"],
+            hours: 120,
+            verifyUrl: "https://www.credly.com"
+        },
+        {
+            id: 2,
+            title: "FCA - FortiGate 7.4 Operator",
+            org: "Fortinet",
+            icon: "🔥",
+            status: "active",
+            date: "Mar 2024",
+            expiry: "Mar 2026",
+            creds: "42031282VR",
+            category: "security",
+            skills: ["FortiGate 7.4", "Operator", "Firewall Policies"],
+            hours: 80,
+            verifyUrl: "https://www.fortinet.com/training"
+        },
+        {
+            id: 3,
+            title: "AWS Solutions Architect Associate",
+            org: "Amazon Web Services",
+            icon: "☁️",
+            status: "active",
+            date: "Jun 2024",
+            expiry: "Jun 2027",
+            creds: "AWS-ASSOCIATE-2024",
+            category: "cloud",
+            skills: ["EC2", "S3", "VPC", "IAM", "CloudFormation"],
+            hours: 80,
+            verifyUrl: "https://www.credly.com/org/amazon-web-services"
+        },
+        {
+            id: 4,
+            title: "CCNP Enterprise",
+            org: "Cisco",
+            icon: "🌐",
+            status: "active",
+            date: "Ago 2024",
+            expiry: "Ago 2027",
+            creds: "CSCO-ENT-2024",
+            category: "network",
+            skills: ["OSPF", "BGP", "MPLS", "SD-Access"],
+            hours: 200,
+            verifyUrl: "https://www.cisco.com/c/en/us/training-events/training-certifications/certifications.html"
+        },
+        {
+            id: 5,
+            title: "Azure Administrator Associate",
+            org: "Microsoft",
+            icon: "🔷",
+            status: "expired",
+            date: "Feb 2023",
+            expiry: "Feb 2025",
+            creds: "MS-AZ104-2023",
+            category: "cloud",
+            skills: ["Azure AD", "VMs", "Storage", "Networking"],
+            hours: 60,
+            verifyUrl: "https://learn.microsoft.com/en-us/credentials/"
+        },
+        {
+            id: 6,
+            title: "CompTIA Security+",
+            org: "CompTIA",
+            icon: "🔐",
+            status: "active",
+            date: "Nov 2023",
+            expiry: "Nov 2026",
+            creds: "COMP-SEC-2023",
+            category: "security",
+            skills: ["Threat Management", "Cryptography", "Risk Analysis"],
+            hours: 90,
+            verifyUrl: "https://www.credly.com/org/comptia"
+        }
+    ];
+
+    function getStatusHTML(status) {
+        const config = { active: { dot: 'status-active', label: 'Activa' }, expired: { dot: 'status-expired', label: 'Por renovar' }, pending: { dot: 'status-pending', label: 'En progreso' } };
+        const c = config[status];
+        return `<span class="status-dot ${c.dot}"></span><span class="status-text">${c.label}</span>`;
+    }
+
+    function renderCerts(filter = 'all') {
+        const container = document.getElementById('certs-container');
+        let filtered = certifications.filter(c => {
+            if (filter === 'all') return true;
+            if (filter === 'active') return c.status === 'active';
+            if (filter === 'expired') return c.status === 'expired';
+            return c.category === filter;
+        });
+
+        if (filtered.length === 0) {
+            container.innerHTML = `<div style="text-align:center; padding:3rem; color:var(--text-muted)">🔍 No hay certificaciones en esta categoría.</div>`;
+            return;
         }
 
-        function renderCerts(filter = 'all') {
-            const container = document.getElementById('certs-container');
-            let filtered = certifications;
+        const byCategory = {};
+        filtered.forEach(c => { if (!byCategory[c.category]) byCategory[c.category] = []; byCategory[c.category].push(c); });
+        const catNames = { security: '🔒 Ciberseguridad', cloud: '☁️ Cloud Computing', network: '🌐 Redes & Infraestructura' };
 
-            if (filter !== 'all') {
-                filtered = certifications.filter(c => {
-                    if (filter === 'expired') return c.status === 'expired';
-                    if (filter === 'active') return c.status === 'active';
-                    return c.category === filter;
-                });
-            }
-
-            if (filtered.length === 0) {
-                container.innerHTML = `
-                    <div class="no-results">
-                        <div class="no-results-icon">🔍</div>
-                        <p>No se encontraron certificaciones en esta categoría.</p>
-                    </div>`;
-                return;
-            }
-
-            // Agrupar por categoría
-            const byCategory = {};
-            filtered.forEach(c => {
-                if (!byCategory[c.category]) byCategory[c.category] = [];
-                byCategory[c.category].push(c);
-            });
-
-            const catNames = {
-                security: '🔒 Ciberseguridad',
-                cloud: '☁️ Cloud Computing',
-                network: '🌐 Redes & Infraestructura',
-                devops: '⚙️ DevOps',
-                data: '📊 Data & Analytics'
-            };
-
-            let html = '';
-            Object.keys(byCategory).forEach((cat, ci) => {
-                html += `<div style="margin-bottom: 2rem;">`;
-                html += `<h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text);">${catNames[cat] || cat}</h3>`;
-                html += `<div class="certs-grid">`;
-
-                byCategory[cat].forEach((cert, i) => {
-                    html += `
-                        <div class="cert-card" onclick="toggleDetails(${cert.id})" style="animation: fadeIn 0.4s ease ${i * 0.08}s both;">
-                            <div class="cert-header">
-                                <div class="cert-icon">${cert.icon}</div>
-                                <div>
-                                    <div class="cert-title">${cert.title}</div>
-                                    <div class="cert-org">${cert.org}</div>
-                                </div>
-                            </div>
-                            <div class="cert-status">${getStatusHTML(cert.status)}</div>
-                            <div class="skills">
-                                ${cert.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
-                            </div>
-                            <div class="cert-meta">
-                                <span>📅 ${cert.date}</span>
-                                <span>⏳ ${cert.expiry}</span>
-                            </div>
-                            <div class="cert-details" id="details-${cert.id}">
-                                <div style="margin-bottom: 6px;">
-                                    <span style="color: var(--text-muted); font-size: 0.8rem;">ID Credencial:</span>
-                                    <span class="cred-id">${cert.creds}</span>
-                                </div>
-                                <div style="color: var(--text-dim); font-size: 0.8rem;">⏱️ ~${cert.hours} horas de preparación</div>
-                                <a href="${cert.verifyUrl}" target="_blank" class="verify-btn">
-                                    🔗 Verificar credencial
-                                </a>
-                            </div>
+        let html = '';
+        Object.keys(byCategory).forEach(cat => {
+            html += `<div style="margin-bottom: 2rem;"><h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">${catNames[cat] || cat}</h3><div class="certs-grid">`;
+            byCategory[cat].forEach(cert => {
+                html += `
+                    <div class="cert-card" data-id="${cert.id}">
+                        <div class="cert-header"><div class="cert-icon">${cert.icon}</div><div><div class="cert-title">${cert.title}</div><div class="cert-org">${cert.org}</div></div></div>
+                        <div class="cert-status">${getStatusHTML(cert.status)}</div>
+                        <div class="skills">${cert.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>
+                        <div class="cert-meta"><span>📅 ${cert.date}</span><span>⏳ ${cert.expiry}</span></div>
+                        <div class="cert-details" id="details-${cert.id}">
+                            <div><span style="color:var(--text-muted); font-size:0.8rem;">ID:</span><br><span class="cred-id">${cert.creds}</span></div>
+                            <div style="color:var(--text-dim); font-size:0.8rem;">⏱️ ~${cert.hours} horas</div>
+                            <a href="${cert.verifyUrl}" target="_blank" class="verify-btn" onclick="event.stopPropagation()">🔗 Verificar</a>
                         </div>
-                    `;
-                });
-
-                html += `</div></div>`;
+                    </div>`;
             });
+            html += `</div></div>`;
+        });
+        container.innerHTML = html;
+        
+        // Asignar eventos sin inline onclick
+        container.querySelectorAll('.cert-card').forEach(card => {
+            card.addEventListener('click', () => toggleDetails(parseInt(card.dataset.id)));
+        });
+        
+        updateStats(filtered);
+    }
 
-            container.innerHTML = html;
-            updateStats();
-        }
+    function toggleDetails(id) {
+        const el = document.getElementById(`details-${id}`);
+        const isOpen = el.classList.contains('show');
+        document.querySelectorAll('.cert-details').forEach(d => d.classList.remove('show'));
+        if (!isOpen) el.classList.add('show');
+    }
 
-        function toggleDetails(id) {
-            const el = document.getElementById(`details-${id}`);
-            const allDetails = document.querySelectorAll('.cert-details');
-            allDetails.forEach(d => {
-                if (d.id !== `details-${id}`) d.classList.remove('show');
-            });
-            el.classList.toggle('show');
-        }
+    function updateStats(list = certifications) {
+        document.getElementById('stat-total').textContent = certifications.length;
+        document.getElementById('stat-active').textContent = certifications.filter(c => c.status === 'active').length;
+        document.getElementById('stat-vendors').textContent = [...new Set(certifications.map(c => c.org))].length;
+        document.getElementById('stat-hours').textContent = certifications.reduce((a, c) => a + c.hours, 0);
+    }
 
-        function filterCerts(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            renderCerts(type);
-        }
+            renderCerts(btn.dataset.filter);
+        });
+    });
 
-        function updateStats() {
-            document.getElementById('stat-total').textContent = certifications.length;
-            document.getElementById('stat-active').textContent = certifications.filter(c => c.status === 'active').length;
-            document.getElementById('stat-vendors').textContent = [...new Set(certifications.map(c => c.org))].length;
-            document.getElementById('stat-hours').textContent = certifications.reduce((a, c) => a + c.hours, 0);
-        }
-
-        // Inicializar
-        renderCerts();
-    </script>
+    renderCerts();
+</script>
 </body>
 </html>
