@@ -658,3 +658,152 @@
             },
             {
                 id: 5,
+                title: "Azure Administrator Associate",
+                org: "Microsoft",
+                icon: "🔷",
+                status: "expired",
+                date: "Feb 2023",
+                expiry: "Feb 2025",
+                creds: "MS-XXX-XXXX",
+                category: "cloud",
+                skills: ["Azure AD", "VMs", "Storage", "Networking"],
+                hours: 60,
+                verifyUrl: "https://learn.microsoft.com/en-us/credentials/"
+            },
+            {
+                id: 6,
+                title: "CompTIA Security+",
+                org: "CompTIA",
+                icon: "🔐",
+                status: "active",
+                date: "Nov 2023",
+                expiry: "Nov 2026",
+                creds: "COMP-XXX-XXXX",
+                category: "security",
+                skills: ["Threat Management", "Cryptography", "Risk Analysis"],
+                hours: 90,
+                verifyUrl: "https://www.credly.com/org/comptia"
+            }
+        ];
+
+        // ========================
+        // RENDER FUNCTIONS
+        // ========================
+        function getStatusHTML(status) {
+            const config = {
+                active:  { dot: 'status-active',  label: 'Activa' },
+                expired: { dot: 'status-expired', label: 'Expirada' },
+                pending: { dot: 'status-pending', label: 'Pendiente' }
+            };
+            const c = config[status];
+            return `<span class="status-dot ${c.dot}"></span><span class="status-text">${c.label}</span>`;
+        }
+
+        function renderCerts(filter = 'all') {
+            const container = document.getElementById('certs-container');
+            let filtered = certifications;
+
+            if (filter !== 'all') {
+                filtered = certifications.filter(c => {
+                    if (filter === 'expired') return c.status === 'expired';
+                    if (filter === 'active') return c.status === 'active';
+                    return c.category === filter;
+                });
+            }
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <p>No se encontraron certificaciones en esta categoría.</p>
+                    </div>`;
+                return;
+            }
+
+            // Agrupar por categoría
+            const byCategory = {};
+            filtered.forEach(c => {
+                if (!byCategory[c.category]) byCategory[c.category] = [];
+                byCategory[c.category].push(c);
+            });
+
+            const catNames = {
+                security: '🔒 Ciberseguridad',
+                cloud: '☁️ Cloud Computing',
+                network: '🌐 Redes & Infraestructura',
+                devops: '⚙️ DevOps',
+                data: '📊 Data & Analytics'
+            };
+
+            let html = '';
+            Object.keys(byCategory).forEach((cat, ci) => {
+                html += `<div style="margin-bottom: 2rem;">`;
+                html += `<h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text);">${catNames[cat] || cat}</h3>`;
+                html += `<div class="certs-grid">`;
+
+                byCategory[cat].forEach((cert, i) => {
+                    html += `
+                        <div class="cert-card" onclick="toggleDetails(${cert.id})" style="animation: fadeIn 0.4s ease ${i * 0.08}s both;">
+                            <div class="cert-header">
+                                <div class="cert-icon">${cert.icon}</div>
+                                <div>
+                                    <div class="cert-title">${cert.title}</div>
+                                    <div class="cert-org">${cert.org}</div>
+                                </div>
+                            </div>
+                            <div class="cert-status">${getStatusHTML(cert.status)}</div>
+                            <div class="skills">
+                                ${cert.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
+                            </div>
+                            <div class="cert-meta">
+                                <span>📅 ${cert.date}</span>
+                                <span>⏳ ${cert.expiry}</span>
+                            </div>
+                            <div class="cert-details" id="details-${cert.id}">
+                                <div style="margin-bottom: 6px;">
+                                    <span style="color: var(--text-muted); font-size: 0.8rem;">ID Credencial:</span>
+                                    <span class="cred-id">${cert.creds}</span>
+                                </div>
+                                <div style="color: var(--text-dim); font-size: 0.8rem;">⏱️ ~${cert.hours} horas de preparación</div>
+                                <a href="${cert.verifyUrl}" target="_blank" class="verify-btn">
+                                    🔗 Verificar credencial
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div></div>`;
+            });
+
+            container.innerHTML = html;
+            updateStats();
+        }
+
+        function toggleDetails(id) {
+            const el = document.getElementById(`details-${id}`);
+            const allDetails = document.querySelectorAll('.cert-details');
+            allDetails.forEach(d => {
+                if (d.id !== `details-${id}`) d.classList.remove('show');
+            });
+            el.classList.toggle('show');
+        }
+
+        function filterCerts(type, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderCerts(type);
+        }
+
+        function updateStats() {
+            document.getElementById('stat-total').textContent = certifications.length;
+            document.getElementById('stat-active').textContent = certifications.filter(c => c.status === 'active').length;
+            document.getElementById('stat-vendors').textContent = [...new Set(certifications.map(c => c.org))].length;
+            document.getElementById('stat-hours').textContent = certifications.reduce((a, c) => a + c.hours, 0);
+        }
+
+        // Inicializar
+        renderCerts();
+    </script>
+</body>
+</html>
