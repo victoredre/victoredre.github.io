@@ -1,24 +1,25 @@
----
-import SkillCard from "@/components/SkillCard.astro";
+interface SoftSkill {
+    name: string;
+    icon: string;
+}
 
-const certifications = [
+const softSkills: SoftSkill[] = [
     {
-        image: "/images/nse7.png",
-        name: "Fortinet NSE 7 — Network Security Expert",
-        description: "Especialista en arquitectura de seguridad FortiGate, SD-WAN avanzado, FortiManager y FortiAnalyzer.",
-        credentialUrl: "https://training.fortinet.com/...",
-        level: "expert" as const,
-        issuer: "Fortinet",
-        date: "Jun 2024",
-        tags: ["FortiGate", "SD-WAN", "FortiManager", "Enterprise"],
-        isVerified: true,
+        name: "Solving Problems",
+        icon: "tools-fill"
     },
-    // ... más certificaciones
+    {
+        name: "Teamwork",
+        icon: "group-fill"
+    },
+    {
+        name: "Communication",
+        icon: "message-2-fill"
+    },
+    {
+        name: "Time Management",
+        icon: "time-fill"
+    }
 ];
----
 
-<section class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    {certifications.map((cert) => (
-        <SkillCard {...cert} />
-    ))}
-</section>
+export default softSkills;
