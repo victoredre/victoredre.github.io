@@ -16,7 +16,7 @@ import {ME} from '@/config';
 
 ---
 
-<div class="relative flex flex-col gap-4 text-n700 dark:text-n200 w-full mt-10 px-4">
+<div class="relative flex flex-col gap-4 text-n700 dark:text-n200 w-full mt-18 px-4">
     {/*Description or About me -- Section*/}
     <h2 class="text-5xl font-bold mb-4">Perfil Profesional</h2>
     <div class="flex flex-col gap-4">
@@ -27,7 +27,7 @@ import {ME} from '@/config';
     </div>
     {/*Experiencia*/}
     <div class="mb-2">
-        <h2 class="text-6xl font-bold mb-4">Experiencia</h2>
+        <h2 class="text-4xl font-bold mb-4">Experiencia</h2>
         <div class="flex flex-col gap-4">
             {workExperience.map((job) => (
                     <JobDetails jobData={job}/>
@@ -36,7 +36,7 @@ import {ME} from '@/config';
     </div>
     {/*Educación*/}
     <div class="mb-2">
-        <h2 class="text-6xl font-bold mb-4">Educación</h2>
+        <h2 class="text-4xl font-bold mb-4">Educación</h2>
         <div class="flex flex-col gap-4">
             {education.map((edu) => (
                     <EduDetail eduData={edu}/>
@@ -44,8 +44,8 @@ import {ME} from '@/config';
         </div>
     </div>
     {/*Competencias*/}
-    <div class="mb-4">
-        <h2 class="text-6xl font-bold mb-4">Competencias</h2>
+    <div class="mb-2">
+        <h2 class="text-4xl font-bold mb-4">Competencias</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             {hardSkills.map((skill) => (
                     <SkillCard {...skill} showDescription={true}/>
@@ -53,7 +53,7 @@ import {ME} from '@/config';
         </div>
     </div>
     {/*Certificaciones*/}
-    <div class="mb-4">
+    <div class="mb-2">
         <h2 class="text-6xl font-bold mb-4">Certificaciones</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             {softSkills.map((skill) => (
@@ -62,8 +62,8 @@ import {ME} from '@/config';
         </div>
     </div>
     {/*Languages section*/}
-    <div class="mb-4">
-        <h2 class="text-6xl font-bold mb-4">Languages</h2>
+    <div class="mb-2">
+        <h2 class="text-4xl font-bold mb-7">Languages</h2>
         <div class="flex flex-col gap-4">
             {
                 languages.map((lang) => (
