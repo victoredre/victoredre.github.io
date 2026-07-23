@@ -7,13 +7,11 @@ import {SOCIALS} from '@/config';
 
 ---
 
-<div class={'flex gap-280 md:gap-180
-00'}>
+<div class={'flex gap-2 md:gap-4'}>
     {
         SOCIALS.map((networkS) => (
             networkS.show && (
                     
-                            <a class={`${networkS.name} text-x3 md:text-4xl text-silver-n200 hover:text-silver-200 rounded-md p-2 duration-100 hover:bg-neutral-200 dark:hover:bg-n700/40`}
                             href={networkS.url}
                             target="_blank"
                             aria-label={networkS.name + "-link"}
@@ -24,4 +22,3 @@ import {SOCIALS} from '@/config';
         ))
     }
 </div>
-
