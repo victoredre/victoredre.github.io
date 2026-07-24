@@ -7,12 +7,12 @@ export interface HardSkill {
 export const hardSkills: HardSkill[] = [
   {
     name: "Fortinet",
-    description: "FortiGate FortiWifi FortiAnalyzer FortiExtender FortiManager FortiSW FortiEDR FortiEMS FortiAP FortiWeb FortiWifi",
+    description: "FortiGate. FortiWifi. FortiAnalyzer. FortiExtender. FortiManager. FortiSW. FortiEDR. FortiEMS. FortiAP. FortiWeb. FortiWifi",
     icon: "fortinet"
   },
   {
     name: "WatchGuard",
-    description: "My favorite React framework for building modern web apps",
+    description: "$Firebox Series T/M WatchGuard Cloud, Total security Suite",
     icon: "watchguard-fill"
   },
   {
