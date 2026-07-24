@@ -1,11 +1,12 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import { ui } from "../../../i18n/ui";
 import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.flatMap((entry) => {
+  // Si tu colección se llama "blogs" o "posts", cambia aquí el nombre
+  const posts = await getCollection("blog" as any);
+  return posts.flatMap((entry: any) => {
     const parts = entry.id.split("/");
     const lang = parts[0];
     if (!(lang in ui)) return [];
@@ -17,10 +18,10 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 const lang = Astro.params.lang as keyof typeof ui;
 ---
-<Layout lang={lang}>
+<Layout lang={lang} scrollSmooth={true}>
   <article class="prose prose-invert max-w-3xl mx-auto py-20 px-4">
     <Content />
   </article>
