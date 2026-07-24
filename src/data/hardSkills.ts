@@ -1,4 +1,4 @@
-interface HardSkill {
+nterface HardSkill {
   name: string;
   description: string;
   icon: string;
@@ -7,7 +7,7 @@ interface HardSkill {
 const hardSkills: HardSkill[] = [
   {
     name: "Fortinet",
-    description: "FortiGate. FortiWifi. FortiAnalyzer. FortiExtender. FortiManager. FortiSW. FortiEDR. FortiEMS. FortiAP. FortiWeb. FortiWifi",
+    description: "FortiGate FortiWifi FortiAnalyzer FortiExtender FortiManager FortiSW FortiEDR FortiEMS FortiAP FortiWeb FortiWifi",
     icon: "fortinet"
   }
   {
