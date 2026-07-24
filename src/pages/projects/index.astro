@@ -3,33 +3,21 @@ import Layout from '../../layouts/Layout.astro';
 import {getCollection} from 'astro:content';
 import ProjectCardList from '@/components/ProjectCardList.astro';
 
-interface Project {
-    id: string;
-    data: {
-        title: string;
-        description: string;
-        tags: string[];
-        image?: string;
-        date: Date;
-    };
-}
-
 const allProjects = (await getCollection('projects'))
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout title="Ing. Victor Eduardo Resendiz Villegas" description="A list of my best projects" scrollSmooth={false}>
     <>
-        <!--Projects Section-->
         <section class="border-bottom">
             <div class="mb-4">
                 <h2 class="text-3xl font-bold mb-8">Proyectos</h2>
             </div>
         </section>
-        <!--Projects List-->
+
         <section class="flex flex-col gap-8">
             {allProjects.length > 0 ? (
-                allProjects.map((project: Project) => (
+                allProjects.map((project) => (
                     <ProjectCardList
                         id={project.id}
                         title={project.data.title}
