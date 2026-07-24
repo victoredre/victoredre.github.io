@@ -30,7 +30,23 @@ ogImage: './images/budget-wise/og-finance_app.webp'
 
 ## Fortinet 
 
-Desde configuraciones basicas como procesos de Firmware y/o alta en la WAN para DHCP, Estatitca o PPPoE hasta SD-WAN, NAT, VPN IPsec, VPN SSL, Políticas de firewall IPv4, Antivirus, Filtrado Web, IPS, App Control, Ruteo estatico y dinámico, BGP en VPN Loopback, segmentación por VLAN's, VDOM, IPS y Web Filter, DNS y VPNE-GRE, casa casos de nivel N2 troubleshooting como:
+Desde configuraciones basicas como procesos de Firmware y/o alta en la WAN para DHCP, Estatitca o PPPoE hasta SD-WAN, NAT, VPN IPsec, VPN SSL, Políticas de firewall IPv4, Antivirus, Filtrado Web, IPS, App Control, Ruteo estatico y dinámico, BGP en VPN Loopback, segmentación por VLAN's, VDOM, IPS y Web Filter, DNS y VPNE-GRE, casa casos de nivel N2 troubleshooting como
+IKE Phase 1 no levanta
+Síntoma: Túnel no establece, sin tráfico.
+'''bash
+# Ver estado
+diagnose vpn ike gateway list
+
+# Debug IKE en vivo
+diagnose debug reset
+diagnose debug application ike -1
+diagnose debug enable
+
+# Lo que buscas en el log
+# "no proposal chosen" = missmatch en encryption/hash
+# "invalid ID" = problema de peer ID
+# "timeout" = problema de conectividad/firewall
+
 
 ---
 
