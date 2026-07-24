@@ -16,6 +16,7 @@ interface Props {
     author?: string;
     imageOg?: string;
     canonicalURL?: string;
+    lang?: string;
 }
 
 const {
@@ -26,11 +27,12 @@ const {
     scrollSmooth,
     canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
     imageOg = SITE.ogImage,
+    lang,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={SITE.lang ?? "en"} class={cn({"scroll-smooth": scrollSmooth})}>
+<html lang={lang ?? SITE.lang ?? "en"} class={cn({"scroll-smooth": scrollSmooth})}>
 <head>
     <meta name="msapplication-TileColor" content="#000000"/>
     <meta name="viewport" content="width=device-width"/>
