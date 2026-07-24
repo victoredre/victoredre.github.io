@@ -6,5 +6,5 @@ date: 2022-09-07
 featured: false
 draft: true
 link: "https://github.com/MeloDev2111/SIGMINCETUR-Scraper"
-image: "../../../assets/projects/project-placeholder.svg"
+---
 ---
