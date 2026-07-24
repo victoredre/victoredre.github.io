@@ -6,5 +6,5 @@ date: 2022-09-07
 featured: false
 draft: true
 link: "https://github.com/victoredre/victoredre.github.io"
-image: "../../../assets/projects/project-placeholder.svg"
+---
 ---
