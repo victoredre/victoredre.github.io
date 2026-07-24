@@ -22,14 +22,14 @@ const projectsCollection = defineCollection({
         pattern: "**/*.{md,json,yaml,yml}",
         base: "./src/content/projects",
     }),
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         tags: z.array(z.string()).optional(),
         date: z.coerce.date(),
         featured: z.boolean().default(false).optional(),
         link: z.string().url().optional(),
-        image: z.string().optional(),
+        image: image().optional(),
     }),
 });
 
@@ -38,12 +38,12 @@ const postsCollection = defineCollection({
         pattern: "**/*.{md,json,yaml,yml}",
         base: "./src/content/posts",
     }),
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         publishDate: z.coerce.date(),
         tags: z.array(z.string()).optional(),
-        cover: z.string().optional(),
+        cover: image().optional(),
     }),
 });
 
