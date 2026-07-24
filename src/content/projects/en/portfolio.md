@@ -5,5 +5,5 @@ tags: ["Astro", "React", "TailwindCSS", "TypeScript", "CI/CD"]
 date: 2026-02-12
 featured: true
 link: "https://github.com/MeloDev2111/portfolio"
-image: "../../../assets/projects/portfolio.png"
+---
 ---
