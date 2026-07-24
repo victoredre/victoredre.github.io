@@ -1,0 +1,121 @@
+---
+import { getI18nStaticPaths } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+import { CertificationList } from "../../components/react/CertificationList";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+export function getStaticPaths() {
+    return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as any);
+
+type CertEntry = CollectionEntry<"certifications">;
+
+const allCertifications = await getCollection("certifications");
+
+// Map to safe props
+const certProps = allCertifications.map((c) => ({
+    id: c.id,
+    data: {
+        name: c.data.name,
+        issuer: c.data.issuer,
+        date: c.data.date,
+        badge: c.data.badge?.startsWith("http")
+            ? c.data.badge
+            : import.meta.env.BASE_URL.replace(/\/$/, "") + c.data.badge,
+        url: c.data.url,
+        starred: c.data.starred,
+    },
+}));
+
+// Sanitize for hydration
+const cleanCertProps = JSON.parse(JSON.stringify(certProps));
+---
+
+<Layout
+    title={`Portfolio | ${t("nav.certifications")}`}
+    lang={lang}
+    description={t("page.certificationsDescription")}
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-light mb-8">
+            <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-white"
+            >
+                {t("nav.certifications")}
+            </span>
+        </h1>
+
+        <p class="text-xl text-gray-400 max-w-2xl mb-12">
+            {t("page.certificationsDescription")}
+        </p>
+
+        <!-- Credly Verification Banner (Compact) -->
+        <a
+            href="https://www.credly.com/users/melio-josue-diaz-diaz"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-5 mb-12 rounded-xl glass-card border border-white/5 hover:border-[#c08b5a]/40 overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(192,139,90,0.1)] hover:-translate-y-0.5"
+        >
+            <div
+                class="absolute inset-0 bento-noise opacity-10 pointer-events-none"
+            >
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-[#c08b5a]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
+            >
+            </div>
+
+            <!-- Icon Container (Compact) -->
+            <div
+                class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#c08b5a]/10 border border-[#c08b5a]/20 group-hover:bg-[#c08b5a]/20 transition-all duration-300 group-hover:rotate-12"
+            >
+                <span class="text-2xl filter drop-shadow-md">🏅</span>
+            </div>
+
+            <div class="relative z-10 flex-grow text-center sm:text-left">
+                <h3
+                    class="text-lg font-bold text-white group-hover:text-[#c08b5a] transition-colors duration-300"
+                >
+                    {t("credly.verified")}
+                </h3>
+                <p
+                    class="text-sm text-gray-400 mt-1 max-w-2xl leading-snug group-hover:text-gray-300 transition-colors"
+                >
+                    {t("credly.description")}
+                </p>
+            </div>
+
+            <div
+                class="relative z-10 flex items-center gap-2 text-[#c08b5a] font-bold text-xs tracking-wider uppercase group-hover:translate-x-1 transition-transform duration-300 mt-2 sm:mt-0"
+            >
+                <span>{t("credly.viewProfile")}</span>
+                <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </div>
+        </a>
+
+        <CertificationList
+            client:only="react"
+            certifications={cleanCertProps}
+            labels={{
+                sortBy: t("ui.sortBy"),
+                sortDesc: t("ui.sortDesc"),
+                sortAsc: t("ui.sortAsc"),
+            }}
+        />
+    </div>
+</Layout>
