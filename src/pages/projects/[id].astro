@@ -1,7 +1,7 @@
 ---
-import { getCollection } from "astro:content";
-import { ui } from "../../i18n/ui";
-import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { ui } from "../../../i18n/ui";
+import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -17,11 +17,11 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
-const { lang } = Astro.params;
+const { Content } = await render(entry);
+const lang = Astro.params.lang as keyof typeof ui;
 ---
-<Layout lang={lang}>
-  <article class="prose">
+<Layout lang={lang} scrollSmooth={true}>
+  <article class="prose prose-invert max-w-3xl mx-auto py-20 px-4">
     <Content />
   </article>
 </Layout>
