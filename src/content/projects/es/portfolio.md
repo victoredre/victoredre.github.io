@@ -6,6 +6,6 @@ date: 2026-01-15
 featured: false
 link: "https://github.com/victoredre/victoredre.github.io"
 ---
-draft: false
-inProgress: true
+---
+---
 ---
