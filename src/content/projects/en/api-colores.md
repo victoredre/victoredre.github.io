@@ -4,6 +4,6 @@ description: "RESTful API built with PHP for managing standardized product color
 tags: ["PHP", "API"]
 date: 2022-07-05
 featured: false
-link: "https://github.com/MeloDev2111/API-Colores"
+link: "https://github.com/victoredre/victoredre.github.io/blob/main/src/content/projects/es/api-colores.md"
 image: "../../../assets/projects/project-placeholder.svg"
 ---
