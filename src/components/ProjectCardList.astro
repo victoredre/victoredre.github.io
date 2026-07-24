@@ -1,7 +1,5 @@
 ---
 // astro imports
-import { Image } from 'astro:assets';
-
 // library imports
 import {cn} from "../lib/utils";
 
@@ -9,7 +7,7 @@ import {cn} from "../lib/utils";
 interface Props {
     title: string;
     tags: string[];
-    cover: ImageMetadata;
+    cover?: string;  // ← Cambiar ImageMetadata a string, hacer opcional
     id: string;
 }
 
@@ -19,16 +17,22 @@ const { title, tags, cover, id } = Astro.props as Props;
 <a href={`/projects/${id}`} class="project-card" aria-label={`View project "${title}"`}>
     <div class="flex flex-col md:flex-row md:items-center gap-6">
         <div class="rounded-xl h-[250px] md:w-[150px] md:h-[150px] flex-none overflow-hidden">
-            <Image
+            {cover ? (
+                <img
                     transition:name={`${id}-image`}
                     src={cover}
                     alt={`Cover preview of the project titled "${title}"`}
                     class="object-cover w-full h-full rounded-xl"
-            />
+                />
+            ) : (
+                <div class="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400">
+                    No image
+                </div>
+            )}
         </div>
         <div class="flex flex-col gap-4 flex-1">
             <p class="text-sm text-n700 dark:text-light-theme">
-                {tags.join(', ')}
+                {tags?.join(', ') || ''}  {/* ← Manejar tags undefined */}
             </p>
             <div class="flex items-center justify-between mb-2">
                 <h6 class={cn("font-semibold text-4xl", "text-n700 dark:text-white")}>
