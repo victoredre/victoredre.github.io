@@ -1,4 +1,9 @@
 ---
 title: "Java Architecture: RPSLS"
-description: "Proyecto educativo demostrando patrones arquitectónicos robustos MVP y MVC. Implementa la lógica compleja del juego extendido Piedra, Papel, Tijera, Lagarto, Spock."
+description: "Educational project demonstrating robust Software Architecture patterns. Implements the logic of the extended Rock-Paper-Scissors game."
+tags: ["Java", "Swing"]
+date: 2025-06-01
+featured: true
+link: "https://github.com/victoredre/victoredre.github.io"
+image: "../../../assets/projects/project-placeholder.svg"
 ---
