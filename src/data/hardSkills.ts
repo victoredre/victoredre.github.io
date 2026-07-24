@@ -1,4 +1,4 @@
-export nterface HardSkill {
+export interface HardSkill {
   name: string;
   description: string;
   icon: string;
