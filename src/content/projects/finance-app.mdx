@@ -36,13 +36,9 @@ VPN Site-to-Site con Cisco (Interoperabilidad)
 Síntoma: FortiGate con Cisco ASA/Router, no levanta.
 
 ```bash
-# En FortiGate ver propuestas IKE
 diagnose vpn ike gateway list
-
-# Debug detallado
 diagnose debug application ike 255
 diagnose debug enable
-
 config vpn ipsec phase1-interface
     edit "to-cisco"
         set ike-version 2
