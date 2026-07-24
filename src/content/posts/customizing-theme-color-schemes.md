@@ -1,7 +1,7 @@
 ---
-author: In. Victor Eduardo  Resendiz  Villegas 
+author: Ing. Victor Eduardo  Resendiz  Villegas 
 publishDate: 2024-12-20T15:20:35Z
-title: Implementacion 
+title: Laboratorio Malware, Ransomware Vcenter
 tags:
   - color-schemes
   - docs
