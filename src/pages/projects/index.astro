@@ -9,7 +9,7 @@ interface Project {
         title: string;
         description: string;
         tags: string[];
-        image: string;
+        image?: string;  // ← Hacer opcional
         date: Date;
     };
 }
@@ -18,7 +18,7 @@ const allProjects = (await getCollection('projects'))
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout title=" Ing. Victor Eduardo Resendiz Villegas " description="A list of my best projects" scrollSmooth={false}>
+<Layout title="Ing. Victor Eduardo Resendiz Villegas" description="A list of my best projects" scrollSmooth={false}>
     <>
         <!--Projects Section-->
         <section class="border-bottom">
@@ -30,15 +30,15 @@ const allProjects = (await getCollection('projects'))
         <section class="flex flex-col gap-8">
             {allProjects.length > 0 ? (
                 allProjects.map((project: Project) => (
-                        <ProjectCardList
-                                id={project.id}
-                                title={project.data.title}
-                                tags={project.data.tags}
-                                cover={project.data.image}
-                        />
+                    <ProjectCardList
+                        id={project.id}
+                        title={project.data.title}
+                        tags={project.data.tags}
+                        cover={project.data.image}  {/* ← Ahora es string opcional */}
+                    />
                 ))
             ) : (
-                    <p>No projects found.</p>
+                <p>No projects found.</p>
             )}
         </section>
     </>
