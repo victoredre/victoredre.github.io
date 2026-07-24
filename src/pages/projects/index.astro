@@ -1,10 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import {getCollection} from 'astro:content';
-import ProjectCardList from '@/components/ProjectCardList.astro';
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import ProjectCardList from "@/components/ProjectCardList.astro";
 
-const allProjects = (await getCollection('projects'))
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const allProjects = await getCollection("projects");
+const sortedProjects = allProjects.sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
 ---
 
 <Layout title="Ing. Victor Eduardo Resendiz Villegas" description="A list of my best projects" scrollSmooth={false}>
@@ -16,12 +18,12 @@ const allProjects = (await getCollection('projects'))
         </section>
 
         <section class="flex flex-col gap-8">
-            {allProjects.length > 0 ? (
-                allProjects.map((project) => (
+            {sortedProjects.length > 0 ? (
+                sortedProjects.map((project) => (
                     <ProjectCardList
                         id={project.id}
                         title={project.data.title}
-                        tags={project.data.tags}
+                        tags={project.data.tags || []}
                         cover={project.data.image}
                     />
                 ))
