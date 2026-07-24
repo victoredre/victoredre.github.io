@@ -1,40 +1,54 @@
-// 1. Import utilities from `astro:content`
-import {defineCollection, reference, z} from 'astro:content';
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
-// 2. Import loader(s)
-import { glob } from 'astro/loaders';
+const certificationsCollection = defineCollection({
+    loader: glob({
+        pattern: "**/*.{json,yaml,yml}",
+        base: "./src/content/certifications",
+    }),
+    schema: z.object({
+        name: z.string(),
+        issuer: z.string(),
+        date: z.string(),
+        badge: z.string().optional(),
+        url: z.string().url().optional(),
+        starred: z.boolean().default(false).optional(),
+    }),
+});
 
-
-const posts = defineCollection({
-    loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/posts' }),
+const projectsCollection = defineCollection({
+    loader: glob({
+        pattern: "**/*.{md,json,yaml,yml}",
+        base: "./src/content/projects",
+    }),
     schema: ({ image }) => z.object({
-        author: z.string().optional(),
-        publishDate: z.date(),
-        updateDate: z.date().optional(),
         title: z.string(),
-        relatedPosts: z.array(reference('posts')).optional(),
-        tags: z.array(z.string()),
         description: z.string(),
-        cover: z.object({
-            src: z.string(),  // ✅ CAMBIADO: image() → z.string()
-            alt: z.string().optional(),
-        }),
+        tags: z.array(z.string()).optional(),
+        date: z.coerce.date(),
+        featured: z.boolean().default(false).optional(),
+        link: z.string().url().optional(),
+        image: image().optional(),
     }),
 });
 
-const projects = defineCollection({
-    loader: glob({ pattern: "**/*.mdx", base: "./src/content/projects" }),
+const postsCollection = defineCollection({
+    loader: glob({
+        pattern: "**/*.{md,json,yaml,yml}",
+        base: "./src/content/posts",
+    }),
     schema: ({ image }) => z.object({
         title: z.string(),
-        startDate: z.date(),
-        endDate: z.date(),
-        summary: z.string(),
-        url: z.string(),
-        cover: image(),  // ⚠️ Este también podría dar problemas si usas strings
-        tags: z.array(z.string()),
-        ogImage: z.string()
+        description: z.string(),
+        publishDate: z.coerce.date(),
+        tags: z.array(z.string()).optional(),
+        cover: image().optional(),
     }),
 });
 
-// 4. Exporta un único objeto `collections` para registrar tu(s) colección(es).
-export const collections = {  projects, posts };
+export const collections = {
+    certifications: certificationsCollection,
+    projects: projectsCollection,
+    posts: postsCollection,
+};
