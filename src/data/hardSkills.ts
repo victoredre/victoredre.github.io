@@ -1,10 +1,10 @@
-nterface HardSkill {
+export nterface HardSkill {
   name: string;
   description: string;
   icon: string;
 }
 
-const hardSkills: HardSkill[] = [
+export const hardSkills: HardSkill[] = [
   {
     name: "Fortinet",
     description: "FortiGate FortiWifi FortiAnalyzer FortiExtender FortiManager FortiSW FortiEDR FortiEMS FortiAP FortiWeb FortiWifi",
