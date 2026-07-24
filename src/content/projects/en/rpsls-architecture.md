@@ -5,5 +5,5 @@ tags: ["Java", "Swing"]
 date: 2025-06-01
 featured: true
 link: "https://github.com/MeloDev2111/RockPaperScissorsLizardSpock"
-image: "../../../assets/projects/project-placeholder.svg"
+---
 ---
