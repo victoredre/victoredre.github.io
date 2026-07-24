@@ -9,7 +9,7 @@ interface Project {
         title: string;
         description: string;
         tags: string[];
-        image?: string;  // ← Hacer opcional
+        image?: string;
         date: Date;
     };
 }
@@ -34,7 +34,7 @@ const allProjects = (await getCollection('projects'))
                         id={project.id}
                         title={project.data.title}
                         tags={project.data.tags}
-                        cover={project.data.image}  {/* ← Ahora es string opcional */}
+                        cover={project.data.image}
                     />
                 ))
             ) : (
