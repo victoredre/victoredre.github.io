@@ -7,15 +7,15 @@ interface Project {
     id: string;
     data: {
         title: string;
-        summary: string;
+        description: string;
         tags: string[];
-        cover: ImageMetadata;
-        startDate: Date;
+        image: string;
+        date: Date;
     };
 }
 
 const allProjects = (await getCollection('projects'))
-    .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime());
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout title=" Ing. Victor Eduardo Resendiz Villegas " description="A list of my best projects" scrollSmooth={false}>
@@ -34,7 +34,7 @@ const allProjects = (await getCollection('projects'))
                                 id={project.id}
                                 title={project.data.title}
                                 tags={project.data.tags}
-                                cover={project.data.cover}
+                                cover={project.data.image}
                         />
                 ))
             ) : (
