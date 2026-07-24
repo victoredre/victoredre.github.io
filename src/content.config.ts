@@ -24,12 +24,12 @@ const projectsCollection = defineCollection({
     }),
     schema: z.object({
         title: z.string(),
-        summary: z.string(),
+        description: z.string(),
         tags: z.array(z.string()).optional(),
-        cover: z.string().optional(),
-        ogImage: z.string().optional(),
-        url: z.string().url().optional(),
-        startDate: z.coerce.date(),
+        date: z.coerce.date(),
+        featured: z.boolean().default(false).optional(),
+        link: z.string().url().optional(),
+        image: z.string().optional(),
     }),
 });
 
