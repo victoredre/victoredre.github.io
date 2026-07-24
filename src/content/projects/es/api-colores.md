@@ -5,5 +5,4 @@ date: 2022-07-05
 tags: ["PHP", "API"]
 featured: false
 link: "https://github.com/victoredre/victoredre.github.io"
-image: "../../../assets/projects/project-placeholder.svg"
 ---
