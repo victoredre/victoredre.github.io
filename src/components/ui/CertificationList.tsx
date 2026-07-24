@@ -1,4 +1,4 @@
-import { CertificationList } from "../../components/ui/certificationslist";
+import React, { useState, useMemo } from "react";
 
 interface Certification {
     id: string;
