@@ -26,7 +26,7 @@ const sortedPosts = allPost.sort(
                         description={post.data.description}
                         publishDate={post.data.publishDate}
                         tags={post.data.tags || []}
-                        cover={post.data.cover}
+                        cover={post.data.cover ? { src: post.data.cover, alt: post.data.title } : undefined}
                     />
                 ))
             ) : (
