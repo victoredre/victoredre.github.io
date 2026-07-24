@@ -1,5 +1,4 @@
 ---
-import {Image} from "astro:assets";
 import ClockIcon from "@/icons/time-line.svg";
 
 interface Props {
@@ -8,8 +7,8 @@ interface Props {
     description: string;
     publishDate: Date;
     tags: string[];
-    cover: {
-        src: ImageMetadata;
+    cover?: {  // ← Hacer opcional
+        src: string;  // ← Cambiar ImageMetadata a string
         alt?: string;
     };
 }
@@ -28,35 +27,45 @@ const post = {
 };
 ---
 
-<a href=`/blog/${id}` aria-label=`Read post about ${title}` class="flex flex-col md:flex-row md:items-center gap-4">
+<a href={`/blog/${id}`} aria-label={`Read post about ${title}`} class="flex flex-col md:flex-row md:items-center gap-4">
     <!--post cover-->
     <div class="flex-none w-full md:w-40 h-40 overflow-hidden rounded-xl">
-        <Image transition:name={`${post.id}-image`} src={post.data.cover.src} alt={post.data.cover.alt ?? title}
-               class="w-full h-full object-cover rounded-xl"/>
+        {cover ? (
+            <img 
+                transition:name={`${post.id}-image`}
+                src={cover.src}
+                alt={cover.alt ?? title}
+                class="w-full h-full object-cover rounded-xl"
+            />
+        ) : (
+            <div class="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400">
+                No image
+            </div>
+        )}
     </div>
     <!--post info-->
     <div class="flex flex-col gap-2">
         <div class="flex items-center gap-1.5">
             <div class="flex items-center gap-1">
                 <ClockIcon class="w-4 h-4 text-gray-500"/>
-                <time class="text-sm text-gray-500" datetime={post.data.publishDate.toISOString()}>
-                    {post.data.publishDate.toDateString()}
+                <time class="text-sm text-gray-500" datetime={publishDate.toISOString()}>
+                    {publishDate.toDateString()}
                 </time>
             </div>
-            <span class=" text-gray-500">
-                                        &middot;
-                                    </span>
+            <span class="text-gray-500">
+                &middot;
+            </span>
             <div class="flex gap-2">
-                {post.data.tags.map((tag) => (
-                        <span class="text-sm text-gray-500">
-                                                    #{tag}
-                                                </span>
+                {tags.map((tag) => (
+                    <span class="text-sm text-gray-500">
+                        #{tag}
+                    </span>
                 ))}
             </div>
         </div>
-        <h3 class="text-xl font-bold">{post.data.title}</h3>
+        <h3 class="text-xl font-bold">{title}</h3>
         <div class="flex flex-col gap-4">
-            <p class="text-sm">{post.data.description}</p>
+            <p class="text-sm">{description}</p>
         </div>
     </div>
 </a>
