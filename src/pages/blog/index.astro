@@ -20,14 +20,14 @@ const sortedPosts = allPost.sort(
         <section class="flex flex-col gap-8">
             {sortedPosts.length > 0 ? (
                 sortedPosts.map((post) => (
-                    <PostCard
-                        id={post.id}
-                        title={post.data.title}
-                        description={post.data.description}
-                        publishDate={post.data.publishDate}
-                        tags={post.data.tags || []}
-                        cover={post.data.cover ? { src: post.data.cover, alt: post.data.title } : undefined}
-                    />
+    <PostCard
+    id={post.id}
+    title={post.data.title}
+    description={post.data.description}
+    publishDate={post.data.publishDate}
+    tags={post.data.tags || []}
+    cover={post.data.cover}
+/>
                 ))
             ) : (
                 <p>No posts found.</p>
