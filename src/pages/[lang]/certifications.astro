@@ -21,7 +21,7 @@ const certProps = allCertifications.map((c) => ({
     data: {
         name: c.data.name,
         issuer: c.data.issuer,
-        date: c.data.date instanceof Date ? c.data.date.toISOString() : c.data.date,
+        date: c.data.date ? new Date(c.data.date as any).toISOString() : "",
         badge: c.data.badge?.startsWith("http")
             ? c.data.badge
             : `${base}${c.data.badge?.startsWith("/") ? "" : "/"}${c.data.badge}`,
