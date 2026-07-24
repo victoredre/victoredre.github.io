@@ -1,8 +1,8 @@
 ---
 title: "Fortinet Certified Associate in Cybersecurity"
-description: "API REST construida con PHP para gestionar colores estandarizados en marcas y redes sociales. Desarrollado como evaluación técnica de proficiency backend."
+description: "Fortinet Certified Associate (FCA) in Cybersecurity."
 date: 2022-07-05
-tags: ["PHP", "API"]
+tags: ["VPN IPsec", "VPN SSL"]
 featured: false
 link: "https://github.com/victoredre/victoredre.github.io"
 ---
