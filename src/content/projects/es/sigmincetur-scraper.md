@@ -1,4 +1,10 @@
 ---
 title: "SIGMINCETUR Scraper"
-description: "Herramienta automatizada de extracción de datos para el Sistema Nacional de Información Turística. Desarrollada con Node.js"
+description: "Automated data extraction tool for the National Tourism Information System (SIGMINCETUR). Built with Node.js"
+tags: ["Node.js", "Scraping"]
+date: 2022-09-07
+featured: false
+draft: true
+link: "https://github.com/victoredre/victoredre.github.io"
+image: "../../../assets/projects/project-placeholder.svg"
 ---
