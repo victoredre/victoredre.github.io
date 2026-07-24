@@ -1,15 +1,12 @@
 ---
-author: Ing. Victor Eduardo  Resendiz  Villegas 
+author: Ing. Victor Eduardo Resendiz Villegas
 publishDate: 2024-12-20T15:20:35Z
 title: Laboratorio Malware, Ransomware Vcenter
 tags:
   - color-schemes
   - docs
-description:
-  A complete guide on how to customize user information in this Astro Simple Portfolio theme.
-cover:
-  src: './images/customizing-theme-color-schemes/cover.webp'
-  alt: 'Customizing color schemes'
+description: A complete guide on how to customize user information in this Astro Simple Portfolio theme.
+cover: './images/customizing-theme-color-schemes/cover.webp'
 ---
 
 Astro Simple Portfolio provides a straightforward way to adapt to your system’s light and dark mode preferences. By default, when a user’s device is set to dark mode, the site will load in dark mode—otherwise, it displays in light mode.
