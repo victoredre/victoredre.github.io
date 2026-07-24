@@ -30,22 +30,38 @@ ogImage: './images/budget-wise/og-finance_app.webp'
 
 ## Fortinet 
 
-Desde configuraciones basicas como procesos de Firmware y/o alta en la WAN para DHCP, Estatitca o PPPoE hasta SD-WAN, NAT, VPN IPsec, VPN SSL, Políticas de firewall IPv4, Antivirus, Filtrado Web, IPS, App Control, Ruteo estatico y dinámico, BGP en VPN Loopback, segmentación por VLAN's, VDOM, IPS y Web Filter, DNS y VPNE-GRE, casa casos de nivel N2 troubleshooting como
-IKE Phase 1 no levanta
-Síntoma: Túnel no establece, sin tráfico.
-'''bash
-# Ver estado
+Desde configuraciones basicas como procesos de Firmware y/o alta en la WAN para DHCP, Estatitca o PPPoE hasta SD-WAN, NAT, VPN IPsec, VPN SSL, Políticas de firewall IPv4, Antivirus, Filtrado Web, IPS, App Control, Ruteo estatico y dinámico, BGP en VPN Loopback, segmentación por VLAN's, VDOM, IPS y Web Filter, DNS y VPNE-GRE, casa casos de nivel N2 troubleshooting como:
+
+VPN Site-to-Site con Cisco (Interoperabilidad)
+```bash
+# En FortiGate ver propuestas IKE
 diagnose vpn ike gateway list
 
-# Debug IKE en vivo
-diagnose debug reset
-diagnose debug application ike -1
+# Debug detallado
+diagnose debug application ike 255
 diagnose debug enable
 
-# Lo que buscas en el log
-# "no proposal chosen" = missmatch en encryption/hash
-# "invalid ID" = problema de peer ID
-# "timeout" = problema de conectividad/firewall
+# Configuración recomendada para Cisco
+config vpn ipsec phase1-interface
+    edit "to-cisco"
+        set ike-version 2
+        set proposal aes256-sha256
+        set dhgrp 14
+        set remote-gw <IP-CISCO>
+        set psksecret <PSK>
+        set nat-traversal disable
+    next
+end
+
+config vpn ipsec phase2-interface
+    edit "to-cisco-p2"
+        set phase1name "to-cisco"
+        set proposal aes256-sha256
+        set dhgrp 14
+        set src-subnet <tu-red>
+        set dst-subnet <red-cisco>
+    next
+end
 
 
 ---
