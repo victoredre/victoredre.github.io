@@ -5,7 +5,7 @@ tags: ["Java", "Spring Boot", "React", "AWS"]
 date: 2026-01-15
 featured: false
 link: "https://github.com/victoredre/victoredre.github.io"
----
+image: "../../../assets/projects/project-placeholder.svg
 ---
 ---
 ---
