@@ -5,5 +5,5 @@ tags: ["PHP", "API"]
 date: 2022-07-05
 featured: false
 link: "https://github.com/victoredre/victoredre.github.io/blob/main/src/content/projects/es/api-colores.md"
-image: "../../../assets/projects/project-placeholder.svg"
+---
 ---
