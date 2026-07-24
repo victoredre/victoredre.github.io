@@ -3,7 +3,6 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import BackBtn from "@/components/BackBtn.astro";
 import BackToTop from "../../components/BackToTop.astro";
-import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
     const posts = await getCollection('posts');
