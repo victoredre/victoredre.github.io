@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
+import {
+    getLangFromUrl,
+    useTranslations,
+    getRelativeLocaleUrl,
+} from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+type CertEntry = CollectionEntry<"certifications">;
+const certifications = await getCollection("certifications");
+---
+
+<section
+    id="certifications"
+    class="py-16 md:py-24 min-h-[60vh] flex flex-col justify-center bg-charcoal snap-start"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+            class="text-3xl md:text-4xl font-heading font-bold text-light mb-12 flex items-center"
+        >
+            <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-[#c08b5a] to-white"
+            >
+                {t("nav.certifications")}
+            </span>
+            <div class="h-px bg-white/10 flex-grow ml-6"></div>
+        </h2>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {
+                certifications
+                    .filter((c) => c.data.starred)
+                    .sort(
+                        (a, b) =>
+                            new Date(b.data.date).valueOf() -
+                            new Date(a.data.date).valueOf(),
+                    )
+                    .slice(0, 4)
+                    .map((cert: CertEntry) => (
+                        <a
+                            href={cert.data.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex flex-col items-center justify-between p-6 rounded-2xl glass-card border border-white/5 hover:border-[#c08b5a]/40 transition-all hover:shadow-[0_0_25px_rgba(192,139,90,0.15)] hover:-translate-y-2 group relative overflow-hidden h-full gap-6"
+                        >
+                            {/* Noise Texture */}
+                            <div class="absolute inset-0 bento-noise opacity-15 pointer-events-none" />
+                            {/* Hover Gradient */}
+                            <div class="absolute inset-0 bg-gradient-to-b from-[#c08b5a]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                            {/* Badge - Prominent & Centered */}
+                            <div class="relative z-10 w-20 h-20 flex items-center justify-center p-3 rounded-full bg-white/5 border border-white/5 group-hover:border-[#c08b5a]/30 group-hover:bg-[#c08b5a]/10 transition-all duration-300">
+                                {cert.data.badge ? (
+                                    <Image
+                                        src={
+                                            cert.data.badge.startsWith("http")
+                                                ? cert.data.badge
+                                                : import.meta.env.BASE_URL.replace(
+                                                      /\/$/,
+                                                      "",
+                                                  ) + cert.data.badge
+                                        }
+                                        alt={cert.data.name}
+                                        width={80}
+                                        height={80}
+                                        loading="lazy"
+                                        class="w-full h-full object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                ) : (
+                                    <span class="text-3xl">🏅</span>
+                                )}
+                            </div>
+
+                            {/* Content - Centered */}
+                            <div class="flex flex-col items-center text-center relative z-10 flex-grow">
+                                <h3 class="text-lg font-heading font-bold text-gray-100 group-hover:text-[#c08b5a] transition-colors leading-tight mb-2">
+                                    {cert.data.name}
+                                </h3>
+                                <p class="text-xs text-gray-400 font-bold tracking-wider mb-4 border-b border-white/5 pb-2 w-full">
+                                    {cert.data.issuer}
+                                </p>
+                                <p class="text-[10px] text-gray-500 font-mono tracking-widest mt-auto">
+                                    {cert.data.date}
+                                </p>
+                            </div>
+
+                            {/* Interactive Indicator */}
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-[#c08b5a] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                        </a>
+                    ))
+            }
+        </div>
+
+        <div class="mt-10 text-center">
+            <a
+                href={getRelativeLocaleUrl(lang, "certifications")}
+                class="text-[#c08b5a] hover:text-white underline underline-offset-4 transition-colors font-medium tracking-wide"
+            >
+                {t("section.viewAllCerts")}
+            </a>
+        </div>
+    </div>
+</section>
