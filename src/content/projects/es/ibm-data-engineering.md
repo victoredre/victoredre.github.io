@@ -1,4 +1,9 @@
 ---
 title: "IBM Data Engineering Certificate"
-description: "Colección integral de pipelines ETL, diseños de bases de datos SQL y flujos de trabajo de Big Data desarrollados durante el Certificado Profesional de Ingeniería de Datos de IBM. Demuestra competencia en Python, Pandas y conceptos de Data Warehousing."
+description: "Comprehensive collection of ETL pipelines, SQL database designs, and Big Data processing workflows developed during the IBM Data Engineering Professional Certificate. Demonstrates proficiency in Python, Pandas, and Data Warehousing concepts."
+tags: ["Python", "ETL", "SQL"]
+date: 2025-06-20
+featured: true
+link: "ttps://github.com/victoredre/victoredre.github.io"
+image: "../../../assets/projects/project-placeholder.svg"
 ---
