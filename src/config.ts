@@ -1,5 +1,5 @@
 export const SITE = {
-    website: "https://victoredre.github.io/", // replace this with your deployed domain
+    website: "https://victoredre.github.io/", 
     title: "Ing. Victor Eduardo Resendiz Villegas",
     description: "Ingeniero",
     tags: ["Bienvenidos", "Resume cv", "Astro"],
