@@ -19,7 +19,7 @@ const certificationsCollection = defineCollection({
 
 const projectsCollection = defineCollection({
     loader: glob({
-        pattern: "**/*.{json,yaml,yml}",
+        pattern: "**/*.{md,json,yaml,yml}",
         base: "./src/content/projects",
     }),
     schema: z.object({
@@ -27,11 +27,28 @@ const projectsCollection = defineCollection({
         summary: z.string(),
         tags: z.array(z.string()).optional(),
         cover: z.string().optional(),
+        ogImage: z.string().optional(),
+        url: z.string().url().optional(),
         startDate: z.coerce.date(),
+    }),
+});
+
+const postsCollection = defineCollection({
+    loader: glob({
+        pattern: "**/*.{md,json,yaml,yml}",
+        base: "./src/content/posts",
+    }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        publishDate: z.coerce.date(),
+        tags: z.array(z.string()).optional(),
+        cover: z.string().optional(),
     }),
 });
 
 export const collections = {
     certifications: certificationsCollection,
     projects: projectsCollection,
+    posts: postsCollection,
 };
