@@ -16,7 +16,7 @@ const posts = defineCollection({
         tags: z.array(z.string()),
         description: z.string(),
         cover: z.object({
-            src: image(),
+            src: z.string(),  // ✅ CAMBIADO: image() → z.string()
             alt: z.string().optional(),
         }),
     }),
@@ -30,7 +30,7 @@ const projects = defineCollection({
         endDate: z.date(),
         summary: z.string(),
         url: z.string(),
-        cover: image(),
+        cover: image(),  // ⚠️ Este también podría dar problemas si usas strings
         tags: z.array(z.string()),
         ogImage: z.string()
     }),
