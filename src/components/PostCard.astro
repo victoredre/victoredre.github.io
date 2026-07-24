@@ -1,71 +1,37 @@
 ---
-import ClockIcon from "@/icons/time-line.svg";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import PostCard from "../../components/PostCard.astro";
 
-interface Props {
-    id: string;
-    title: string;
-    description: string;
-    publishDate: Date;
-    tags: string[];
-    cover?: {  // ← Hacer opcional
-        src: string;  // ← Cambiar ImageMetadata a string
-        alt?: string;
-    };
-}
-
-const {id, title, description, publishDate, tags, cover} = Astro.props as Props;
-
-const post = {
-    id,
-    data: {
-        title,
-        description,
-        publishDate,
-        tags,
-        cover,
-    },
-};
+const allPost = await getCollection("posts");
+const sortedPosts = allPost.sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
 ---
 
-<a href={`/blog/${id}`} aria-label={`Read post about ${title}`} class="flex flex-col md:flex-row md:items-center gap-4">
-    <!--post cover-->
-    <div class="flex-none w-full md:w-40 h-40 overflow-hidden rounded-xl">
-        {cover ? (
-            <img 
-                transition:name={`${post.id}-image`}
-                src={cover.src}
-                alt={cover.alt ?? title}
-                class="w-full h-full object-cover rounded-xl"
-            />
-        ) : (
-            <div class="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400">
-                No image
+<Layout title="Ing. Victor Eduardo Resendiz Villegas" description="A list of my blog posts" scrollSmooth={false}>
+    <>
+        <section class="border-bottom">
+            <div class="mb-4">
+                <h2 class="text-3xl font-bold mb-8">Laboratorio</h2>
             </div>
-        )}
-    </div>
-    <!--post info-->
-    <div class="flex flex-col gap-2">
-        <div class="flex items-center gap-1.5">
-            <div class="flex items-center gap-1">
-                <ClockIcon class="w-4 h-4 text-gray-500"/>
-                <time class="text-sm text-gray-500" datetime={publishDate.toISOString()}>
-                    {publishDate.toDateString()}
-                </time>
-            </div>
-            <span class="text-gray-500">
-                &middot;
-            </span>
-            <div class="flex gap-2">
-                {tags.map((tag) => (
-                    <span class="text-sm text-gray-500">
-                        #{tag}
-                    </span>
-                ))}
-            </div>
-        </div>
-        <h3 class="text-xl font-bold">{title}</h3>
-        <div class="flex flex-col gap-4">
-            <p class="text-sm">{description}</p>
-        </div>
-    </div>
-</a>
+        </section>
+
+        <section class="flex flex-col gap-8">
+            {sortedPosts.length > 0 ? (
+                sortedPosts.map((post) => (
+                    <PostCard
+                        id={post.id}
+                        title={post.data.title}
+                        description={post.data.description}
+                        publishDate={post.data.publishDate}
+                        tags={post.data.tags || []}
+                        cover={post.data.cover ? { src: post.data.cover, alt: post.data.title } : undefined}
+                    />
+                ))
+            ) : (
+                <p>No posts found.</p>
+            )}
+        </section>
+    </>
+</Layout>
