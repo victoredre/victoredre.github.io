@@ -1,4 +1,3 @@
-
 ---
 import { getCollection, render } from "astro:content";
 import { Image } from "astro:assets";
@@ -15,12 +14,12 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { title, summary, tags, cover, ogImage, url } = post.data;
+const { title, description, tags, image, link } = post.data;
 
 const { Content } = await render(post);
 
 ---
-<Layout title={title} description={summary} imageOg={ogImage} scrollSmooth={true}>
+<Layout title={title} description={description} imageOg={image} scrollSmooth={true}>
     <>
         <div class="flex justify-center mt-10">
             <BackBtn/>
@@ -31,11 +30,11 @@ const { Content } = await render(post);
                 {tags.join(', ')}
             </p>
         </div>
-        <Image transition:name={`${post.id}-image`} class="rounded-2xl" src={cover} alt="Main project image"/>
+        <Image transition:name={`${post.id}-image`} class="rounded-2xl" src={image} alt="Main project image"/>
         <p>
-            {summary}
+            {description}
         </p>
-        <a href={url}>
+        <a href={link}>
             Visit the project ↗
         </a>
 
@@ -51,4 +50,3 @@ const { Content } = await render(post);
         @apply text-2xl font-bold my-4;
     }
 </style>
-
