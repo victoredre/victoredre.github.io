@@ -5,5 +5,5 @@ tags: ["Python", "ETL", "SQL"]
 date: 2025-06-20
 featured: true
 link: "https://github.com/MeloStudy/IBM-Data-Engineering-Certification-Notebooks"
-image: "../../../assets/projects/project-placeholder.svg"
+---
 ---
