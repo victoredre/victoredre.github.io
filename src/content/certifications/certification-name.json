@@ -1,0 +1,8 @@
+{
+  "name": "Certification Name",
+  "issuer": "Provider (e.g., AWS)",
+  "date": "2024-01-01",
+  "url": "https://credly.com/...",
+  "badge": "https://images.credly.com/...",
+  "starred": true
+}
