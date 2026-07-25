@@ -1,8 +1,10 @@
 ---
 title: "Fortinet Certified Associate (FCA) in Cybersecurity."
-description: "Fortinet Certified Associate (FCA) in Cybersecurity."
-date: 2022-07-05
-tags: ["VPN IPsec","VPN SSL","Web-Filter"]
-featured: false
+description: "Fortinet"
+tags: ["Antivirus" , "Web Filter","App Control","SD-WAN"]
+date: 2024-01-01
+featured: true
+inProgress: false
 link: "https://github.com/victoredre/victoredre.github.io"
+image: "../../../assets/projects/tio.png"
 ---
