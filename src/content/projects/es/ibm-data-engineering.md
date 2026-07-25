@@ -1,4 +1,3 @@
-
 ---
 title: "Fortinet"
 description: "Descripción breve en Español."
