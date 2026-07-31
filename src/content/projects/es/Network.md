@@ -11,8 +11,7 @@ startDate: 2026-06-01
 endDate: 2022-12-20
 author: Ing. Victor Eduardo Resendiz Villegas.
 url: https://201.212.120.138:443
-cover: './images/pro-accountant/accnt.webp'
-ogImage: './images/pro-accountant/accnt.webp'
+ogImage: "../../../assets/projects/sdwan.png"
 ---
 
 ## Indice 
