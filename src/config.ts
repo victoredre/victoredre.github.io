@@ -53,7 +53,7 @@ export const SOCIALS = [
     {
         name: "Instagram",
         url: "https://victoredre.github.io/projects/pro-accountant/",
-        icon: "malwa",
+        icon: "cred",
         show: true
     },
     {
