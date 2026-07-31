@@ -75,11 +75,11 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Especialista en Seguridad Perimetral y Redes",
+        title: "Analista en Ciberseguridad - Senior.",
         startDate: "2021-10-10",
         endDate: "2023-09-17",
-        company:  "Telefonica Cybersecurity & Cloud Tech S.A de C.V",
-        location: "Grupo Operadora Multi-tenant México.",
+        company:  "Telefonica Tech S.A de C.V",
+        location: "Arquitectura Multi-tenant B2B.",
         description: "Principales clientes: Gpo. Ciosa, Gpo. Bradescard, Grupo Atento, CI Banco, Gpo. Atento.",
         goals: [
             "Participé activamente en la atención de auditorías externas al SOC encargándome de presentar controles de cambios y aportando la trazabilidad de la operación.",
