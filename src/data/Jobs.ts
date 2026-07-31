@@ -92,11 +92,11 @@ const workExperience:WorkExperience[] = [
     },
     {
         title: "Ing. Gestión, Seguridad Perimetral Jr.",
-        startDate: "2021-09-10",
-        endDate: "2017-03-10",
+        startDate: "2017-12-10",
+        endDate: "2021-10-10",
         company: "Scitum S.A de C.V",
         location: "Seguridad Perimetral Data Center Triara Qro.",
-        description: "Principales clientes Gpo. Bimbo, Milano, Grupo Sears",
+        description: "Principales clientes Gpo. Bimbo, Milano, Grupo Sears, Gpo. Banamex, Gpo. Opticas Luxx, Municipio de Ojacuba Hlgo.",
         goals: [
             "Asegure la reducción del 18% en fallas no detectadas durante el horario de producción configurando sensores en Hostmonitor",          
             "Remediación de incidentes a través de la operación de reglas en las plataformas de seguridad con Juniper, WatchGuard y Fortinet",
