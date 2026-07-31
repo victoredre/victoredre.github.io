@@ -19,17 +19,22 @@ const certificationsCollection = defineCollection({
 
 const projectsCollection = defineCollection({
     loader: glob({
-        pattern: "**/*.{md,json,yaml,yml}",
+        pattern: "**/*.{md,mdx,json,yaml,yml}",
         base: "./src/content/projects",
     }),
     schema: ({ image }) => z.object({
-        title: z.string(),
-        description: z.string(),
+        title: z.string().min(1, "El título es requerido"),
+        description: z.string().min(1, "La descripción es requerida"),
         tags: z.array(z.string()).optional(),
         date: z.coerce.date(),
+        endDate: z.coerce.date().optional(),
         featured: z.boolean().default(false).optional(),
         link: z.string().url().optional(),
+        github: z.string().url().optional(),
         image: image().optional(),
+        cover: image().optional(),
+        status: z.enum(["completed", "in-progress", "planned"]).default("completed"),
+        technologies: z.array(z.string()).optional(),
     }),
 });
 
