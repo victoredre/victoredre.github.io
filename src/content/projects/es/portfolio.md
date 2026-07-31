@@ -1,10 +1,10 @@
 ---
-title: "Fortinet Certified Fundamentals Cybersecurity"
-description: "The Fortinet Certified Fundamentals in Cybersecurity certification validates that the earner has mastered the technical skills "
-tags: ["Application Security", "Cloud Services", "Secure SD-WAN", "Network Security"]
-date: 2026-01-15
-featured: false
+title: "Fortinet (FCSS) SD-WAN ISC2 CISSP Security Operations"
+description: "Fortinet"
+tags: ["Policy sdwan" , "Web Filter","App Control","Antivirus"]
+date: 2024-01-01
+featured: true
+inProgress: false
 link: "https://github.com/victoredre/victoredre.github.io"
----
----
+image: "../../../assets/projects/sdwan.png"
 ---
