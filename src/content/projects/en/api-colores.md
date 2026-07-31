@@ -1,9 +1,10 @@
 ---
-title: "Standardized Colors API"
-description: "RESTful API built with PHP for managing standardized product colors across branding and social media. Developed as a technical assessment for backend proficiency."
-tags: ["PHP", "API"]
-date: 2022-07-05
-featured: false
-link: "https://github.com/victoredre/victoredre.github.io/blob/main/src/content/projects/es/api-colores.md"
----
+title: "Fortinet FCF Introduction to the Threat Landscape Security Operations"
+description: "Fortinet"
+tags: ["Policy IPv4","Router static","App Control","Antivirus"]
+date: 2024-01-01
+featured: true
+inProgress: false
+link: "https://github.com/victoredre/victoredre.github.io"
+image: "../../../assets/projects/Chec.png"
 ---
