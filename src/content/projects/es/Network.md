@@ -8,6 +8,6 @@ link: "https://github.com/victoredre/victoredre.github.io"
 image: "../../../assets/projects/sdwan.png"
 status: "completed"
 technologies: ["AWS", "Terraform", "Docker"]
-relatedCertifications: ["certificacion-aws"]
+relatedCertifications: ["certification-name"] 
 ---
 Contenido del proyecto...
