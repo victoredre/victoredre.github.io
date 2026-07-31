@@ -19,7 +19,7 @@ const certificationsCollection = defineCollection({
 
 const projectsCollection = defineCollection({
     loader: glob({
-        pattern: "**/*.{md,json,yaml,yml,mdx}",
+        pattern: "**/*.{md,json,yaml,yml}",
         base: "./src/content/projects",
     }),
     schema: ({ image }) => z.object({
