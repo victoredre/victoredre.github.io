@@ -40,7 +40,7 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "Ingeniero titulado en tecnologías de la información y comunicación, con +9 años de experiencia en el diseño, implementación y administración de infraestructuras tecnológicas y plataformas de ciberseguridad en entornos de alta exigencia, he liderado iniciativas de modernización tecnológica y desarrollo de soluciones personalizadas mediante la automatización y la creación de herramientas en seguridad, poseo una sólida trayectoria con un enfoque orientado a la excelencia operativa y la generación de valor sostenido.lo que me impulsa a convertir desafíos tecnológicos en soluciones innovadoras, eficientes y escalables que fortalecen la continuidad del negocio y aportan ventaja competitiva a la organización.",
+    aboutMe: "Ingeniero titulado en tecnologías de la información y comunicación, con +9 años de experiencia en el diseño, implementación y administración de infraestructuras de ciberseguridad y plataformas  tecnologícas en entornos de alta exigencia, he liderado migraciones asi como la consultoría mediante la automatización de herramientas en seguridad, cumplíendo rigurosamente los estándares y normativas internacionales ITIL, NIS, ISO/IEC 20000, ISO/IEC 27001 con un enfoque orientado a la excelencia dentro y fuera de la operación y una profunda pasión por mi trabajo, lo que me impulsa a convertir desafíos en soluciones innovadoras, eficientes y escalables que fortalecen no sólo el área si no el negocio y aportan ventaja competitiva a la organización.",
 }
 
 export const SOCIALS = [
