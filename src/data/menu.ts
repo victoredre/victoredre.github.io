@@ -4,8 +4,8 @@ export const menu = [
         label: 'Home',
     },
     {
-        href: '/projects',
-        label: 'Projects',
+        href: '/Certificaciones',
+        label: 'Certificaciones',
     },
     {
         href: '/blog',
