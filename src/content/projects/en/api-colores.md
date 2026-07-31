@@ -1,5 +1,5 @@
 ---
-title: "Fortinet FCF Introduction to the Threat Landscape Security Operations"
+title: "Check Point Udemy CCSA Security Operations"
 description: "Fortinet"
 tags: ["Policy IPv4","Router static","App Control","Antivirus"]
 date: 2024-01-01
