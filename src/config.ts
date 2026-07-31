@@ -52,7 +52,7 @@ export const SOCIALS = [
     },
     {
         name: "Instagram",
-        url: "https://victoredre.github.io/projects/pro-accountant/",
+        url: "https://www.credly.com/users/victor-eduardo-resendiz-villegas.e524dc2a/badges/credly",
         icon: "cred",
         show: true
     },
