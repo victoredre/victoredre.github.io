@@ -1,10 +1,10 @@
 ---
-title: "SIGMINCETUR Scraper"
-description: "Automated data extraction tool for the National Tourism Information System (SIGMINCETUR). Built with Node.js"
-tags: ["Node.js", "Scraping"]
-date: 2022-09-07
-featured: false
-draft: true
+title: "Fortinet FCF Introduction to the Threat Landscape Security Operations"
+description: "Fortinet"
+tags: ["Policy IPv4","Router static","App Control","Antivirus"]
+date: 2024-01-01
+featured: true
+inProgress: false
 link: "https://github.com/victoredre/victoredre.github.io"
----
+image: "../../../assets/projects/introd.png"
 ---
