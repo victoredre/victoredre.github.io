@@ -7,4 +7,5 @@ featured: true
 inProgress: false
 link: "https://github.com/victoredre/victoredre.github.io"
 image: "../../../assets/projects/sdwan.png"
----
+badge: "https://www.credly.com/users/victor-eduardo-resendiz-villegas.e524dc2a/badges/credly"
+
