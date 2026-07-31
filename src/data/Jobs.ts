@@ -95,10 +95,10 @@ const workExperience:WorkExperience[] = [
         startDate: "2017-12-10",
         endDate: "2021-10-10",
         company: "Scitum S.A de C.V",
-        location: "Seguridad Perimetral Data Center Triara Qro.",
-        description: "Principales clientes Gpo. Bimbo, Milano, Grupo Sears, Gpo. Banamex, Gpo. Opticas Luxx, Municipio de Ojacuba Hlgo.",
+        location: "Data Center Triara Queretaro.",
+        description: "Principales clientes Gpo. Bimbo, Milano, Grupo Sears, Gpo. Banamex, Gpo. Opticas Lux, Municipio de Ojacuba Hlgo, Walmart de México.",
         goals: [
-            "Asegure la reducción del 50% en fallas no detectadas esto durante el horario hábil como no habil configurando sensores en la herramienta de monitoreo Hostmonitor enviando notificaciones via telegram para no saturar la bandeja de correo.",          
+            "Configuré e implemente FortiGate, FortiManagerment, FortiAnalyzer, FortiEMS, FortiSwitch, FortiAP, FortiWiFi, FortiExtender, FortiADC, FortiWeb) en entornos de alta disponibilidad asi como equipos WatchGuard Firebox T y M-Series junto con unidades Juniper routers PTX y ACX. en proyectos para sector privado, financiero y gobierno.",          
             "Regule el ciclo completo de los TCK en coordinación directa con nuestros fabricantes (Juniper, Fortinet, WatchGuard) garantizando la aprobación de los RMAs y la celeridad en los reemplazos de hardware. Paralelamente, me encargué de la configuración y el envío de equipos de contingencia desde nuestro inventario, con el fin de no afectar  la operación de nuestros clientes.",
             "Optimicé las plataformas de monitoreo Nagios, HostMonitor y Observium, logrando una visibilidad del 100% de nuestros enlaces ISP y una segmentación efectiva de los brazos de FW internos, monitoreados a través de loopbacks desde el SOC, incluyendo también loopbacks de VPN IPsec de nuestros clientes reduciendo tiempos de detección y aumentando la disponibilidad del servicio.",
             "Coordiné cambios críticos en producción durante ventanas de mantenimiento, abarcando actualizaciones de firmware, reconexión de VPN's, ajustes de NAT en túneles VPN y en entornos productivos enmascarado IP's privadas como publicas en DNS y PROXY así como configuración de VDOM's, implementación de ruteo en cascada, agrupación de políticas de antivirus, filtrado web y application control. Aseguré el 100% de la operatividad y ejecuté rigurosamente los planes de rollback para mitigar riesgos ante cualquier contingencia.",
