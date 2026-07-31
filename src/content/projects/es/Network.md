@@ -1,10 +1,10 @@
 ---
-title: "Fortinet FCF Introduction to the Threat Landscape Security Operations"
-tags: ["Policy IPv4","Router static","App Control","Antivirus"]
+title: "Fortinet SD-WAN Cybersecurity."
+description: "Fortinet"
+tags: ["Antivirus" , "Web Filter","App Control","SD-WAN"]
 date: 2024-01-01
 featured: true
+inProgress: false
 link: "https://github.com/victoredre/victoredre.github.io"
 image: "../../../assets/projects/sdwan.png"
 ---
-
-
