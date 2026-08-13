@@ -1,7 +1,7 @@
 ---
-title: "Fortinet FCF Introduction to the Threat Landscape Security Operations"
+title: "Fortinet (FCF) Introduction to the Threat Landscape Security Operations"
 description: "Fortinet"
-tags: ["Policy IPv4","Router static","App Control","Antivirus"]
+tags: ["types of threat actors (script kiddies, cybercriminals, hacktivists, APT groups, insiders), common malware types (viruses, worms, trojans, ransomware, spyware, adware)","Router the Cyber Kill Chain and attack lifecycle stages (reconnaissance, weaponization, delivery, exploitation, installation, command and control, actions on objectives) Control","Antivirus"]
 date: 2024-01-01
 featured: true
 inProgress: false
