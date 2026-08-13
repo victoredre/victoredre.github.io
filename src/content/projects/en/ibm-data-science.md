@@ -1,7 +1,8 @@
 ---
-title: "SOC SonicWall (Cybersecurity) Firewall Administration"
-description: "SonicWall"
-tags: ["SonicWall Capture ATP (sandboxing)","Intrusion Prevention (IPS) Gateway Anti-Virus y Anti-Spyware","Site-to-Site VPN (IPSec) y SSL VPN / Global VPN Client","Access rules / firewall rules App Control y Content Filtering"]
+title: "CheckPoint Quantum Hyperscale (Cybersecurity) Firewall Sales Specialist"
+description: "CheckPoint"
+tags: ["ROI y TCO (Total Cost of Ownership)","Prevención de amenazas (Threat Prevention)
+Consolidación de seguridad/Integración con SmartConsole / gestión centralizada","Escalado horizontal (scale-out) vs vertical (scale-up)","Access rules / firewall rules"]
 date: 2024-01-01
 featured: true
 inProgress: false
