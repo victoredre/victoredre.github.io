@@ -1,7 +1,8 @@
 ---
-title: "SOC Analyst (Cybersecurity) interview"
-description: "Fortinet"
-tags: ["SIEM (Splunk, QRadar, Sentinel, ELK)","EDR/XDR (CrowdStrike, Defender)","Fases de un incidente (NIST/SANS incident response)","Indicadores de compromiso (IOCs) e IOAs"]
+title: "NAGIOS Monitoreo de infraestructura"
+description: "NAGIOS"
+tags: ["Arquitectura(Core, plugins, NRPE/NCPA) Nagios Core vs Nagios XI vs otras variantes (Icinga, Centreon)","Instalación en Linux (dependencias, compilación, servicios)
+Estructura de archivos de configuración (nagios.cfg, objects/)","Hosts y hostgroups Servicios y servicegroups Contactos y contactgroups Comandos (commands.cfg) Time periods (horarios de monitoreo), Templates (plantillas para reutilizar configuración), Plugins"]
 date: 2024-01-01
 featured: true
 inProgress: false
