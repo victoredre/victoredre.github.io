@@ -1,7 +1,7 @@
 ---
-title: "Fortinet FortiManager 7.4 Administrator (FCP) Self-Paced."
+title: "Fortinet (FCP) FortiManager 7.4 Administrator Self-Paced."
 description: "Fortinet"
-tags: ["Policy sdwan" , "Web Filter","App Control","Antivirus"]
+tags: ["architecture and deployment models, initial setup and system requirements, accessing the GUI and CLI basics, Device Manager overview, adding and registering FortiGate devices, device groups and ADOMs (Administrative Domains)" , "history and configuration change tracking, App Control","]
 date: 2024-01-01
 featured: true
 inProgress: false
