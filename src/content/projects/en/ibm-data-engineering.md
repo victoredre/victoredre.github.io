@@ -1,7 +1,7 @@
 ---
-title: "Fortinet FCF Introduction to the Threat Landscape Security Operations"
+title: "SOC Analyst (Cybersecurity) interview"
 description: "Fortinet"
-tags: ["Policy IPv4","Router static","App Control","Antivirus"]
+tags: ["SIEM (Splunk, QRadar, Sentinel, ELK)","EDR/XDR (CrowdStrike, Defender)","Fases de un incidente (NIST/SANS incident response)","Indicadores de compromiso (IOCs) e IOAs"]
 date: 2024-01-01
 featured: true
 inProgress: false
