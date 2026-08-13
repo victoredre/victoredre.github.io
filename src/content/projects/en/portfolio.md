@@ -1,9 +1,10 @@
 ---
-title: "MeloDev Portfolio"
-description: "High-performance personal portfolio built with Astro 5, React 19, and Tailwind CSS v4 to showcase technical expertise in Backend Architecture and Cloud Solutions."
-tags: ["Astro", "React", "TailwindCSS", "TypeScript", "CI/CD"]
-date: 2026-02-12
+title: "CheckPoint - CloudGuard Pre sales - Specialist"
+description: "CheckPoint"
+tags: ["CloudGuard Network Security (protección de red en la nube) CloudGuard Posture Management (CSPM) — antes Dome9 CloudGuard Workload Protection (CWP) CloudGuard AppSec (seguridad de aplicaciones web/API) CloudGuard Spectral (seguridad en el código/DevSecOps) CloudGuard Intelligence & Threat Hunting"]
+date: 2024-01-01
 featured: true
-link: "https://github.com/MeloDev2111/portfolio"
----
+inProgress: false
+link: "https://github.com/victoredre/victoredre.github.io"
+image: "../../../assets/projects/asa.png"
 ---
