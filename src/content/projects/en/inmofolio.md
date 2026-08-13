@@ -1,8 +1,7 @@
 ---
 title: "NAGIOS Monitoreo de infraestructura"
 description: "NAGIOS"
-tags: ["Arquitectura(Core, plugins, NRPE/NCPA) Nagios Core vs Nagios XI vs otras variantes (Icinga, Centreon)","Instalación en Linux (dependencias, compilación, servicios)
-Estructura de archivos de configuración (nagios.cfg, objects/)","Hosts y hostgroups Servicios y servicegroups Contactos y contactgroups Comandos (commands.cfg) Time periods (horarios de monitoreo), Templates (plantillas para reutilizar configuración), Plugins"]
+tags: ["Arquitectura(Core, plugins, NRPE/NCPA) (Icinga, Centreon)"," Linux (dependencias, compilación, servicios)(nagios.cfg, objects/)","Hosts, hostgroups, servicegroups, Contactos y contactgroupsy Comandos (commands.cfg) Time periods (horarios de monitoreo)"]
 date: 2024-01-01
 featured: true
 inProgress: false
