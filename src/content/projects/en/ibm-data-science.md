@@ -1,9 +1,10 @@
 ---
-title: "IBM Data Science Certificate"
-description: "Data Science projects covering methodology, Python, SQL, and data visualization. Capstone project involves complex data analysis and predictive modeling."
-tags: ["Python", "Pandas", "SQL", "Data Visualization", "Machine Learning"]
-date: 2025-06-01
+title: "SOC SonicWall (Cybersecurity) Firewall Administration"
+description: "SonicWall"
+tags: ["SonicWall Capture ATP (sandboxing)","Intrusion Prevention (IPS) Gateway Anti-Virus y Anti-Spyware","Site-to-Site VPN (IPSec) y SSL VPN / Global VPN Client","Access rules / firewall rules App Control y Content Filtering"]
+date: 2024-01-01
 featured: true
-link: "https://github.com/MeloStudy/IBM-Data-Science-Certification-Notebooks"
----
+inProgress: false
+link: "https://github.com/victoredre/victoredre.github.io"
+image: "../../../assets/projects/quantun.png"
 ---
