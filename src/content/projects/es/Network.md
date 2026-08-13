@@ -1,13 +1,11 @@
 ---
-title: "Migración a AWS Cloud"
-description: "Migración exitosa de infraestructura a AWS"
-tags: ["aws", "cloud", "devops"]
-date: 2024-01-20
+title: "Fortinet Certified SDWAN (FCSS) Cybersecurity 7.2 Self - Paced."
+description: "Fortinet"
+tags: ["Architecture SD-WAN overlay vs underlay SD-WAN zones and interface members SD-WAN rules (also called SD-WAN Rules" or performance SLA rules Configuration Basic Strategies: Manual, Best Quality, Lowest Cost (SLA), Maximize Bandwidth
+Rule priority and matching criteria Application-based steering (using App-ID/ISDB)"]
+date: 2024-01-01
 featured: true
+inProgress: false
 link: "https://github.com/victoredre/victoredre.github.io"
 image: "../../../assets/projects/sdwan.png"
-status: "completed"
-technologies: ["AWS", "Terraform", "Docker"]
-relatedCertifications: ["certification-name"] 
 ---
-Contenido del proyecto...
