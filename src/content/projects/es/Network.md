@@ -1,7 +1,7 @@
 ---
-title: "Fortinet Certified Associate (FCA) in Cybersecurity."
+title: "Fortinet SD-WAN 7.2 Self - Paced"
 description: "Fortinet"
-tags: ["Availability (CIA Triad) types of threats (malware, phishing, ransomware, social engineering) Common attack vectors Threat Landscape Evolution of cyber threats Threat actors (hackers, APT groups, insiders) Attack lifecycle (Cyber Kill Chain Network SecurityBasic networking concepts (TCP/IP, ports, protocols) FW and their role Network segmentation Fortinet Security Fabric"]
+tags: ["Architecture SD-WAN overlay vs underlay SD-WAN zones and interface members SD-WAN rules (also called SD-WAN Rules" or performance SLA rules Configuration Basic Strategies: Manual, Best Quality, Lowest Cost (SLA), Maximize Bandwidth Rule priority and matching criteria Application-based steering (using App-ID/ISDB)"]
 date: 2024-01-01
 featured: true
 inProgress: false
