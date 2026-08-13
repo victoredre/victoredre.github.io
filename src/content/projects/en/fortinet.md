@@ -1,10 +1,10 @@
 ---
-title: "Fortinet"
-description: "Brief description in English."
-tags: ["React", "TypeScript"]
+title: "SOC Sonic Wall (Cybersecurity) interview"
+description: "Fortinet"
+tags: ["SIEM (Splunk, QRadar, Sentinel, ELK)","EDR/XDR (CrowdStrike, Defender)","Fases de un incidente (NIST/SANS incident response)","Indicadores de compromiso (IOCs) e IOAs"]
 date: 2024-01-01
-featured: true # Shows in Home & Top of Projects
-inProgress: false # Adds 'In Construction' badge
+featured: true
+inProgress: false
 link: "https://github.com/victoredre/victoredre.github.io"
-image: "../../../assets/projects/fortinet.svg"
+image: "../../../assets/projects/sonic.png"
 ---
