@@ -1,7 +1,7 @@
 ---
-title: "SOC Sonic Wall (Cybersecurity) interview"
-description: "Fortinet"
-tags: ["SIEM (Splunk, QRadar, Sentinel, ELK)","EDR/XDR (CrowdStrike, Defender)","Fases de un incidente (NIST/SANS incident response)","Indicadores de compromiso (IOCs) e IOAs"]
+title: "SOC SonicWall (Cybersecurity) Firewall Administration"
+description: "SonicWall"
+tags: ["SonicWall Capture ATP (sandboxing)","Intrusion Prevention (IPS) Gateway Anti-Virus y Anti-Spyware","Site-to-Site VPN (IPSec) y SSL VPN / Global VPN Client","Access rules / firewall rules App Control y Content Filtering"]
 date: 2024-01-01
 featured: true
 inProgress: false
