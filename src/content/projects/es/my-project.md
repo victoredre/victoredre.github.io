@@ -1,7 +1,7 @@
 ---
 title: "FCSS - Network Security Support Engineer 7.2 Self - Paced"
 description: "Fortinet."
-tags: ["(Route vs Transparent)", "Failover, Routig (OSPF, BGP) Policy routing VPN Toubleshooting de IPsec (fase 1 y fase 2) SSL VPN"]
+tags: ["architecture and internal system processes, using diagnostic CLI commands (diagnose sys, diagnose debug)","troubleshooting (OSPF, BGP), analyzing routing tables and policy-based routing, IPsec VPN troubleshooting (Phase 1 and Phase 2), SSL VPN troubleshooting, diagnosing unstable or dropped VPN tunnels, firewall policy troubleshooting, Source NAT and Destination NAT analysis, session table inspection and interpretation, Antivirus, IPS, and Web Filtering troubleshooting, Application Control diagnostics, SSL Inspection issues and resolution, FSSO, LDAP, and RADIUS authentication"]
 date: 2024-01-01
 featured: true
 inProgress: false
