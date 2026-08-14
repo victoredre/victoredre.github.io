@@ -1,7 +1,7 @@
 ---
 title: "Fortinet Certified Associate (FCA) in Cybersecurity."
 description: "Fortinet"
-tags: ["Malware, phishing, ransomware, social engineering) Common attack vectors threat landscape evolution of cyber threats threat actors (hackers, APT groups, insiders) attack lifecycle Basic networking concepts (TCP/IP, ports, protocols) FW and their role Network segmentation fortinet security fabric"]
+tags: [" Malware, Phishing, Ransomware, Antivirus, Application Control, Authentication, Cybersecurity, Firewall, FortiGate, FortiWifi, Intrusion Detection Systems, SSL Inspection, Virtual Private Networks (VPN), Web Filtering, Security fabric"]
 date: 2024-01-01
 featured: true
 inProgress: false
