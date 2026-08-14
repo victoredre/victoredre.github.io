@@ -1,5 +1,5 @@
 ---
-title: "Fortinet (FCSS) SD-WAN Self - Paced"
+title: "Fortinet, ISC2 (FCSS) SD-WAN"
 description: "Fortinet"
 tags: ["Security Architecture and Engineering (design principles, cryptography, physical security)","ADVPN, BGP, Broad Application Visibility, FortiOS, Secure SD-WAN, Traffic Steering"]
 date: 2024-01-01
