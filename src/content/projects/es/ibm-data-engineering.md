@@ -1,5 +1,5 @@
 ---
-title: "Fortinet (FCA) - FortiGate Operator Self - Paced"
+title: "Fortinet (FCA) - FortiGate Operator "
 description: "Fortinet."
 tags: [" Interface roles (LAN, WAN, DMZ), basic IP addressing (static/DHCP), Application Control, Authentication, FortiOS, IPS, SSL Inspection VPN Client to site, VPN Site to Site"]
 date: 2024-01-01
