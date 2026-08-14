@@ -1,5 +1,5 @@
 ---
-title: "Fortinet, ISC2 (FCSS) SD-WAN Self - Paced"
+title: "Fortinet, ISC2 (FCSS) SD-WAN"
 description: "Fortinet"
 tags: ["Administration, troubleshooting, and central management of a secure SD-WAN solution consisting of FortiOS, FortiManager, and FortiAnalyzer."]
 date: 2024-01-01
