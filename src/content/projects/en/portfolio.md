@@ -1,7 +1,7 @@
 ---
-title: "CISCO ASA Firewall Administration Udemy"
+title: " Udemy CISCO ASA Firewall"
 description: "CISCO ASA"
-tags: ["Configuración inicial Métodos de acceso (consola, SSH, ASDM) Configuración básica de hostname, dominio, passwords Introducción a ASDM (Adaptive Security Device Manager)  int config de interfaces físicas y VLANs Asignación de nombres e  niveles de seguridad ubinterfaces (802.1Q  Listas de acceso (ACLs) Access Control Lists (ACL) en ASA"]
+tags: [" Pre-Implementation Planning, Assignment and security levels Subinterfaces 802.1Q trunking, Addressing and NAT,(ACLs), Inspection Policies, Remote Access VPN IPsec/SSL, High Availability, Authentication, Authorization, Accounting, Logging and Monitoring"]
 date: 2024-01-01
 featured: true
 inProgress: false
