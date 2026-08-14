@@ -1,5 +1,5 @@
 ---
-title: "Fortinet (FCP) FortiManager 7.4 Administrator Self-Paced."
+title: "Fortinet (FCP) FortiManager Administrator Self-Paced."
 description: "Fortinet"
 tags: ["Administrative Domains, Central Management, Device Provisioning, FortiGuard Distribution Center, Object Management, Policy Management, workflow mode and approval process for change management"]
 date: 2024-01-01
