@@ -1,7 +1,7 @@
 ---
 title: " Udemy SOC SonicWall Firewall"
 description: "SonicWall"
-tags: ["Capture ATP sandboxing","Intrusion Prevention IPS Gateway Anti-Virus y Anti-Spyware, Web Filter, App Control, Authentication","Site-to-Site VPN IPSec/SSL VPN/Global VPN Client","Access rules/firewall Content Filtering"]
+tags: [" SonicOS architecture","Firmware and licensing MySonicWall registration","Intrusion Prevention IPS Gateway, Anti-Virus, Anti-Spyware, Web Filter, App Control","Site-to-Site VPN /Global VPN Client","Access rules/firewall Content Filtering"]
 date: 2024-01-01
 featured: true
 inProgress: false
