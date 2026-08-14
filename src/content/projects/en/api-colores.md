@@ -1,7 +1,7 @@
 ---
-title: "Check Point Udemy (CCSA) Security Operations"
+title: "Udemy (CCSA) Check Point Security Operations"
 description: "Check Point"
-tags: ["Security Management Server, SmartConsole), three-tier architecture and communication between components, initial deployment and installation of Check Point (Gaia OS), SmartConsole navigation and object management","SmartConsole navigation and object management, network objects, host objects, groups, NAT configuratio dynamic NAT"]
+tags: ["Security Policy Management, using SmartConsole, Access control, Administration rules, Monitoring and Maintenance, Real-time traffic monitoringHide and Static NAT, site-to-site and remote access VPN, app control and URL filtering, Monitoring and Maintenance, essential command-line interface CLI"]
 date: 2024-01-01
 featured: true
 inProgress: false
