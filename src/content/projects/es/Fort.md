@@ -1,7 +1,7 @@
 ---
-title: "Fortinet nuevo"
+title: "Fortinet Certified Fundamentals Cybersecurity"
 description: "Fortinet"
-tags: [" Types of threat actors (script kiddies, cybercriminals, hacktivists, APT groups, insiders), common malware types (viruses, worms, trojans, ransomware, spyware, adware)","Router the Cyber Kill Chain and attack lifecycle stages (reconnaissance, weaponization, delivery, exploitation, installation, command and control, actions on objectives"]
+tags: [" Application Security, Cloud Services, Cryptography, Cybersecurity Threats, Data Privacy, Endpoint Security, Information Security Principles, Malware Attacks, Network Security, Secure SD-WAN, Security Operations, Social Engineering, Threat Intelligence."]
 date: 2024-01-01
 featured: true
 inProgress: false
