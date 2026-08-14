@@ -1,8 +1,7 @@
 ---
-title: "CheckPoint Quantum Hyperscale (Cybersecurity) Firewall Sales Specialist"
-description: "CheckPoint"
-tags: ["ROI y TCO (Total Cost of Ownership)","Prevención de amenazas (Threat Prevention)
-Consolidación de seguridad/Integración con SmartConsole / gestión centralizada","Escalado horizontal (scale-out) vs vertical (scale-up)","Access rules / firewall rules"]
+title: "Check Point Quantum Hyperscale Firewall Sales Specialist"
+description: "Check Point"
+tags: ["vertical scaling scale-up, ClusterXL for high availability, Load sharing configurations, Integration with SmartConsole / centralized management, Unified security, architecture across gateways"]
 date: 2024-01-01
 featured: true
 inProgress: false
