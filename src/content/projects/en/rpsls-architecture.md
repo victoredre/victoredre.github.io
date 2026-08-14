@@ -1,7 +1,7 @@
 ---
-title: "Palo Alto Network- Firewall v10"
+title: "Udemy Palo Alto Network Firewall"
 description: "Palo Alto Network"
-tags: ["Arquitectura (SP3), App-ID, User-ID, Content-ID, int (Web UI, CLI) Configuración inicial de management Licenciamiento y actualización de PAN-OS int y zonas Subinterfaces y VLANs Políticas de seguridad Security Policies (reglas basadas en App-ID) NAT Policies (Source NAT, Destination NAT) app filters y groups Content-ID Antivirus, Anti-spyware, Vulnerability Protection URL Filtering File Blocking y Data Filtering WildFire (sandboxing)"]
+tags: ["Routing Implementation, Forwarding configuration Logging & Panorama Integration, configuration Panorama onboarding and device group setup, Threat Prevention Deployment IPS/IDS, Site-to-Site VPN, GlobalProtect VPN SSL, Vulnerability Protection."]
 date: 2024-01-01
 featured: true
 inProgress: false
