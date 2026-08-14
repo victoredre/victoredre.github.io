@@ -1,7 +1,7 @@
 ---
 title: "Udemy NAGIOS Monitoreo de infraestructura"
 description: "NAGIOS"
-tags: ["Arquitectura Core, plugins, NRPE/NCPA, Icinga, Centreon,","Linux dependencias, compilación","Hosts, hostgroups, servicegroups, Contact's, contactgroupsy, commands.cfg, Time periods, horarios de monitoreo."]
+tags: [" Core, plugins, NRPE/NCPA, Icinga, Centreon,","Linux dependencias, compilación","Hosts, hostgroups, servicegroups, Contact's, contactgroupsy, commands.cfg, Time periods, horarios de monitoreo."]
 date: 2024-01-01
 featured: true
 inProgress: false
