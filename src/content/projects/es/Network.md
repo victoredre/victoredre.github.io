@@ -1,7 +1,7 @@
 ---
-title: "Fortinet (FCSS) SD-WAN  ISC2 7.2 Self - Paced"
+title: "Fortinet, ISC2 (FCSS) SD-WAN Self - Paced"
 description: "Fortinet"
-tags: ["Architecture SD-WAN overlay, under, zones and interface members ADVPN for dynamic hub-and-spoke design."]
+tags: ["Administration, troubleshooting, and central management of a secure SD-WAN solution consisting of FortiOS, FortiManager, and FortiAnalyzer."]
 date: 2024-01-01
 featured: true
 inProgress: false
