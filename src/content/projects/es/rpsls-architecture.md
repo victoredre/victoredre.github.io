@@ -1,7 +1,7 @@
 ---
 title: "Fortinet, ISC2 (FCSS) LAN Edge"
 description: "Fortinet"
-tags: ["Zero-touch deployment, VLAN design and segmentation at the LAN edge, Network Access Control (NAC) concepts and device onboarding","dynamic and static port policies on FortiSwitch","security profiles (WPA2/WPA3, captive portal), Fabric connectors, Network access and dynamic VLAN assignment, Security Fabric integration between FortiGate"]
+tags: ["VLAN desigm, Segmentation at the LAN edge, Nac, Conboarding","dynamic, static port","security profiles (WPA2/WPA3, captive portal), Fabric connectors, Network access and dynamic VLAN assignment."]
 date: 2024-01-01
 featured: true
 inProgress: false
