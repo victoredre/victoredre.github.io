@@ -1,5 +1,5 @@
 ---
-title: "Check Point MSSP Cybersecurity"
+title: "Check Point MSSP Sales - Specialist"
 description: "Check Point"
 tags: ["SMB Security, Quantum Spark Appliances, Gateway Configuration
 Threat Prevention, Antivirus, Anti-Bot, IPS SMP Security Management Portal, Cloud Services Integration, Reporting and Monitoring, Licensing and Deployment."]
