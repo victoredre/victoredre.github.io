@@ -1,7 +1,7 @@
 ---
-title: "ESET Project Cloud"
+title: "ESET Protect Cloud "
 description: "ESET"
-tags: ["Event vs Incident, Lifecycle (Planning, Detection, Containment, Eradication, and Recovery), Roles (CSIRT), Detection and Triage, Contingency Plans, Bgies, Operations running after a crisis, Drills and Preparedness."]
+tags: ["Eset protect cloud instante,  Protect cloud web console, Management agent, Eset bridge, Mobile device management, Patch and vulnerability management."]
 date: 2024-01-01
 featured: true
 inProgress: true
