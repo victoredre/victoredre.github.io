@@ -1,10 +1,10 @@
 ---
-title: "Fortinet Gesting"
+title: "Fortinet (FCF) Gestting Started in Cybersecurity"
 description: "Fortinet"
-tags: [" Application Security, Cloud Services, Cryptography, Cybersecurity Threats, Data Privacy, Endpoint Security, Information Security Principles, Malware Attacks, Network Security, Secure SD-WAN, Security Operations, Social Engineering, Threat Intelligence."]
+tags: [" Cloud Services, Endpoint Security, Network Access Control, Sandbox, SASE, Secure Email Gateway, Secure SD-WAN, Secure Wi-Fi, SIEM, SOAR, Web Application Firewall, Web Filtering, ZTNA"]
 date: 2024-01-01
 featured: true
-inProgress: false
+inProgress: true
 link: "https://github.com/victoredre/victoredre.github.io"
 image: "../../../assets/projects/fcaa.png"
 ---
