@@ -1,7 +1,7 @@
 ---
 title: "ESET Protect Cloud "
 description: "ESET"
-tags: ["Eset protect cloud instante,  Protect cloud web console, Management agent, Eset bridge, Mobile device management, Patch and vulnerability management."]
+tags: ["Eset protect cloud instante,  Protect cloud web console, Management agent, Eset bridge, Mobile device management, Patch and vulnerability."]
 date: 2024-01-01
 featured: true
 inProgress: true
