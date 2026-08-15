@@ -1,7 +1,7 @@
 ---
 title: "SCRUM"
 description: "SCRUM"
-tags: ["Risk Assessment (Qualitative and Quantitative), Threat Landscape Overview, Vulnerability Management, Mitigation Strategies,  Appetite and Tolerance, Frameworks (NIST, ISO 27005, FAIR) Third-Party, Governance Compliance (GRC)."]
+tags: ["Scrum Framework, Agile Methodology, Project Delivery, Scrum Project, Earning Criteria, Attend Scrum Fundamentals."]
 date: 2024-01-01
 featured: true
 inProgress: true
