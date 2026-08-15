@@ -51,7 +51,7 @@ const workExperience:WorkExperience[] = [
         location: " Gestión e Implementacion y Servicios de Ciberseguridad Multicapa ",
         description: "Principal cliente: Sector gubernamental Instituto Nacional de Migración",
         goals:  [
-            "Diseñé e impartí la capacitación para los ingenieros SOC Junior para la interpretación e identificación de vectores de ataque dentro y fuera de la infraestructura de nuestro cliente Instituto Nacional de Migración",
+            "Diseñé e impartí la capacitación para los ingenieros SOC Junior para la interpretación e identificación de vectores de ataque dentro y fuera de la infraestructura de nuestro cliente Instituto Nacional de Migración.",
             "Implementé un entorno virtual ESXi para migrar e implementar, ecosistemas Fortinet en multicapa por ejemplo la integración con CrowdStrike y Forescout, Forcepoint, BeyondTrust y Fortinet acelerando un 40% el tiempo de implementación y minimizando errores",
             "Configuré pasarelas web en Forcepoint y Forescout frente a fugas de información e ingresos de dispositivos no autorizados agilizando la detección y contención de anomalías hasta un 20% en las brechas de seguridad",
             "Gestione e Implemente equipos bajo el ecosistema Fortinet desplegando unidades como: (FortiADC, FortiWifi, FortiManager, FortiSwitch, FortiAnalyzer,  FortiNAC).",
