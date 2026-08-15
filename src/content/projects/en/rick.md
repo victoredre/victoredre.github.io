@@ -1,7 +1,7 @@
 ---
-title: "ESET Gestión y Respuesta a Incidentes"
-description: "ESET"
-tags: ["Event vs Incident, Lifecycle (Planning, Detection, Containment, Eradication, and Recovery), Roles (CSIRT), Detection and Triage, Contingency Plans, Bgies, Operations running after a crisis, Drills and Preparedness."]
+title: "Fundamentals of Cyber Rick Management Public Versión"
+description: "Fedv"
+tags: ["Risk Assessment (Qualitative and Quantitative), Threat Landscape Overview, Vulnerability Management, Mitigation Strategies,  Appetite and Tolerance, Frameworks (NIST, ISO 27005, FAIR) Third-Party, Governance Compliance (GRC)."]
 date: 2024-01-01
 featured: true
 inProgress: true
