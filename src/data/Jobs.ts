@@ -54,7 +54,7 @@ const workExperience:WorkExperience[] = [
             "Diseñé e impartí la capacitación para los ingenieros SOC,en la interpretación e identificación de vectores de ataque dentro de nuestra y fuera de la infraestructura",
             "Implementé un entorno virtual ESXi para migrar e implementar, ecosistemas Fortinet en multicapa por ejemplo la integración con CrowdStrike y Forescout, Forcepoint BeyondTrust acelerando un 40% el tiempo de implementación y minimizando errores",
             "Configuré pasarelas web en Forcepoint y Forescout frente a fugas de información e ingresos de dispositivos no autorizados agilizando la detección y contención de anomalías hasta un 20% en las brechas de seguridad",
-            "Gestión de campañas de concientización y simulaciones de phishing",
+            "Gestione e Implemente equipos bajo el ecosistema Fortinet desplegando unidades como: (FortiADC, FortiWifi, FortiManager, FortiSwitch, FortiAnalyzer,  FortiNAC).",
             "Aseguré el cumplimiento de los SLAs , logrando un tiempo de contención menor a 15 minutos en alertas críticas en el tablero de Falcon",
                 ],
         currentJob: false, 
@@ -83,7 +83,7 @@ const workExperience:WorkExperience[] = [
         description: "Principales clientes: Gpo. Ciosa, Gpo. Bradescard, Grupo Atento, CI Banco, Gpo. Atento.",
         goals: [
             "Participé activamente en la atención de auditorías externas al SOC encargándome de presentar controles de cambios y aportando la trazabilidad de la operación.",
-            "Migración e Implementación a ecosistemas Fortinet desplegando FortiGate, FortiWifi, FortiEMS, FortiManager, FortiSwitch, FortiAP, FortiWeb, FortiAnalyzer, FortiExtender.",
+            "Migre e Implemente equipos bajo el ecosistema Fortinet desplegando unidades como: (FortiGate, FortiWifi, FortiEMS, FortiManager, FortiSwitch, FortiAP, FortiWeb, FortiAnalyzer, FortiExtender).",
             "Soporte de N1/N2 a ecosistemas híbridos con Palo Alto Networks con gestión a Panorama con PA-VM en la nube.",
             "Optimicé los controles de Monitoreo con Nagios, Host Monitor y Observium para la supervisor de Enlaces, LookBack, Servidores internos interna como externa Reforzando un 40% el manejo de incidentes.",
             "Logre la reducción de un 40% la identificación de anomalías en la red mediante la sintonización de filtros aislando solicitudes sospechosas en Trend Micro con Apex one y Deep Security.",
