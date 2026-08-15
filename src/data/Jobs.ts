@@ -44,7 +44,7 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "Ing. Implementación en Soluciones de Ciberseguridad - Sentínel",
+        title: "Ing. Administración y Implementación en Soluciones de Ciberseguridad - Sentínel",
         startDate: "2025-03-10",
         endDate:   "2024-06-10",
         company: "IQsec S.A de C.V",
